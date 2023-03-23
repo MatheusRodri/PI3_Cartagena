@@ -27,7 +27,8 @@ namespace PI3_Cartagena
             dados = dados.Replace("\r", "");
             string[] partidas = dados.Split('\n');
 
-            
+
+
 
             for (int i = 0; i < partidas.Length; i++)
             {
@@ -37,9 +38,10 @@ namespace PI3_Cartagena
 
         private void jogadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string[] dadosPartidas = lb_partidas.SelectedItem.ToString().Split(',');
-            
-            idpartida = Convert.ToInt32(dadosPartidas[0]);
+            string dadosPartidas = lb_partidas.SelectedItem.ToString();
+            string[] itens = dadosPartidas.Split(',');
+
+            idpartida = Convert.ToInt32(itens[0]);
             
 
             Tela_Jogadores tela_Jogadores = new Tela_Jogadores(idpartida);
@@ -111,6 +113,13 @@ namespace PI3_Cartagena
             {
                 lb_jogadoresNaPartida.Items.Add(jogadores[i]);
             }
+        }
+
+        private void cartaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Carta partida = new Carta();
+            partida.Show();
+            this.Close();
         }
     }
 }
