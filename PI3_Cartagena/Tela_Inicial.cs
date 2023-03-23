@@ -67,5 +67,17 @@ namespace PI3_Cartagena
         {
 
         }
+
+        private void cartaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Carta partida = new Carta();
+            partida.Show();
+            Hide();
+        }
+
+        private void inicialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

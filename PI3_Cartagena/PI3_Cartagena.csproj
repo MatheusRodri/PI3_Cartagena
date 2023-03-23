@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carta.Designer.cs">
+      <DependentUpon>Carta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Tela_Partida.Designer.cs">
       <DependentUpon>Tela_Partida.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Carta.resx">
+      <DependentUpon>Carta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tela_Inicial.resx">
       <DependentUpon>Tela_Inicial.cs</DependentUpon>
     </EmbeddedResource>
