@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -57,11 +58,11 @@ namespace PI3_Cartagena
                             {
                                 Name = "pictureBox",
                                 Size = new Size(40, 50),
-                                Location = new Point(550, 60),
+                                Location = new Point(550, 0 * contador),
                                 SizeMode = PictureBoxSizeMode.StretchImage,
                                 Image = Image.FromFile("Icones/Chave.png"),
                             };
-                            this.Controls.Add(picture);
+                            this.Controls.Add(picture);                          
                             contador++;
 
                         }
