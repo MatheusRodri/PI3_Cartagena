@@ -16,10 +16,7 @@ namespace PI3_Cartagena
         public Tela_Inicial()
         {
             InitializeComponent();
-            inicialToolStripMenuItem.Visible = false;
         }
-
-        int idPartida;
 
         private void btn_listarPartida_Click(object sender, EventArgs e)
         {
@@ -39,11 +36,7 @@ namespace PI3_Cartagena
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string nomeUsuario = txt_nomeUsuario.Text;
-            string senhaPartida = txt_senha.Text;
-            string dadosDaPartida = Jogo.EntrarPartida(idPartida, nomeUsuario, senhaPartida);
-
-            MessageBox.Show(dadosDaPartida);
+            
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -78,6 +71,18 @@ namespace PI3_Cartagena
         private void inicialToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Tela_Partida tela_Partida = new Tela_Partida();
+            tela_Partida.Show();
+            Hide();
         }
     }
 }

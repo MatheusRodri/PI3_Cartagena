@@ -25,7 +25,7 @@ namespace PI3_Cartagena
             lb_partidas.Items.Clear();
             string dados = Jogo.ListarPartidas("T");
             dados = dados.Replace("\r", "");
-            string[] partidas = dados.Split('\n');
+            string[] partidas = dados.Split('\n');  
 
 
 
@@ -78,13 +78,7 @@ namespace PI3_Cartagena
 
         private void btn_criarPartida_Click(object sender, EventArgs e)
         {
-            string nomePartida = txt_nomePartida.Text;
-            string senhaPartida = txt_senhaPartida.Text;
-
-            string dadosPartidaNova = Jogo.CriarPartida(nomePartida, senhaPartida);
-
-            MessageBox.Show(dadosPartidaNova);
-            exibirPartidas();
+            
         }
 
         private void lb_partidas_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +113,25 @@ namespace PI3_Cartagena
         {
             Carta partida = new Carta();
             partida.Show();
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_form_criar_partida_Click(object sender, EventArgs e)
+        {
+            CriarPartida partida = new CriarPartida();
+            partida.Show();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tela_Jogadores tela_Jogadores = new Tela_Jogadores(idpartida);
+            tela_Jogadores.Show();
             this.Close();
         }
     }

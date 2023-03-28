@@ -58,7 +58,7 @@ namespace PI3_Cartagena
                             {
                                 Name = "pictureBox",
                                 Size = new Size(40, 50),
-                                Location = new Point(550, 0 * contador),
+                                Location = new Point(550, 60 * contador),
                                 SizeMode = PictureBoxSizeMode.StretchImage,
                                 Image = Image.FromFile("Icones/Chave.png"),
                             };

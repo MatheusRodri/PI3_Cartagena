@@ -55,6 +55,12 @@
     <Compile Include="Carta.Designer.cs">
       <DependentUpon>Carta.cs</DependentUpon>
     </Compile>
+    <Compile Include="CriarPartida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarPartida.Designer.cs">
+      <DependentUpon>CriarPartida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="Carta.resx">
       <DependentUpon>Carta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarPartida.resx">
+      <DependentUpon>CriarPartida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Inicial.resx">
       <DependentUpon>Tela_Inicial.cs</DependentUpon>

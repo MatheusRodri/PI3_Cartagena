@@ -32,7 +32,11 @@ namespace PI3_Cartagena
             string senhaPartida = txt_senha.Text;
             string dadosDaPartida = Jogo.EntrarPartida(idPartida, nomeUsuario, senhaPartida);
 
-            MessageBox.Show(dadosDaPartida);
+            Console.WriteLine(dadosDaPartida);
+            string[] dadosUser = dadosDaPartida.Split(',');
+            
+            txtUser.Text = dadosUser[0];
+            txtSenhaU.Text = dadosUser[1];
         }
 
         private void partidaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +46,6 @@ namespace PI3_Cartagena
 
         private void partidaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
             
             Carta partida = new Carta();
             partida.Show();
@@ -54,8 +57,15 @@ namespace PI3_Cartagena
             int idUsuario = Convert.ToInt32(txtUser.Text);
             string senhaUsuario = txtSenhaU.Text;
             string jogador = Jogo.IniciarPartida(idUsuario, senhaUsuario);
+            
+            MessageBox.Show($"Jogador: {jogador} iniciara");
+        }
 
-            MessageBox.Show($"Jogador: {jogador} iniciara a partida");
+        private void btn_voltar_Click(object sender, EventArgs e)
+        {
+            Tela_Partida partida = new Tela_Partida();
+            partida.Show();
+            this.Close();
         }
     }
 }
