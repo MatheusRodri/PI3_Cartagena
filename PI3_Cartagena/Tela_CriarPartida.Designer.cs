@@ -1,6 +1,6 @@
 ﻿namespace PI3_Cartagena
 {
-    partial class CriarPartida
+    partial class Tela_CriarPartida
     {
         /// <summary>
         /// Required designer variable.
@@ -47,70 +47,83 @@
             this.panel1.Controls.Add(this.txt_nomePartida);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(380, 508);
+            this.panel1.Size = new System.Drawing.Size(428, 635);
             this.panel1.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 35);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(56, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.Size = new System.Drawing.Size(342, 64);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "Criar Partida";
             // 
             // txt_senhaPartida
             // 
-            this.txt_senhaPartida.Location = new System.Drawing.Point(31, 231);
+            this.txt_senhaPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_senhaPartida.Location = new System.Drawing.Point(36, 260);
+            this.txt_senhaPartida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_senhaPartida.Name = "txt_senhaPartida";
-            this.txt_senhaPartida.Size = new System.Drawing.Size(311, 22);
+            this.txt_senhaPartida.Size = new System.Drawing.Size(349, 44);
             this.txt_senhaPartida.TabIndex = 4;
+            this.txt_senhaPartida.TextChanged += new System.EventHandler(this.txt_senhaPartida_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 202);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(78, 216);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.Size = new System.Drawing.Size(291, 40);
             this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.label2.Text = "Senha da partida";
+            
             // 
             // btn_criarPartida
             // 
-            this.btn_criarPartida.Location = new System.Drawing.Point(31, 271);
+            this.btn_criarPartida.Location = new System.Drawing.Point(35, 332);
+            this.btn_criarPartida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_criarPartida.Name = "btn_criarPartida";
-            this.btn_criarPartida.Size = new System.Drawing.Size(311, 23);
+            this.btn_criarPartida.Size = new System.Drawing.Size(350, 47);
             this.btn_criarPartida.TabIndex = 2;
-            this.btn_criarPartida.Text = "button1";
+            this.btn_criarPartida.Text = "Criar Partida";
             this.btn_criarPartida.UseVisualStyleBackColor = true;
             this.btn_criarPartida.Click += new System.EventHandler(this.btn_criarPartida_Click);
             // 
             // txt_nomePartida
             // 
-            this.txt_nomePartida.Location = new System.Drawing.Point(31, 152);
+            this.txt_nomePartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nomePartida.Location = new System.Drawing.Point(36, 156);
+            this.txt_nomePartida.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nomePartida.Name = "txt_nomePartida";
-            this.txt_nomePartida.Size = new System.Drawing.Size(311, 22);
+            this.txt_nomePartida.Size = new System.Drawing.Size(349, 39);
             this.txt_nomePartida.TabIndex = 1;
             this.txt_nomePartida.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 124);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(78, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(283, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Nome da partida";
+            
             // 
-            // CriarPartida
+            // Tela_CriarPartida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 402);
+            this.ClientSize = new System.Drawing.Size(432, 502);
             this.Controls.Add(this.panel1);
-            this.Name = "CriarPartida";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "Tela_CriarPartida";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CriarPartida";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -56,36 +56,6 @@ namespace PI3_Cartagena
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Tela_Partida_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_criarPartida_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void lb_partidas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lb_partidas_SelectedValueChanged(object sender, EventArgs e)
         {
             string[] dadosPartidas = lb_partidas.SelectedItem.ToString().Split(',');
@@ -111,19 +81,14 @@ namespace PI3_Cartagena
 
         private void cartaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Carta partida = new Carta();
+            Tela_Carta partida = new Tela_Carta();
             partida.Show();
             this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_form_criar_partida_Click(object sender, EventArgs e)
         {
-            CriarPartida partida = new CriarPartida();
+            Tela_CriarPartida partida = new Tela_CriarPartida();
             partida.Show();
             
         }

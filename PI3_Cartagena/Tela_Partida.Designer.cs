@@ -53,7 +53,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(325, 325);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+           
             // 
             // label1
             // 
@@ -64,7 +64,7 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Partidas abertas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // lb_partidas
             // 
@@ -75,7 +75,7 @@
             this.lb_partidas.Name = "lb_partidas";
             this.lb_partidas.Size = new System.Drawing.Size(243, 260);
             this.lb_partidas.TabIndex = 0;
-            this.lb_partidas.SelectedIndexChanged += new System.EventHandler(this.lb_partidas_SelectedIndexChanged);
+           
             this.lb_partidas.SelectedValueChanged += new System.EventHandler(this.lb_partidas_SelectedValueChanged);
             // 
             // panel2
@@ -162,7 +162,7 @@
             this.Name = "Tela_Partida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Partida";
-            this.Load += new System.EventHandler(this.Tela_Partida_Load);
+           
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

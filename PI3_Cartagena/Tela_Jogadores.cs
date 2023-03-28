@@ -47,7 +47,7 @@ namespace PI3_Cartagena
         private void partidaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             
-            Carta partida = new Carta();
+            Tela_Carta partida = new Tela_Carta();
             partida.Show();
             this.Close();
         }

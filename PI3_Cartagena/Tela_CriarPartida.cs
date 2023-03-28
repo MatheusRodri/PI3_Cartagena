@@ -11,23 +11,30 @@ using System.Windows.Forms;
 
 namespace PI3_Cartagena
 {
-    public partial class CriarPartida : Form
+    public partial class Tela_CriarPartida : Form
     {
-        public CriarPartida()
+        public Tela_CriarPartida()
         {
             InitializeComponent();
+            btn_criarPartida.Enabled = false;
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        
+        private void validaCampos()
         {
-
+            if (txt_nomePartida.Text.Length > 0 && txt_senhaPartida.Text.Length > 0)
+            {
+                btn_criarPartida.Enabled = true;
+            }
+            else
+            {
+                btn_criarPartida.Enabled = false;
+            }
         }
-
        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            validaCampos();
         }
 
         private void btn_criarPartida_Click(object sender, EventArgs e)
@@ -39,6 +46,11 @@ namespace PI3_Cartagena
 
             MessageBox.Show(dadosPartidaNova);
             this.Close();
+        }
+
+        private void txt_senhaPartida_TextChanged(object sender, EventArgs e)
+        {
+            validaCampos();
         }
     }
 }

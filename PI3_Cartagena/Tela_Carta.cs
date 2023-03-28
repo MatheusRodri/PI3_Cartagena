@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace PI3_Cartagena
 {
-    public partial class Carta : Form
+    public partial class Tela_Carta : Form
     {
-        public Carta()
+        public Tela_Carta()
         {
             InitializeComponent();
         }
@@ -161,8 +161,15 @@ namespace PI3_Cartagena
 
         private void partidaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Carta partida = new Carta();
+            Tela_Carta partida = new Tela_Carta();
             partida.Show();
+            this.Close();
+        }
+
+        private void btn_voltar_Click(object sender, EventArgs e)
+        {
+            Tela_Partida tela_Partida = new Tela_Partida();
+            tela_Partida.Show();
             this.Close();
         }
     }
