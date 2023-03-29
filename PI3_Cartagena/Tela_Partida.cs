@@ -19,7 +19,7 @@ namespace PI3_Cartagena
             exibirPartidas();
 
         }
-        int idpartida;
+         int idpartida;
         private void exibirPartidas()
         {
             lb_partidas.Items.Clear();
@@ -81,7 +81,7 @@ namespace PI3_Cartagena
 
         private void cartaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Tela_Carta partida = new Tela_Carta();
+            Tela_Carta partida = new Tela_Carta(idpartida,);
             partida.Show();
             this.Close();
         }
