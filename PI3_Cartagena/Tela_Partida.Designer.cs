@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_partidas = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_form_criar_partida = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -53,7 +52,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(325, 325);
             this.panel1.TabIndex = 1;
-           
             // 
             // label1
             // 
@@ -64,7 +62,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Partidas abertas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-          
             // 
             // lb_partidas
             // 
@@ -75,13 +72,11 @@
             this.lb_partidas.Name = "lb_partidas";
             this.lb_partidas.Size = new System.Drawing.Size(243, 260);
             this.lb_partidas.TabIndex = 0;
-           
             this.lb_partidas.SelectedValueChanged += new System.EventHandler(this.lb_partidas_SelectedValueChanged);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btn_form_criar_partida);
             this.panel2.Controls.Add(this.panel4);
@@ -90,15 +85,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1157, 662);
             this.panel2.TabIndex = 2;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(874, 292);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(183, 63);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -162,7 +148,6 @@
             this.Name = "Tela_Partida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Partida";
-           
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -180,7 +165,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbl_nomePartida;
         private System.Windows.Forms.ListBox lb_jogadoresNaPartida;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_form_criar_partida;
     }

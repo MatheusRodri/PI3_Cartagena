@@ -15,13 +15,6 @@ namespace PI3_Cartagena
 {
     public partial class Tela_Carta : Form
     {
-        public Tela_Carta(int idPartida,int idUsuario,string senhaUsuario)
-        {
-            InitializeComponent();
-            this.idPartida = idPartida;
-            this.idUsuario = idUsuario;
-            this.senhaUsuario = senhaUsuario;
-        }
 
         string[] mao;
         string[] casasSeparadas;
@@ -33,12 +26,16 @@ namespace PI3_Cartagena
         string cartaParaJogar;
         int numCartaAjogar;
 
-
         
         string tipoCasaSel;
         int numCasaSel;
-
-
+        public Tela_Carta(int idPartida,int idUsuario,string senhaUsuario)
+        {
+            InitializeComponent();
+            this.idPartida = idPartida;
+            this.idUsuario = idUsuario;
+            this.senhaUsuario = senhaUsuario;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             lb_cartas.Items.Clear();

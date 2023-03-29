@@ -81,9 +81,7 @@ namespace PI3_Cartagena
 
         private void cartaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Tela_Carta partida = new Tela_Carta(idpartida,);
-            partida.Show();
-            this.Close();
+            
         }
 
         private void btn_form_criar_partida_Click(object sender, EventArgs e)

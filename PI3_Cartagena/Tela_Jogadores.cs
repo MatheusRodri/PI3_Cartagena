@@ -57,7 +57,7 @@ namespace PI3_Cartagena
         private void btnPartida_Click(object sender, EventArgs e)
         {
             idUsuario = Convert.ToInt32(txtUser.Text);
-             senhaUsuario = txtSenhaU.Text;
+            senhaUsuario = txtSenhaU.Text;
             string jogador = Jogo.IniciarPartida(idUsuario, senhaUsuario);
             
             MessageBox.Show($"Jogador: {jogador} iniciara");
@@ -67,6 +67,13 @@ namespace PI3_Cartagena
         {
             Tela_Partida partida = new Tela_Partida();
             partida.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Tela_Carta tela_Carta = new Tela_Carta(idPartida, idUsuario, senhaUsuario);
+            tela_Carta.Show();
             this.Close();
         }
     }
