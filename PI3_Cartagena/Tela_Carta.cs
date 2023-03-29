@@ -38,6 +38,12 @@ namespace PI3_Cartagena
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+
+            
+            
+            
             lb_cartas.Items.Clear();
             int id = Convert.ToInt32(txt_UserId.Text);
             string senha = txt_SenhaUser.Text;
@@ -46,6 +52,8 @@ namespace PI3_Cartagena
 
             cartas = cartas.Replace("\r", "");
             mao = cartas.Split('\n');
+             
+            
             List<int> qtd = new List<int>();
             List<string> icone = new List<string>();
 
@@ -63,116 +71,123 @@ namespace PI3_Cartagena
             }
             int contador = 1;
             int posQtd = 0;
-            // "C", "T", "E", "F", "G", "P"
-            foreach (var item in icone)
-            {
-                switch (item)
+                // "C", "T", "E", "F", "G", "P"
+                foreach (var item in icone)
                 {
-                    case "C":
-                        for (int j = 0; j < qtd[posQtd]; j++)
-                        {
-                            var picture = new PictureBox
+                    switch (item)
+                    {
+                        case "C":
+                            for (int j = 0; j < qtd[posQtd]; j++)
                             {
-                                Name = "pictureBox",
-                                Size = new Size(40, 50),
-                                Location = new Point(550, 60 * contador),
-                                SizeMode = PictureBoxSizeMode.StretchImage,
-                                Image = Image.FromFile("Icones/Chave.png"),
-                            };
-                            this.Controls.Add(picture);                          
-                            contador++;
+                                var picture = new PictureBox
+                                {
+                                    Name = "pictureBox",
+                                    Size = new Size(40, 50),
+                                    Location = new Point(550, 60 * contador),
+                                    SizeMode = PictureBoxSizeMode.StretchImage,
+                                    Image = Image.FromFile("Icones/Chave.png"),
+                                };
+                                this.Controls.Add(picture);
+                                contador++;
 
-                        }
-                        posQtd++;
-                        break;
-                    case "T":
-                        for (int j = 0; j < qtd[posQtd]; j++)
-                        {
-                            var picture = new PictureBox
+                            }
+                            posQtd++;
+                            break;
+                        case "T":
+                            for (int j = 0; j < qtd[posQtd]; j++)
                             {
-                                Name = "pictureBox",
-                                Size = new Size(40, 50),
-                                Location = new Point(550, 60 * contador),
-                                SizeMode = PictureBoxSizeMode.StretchImage,
-                                Image = Image.FromFile("Icones/Tricornio.jpg"),
-                            };
-                            this.Controls.Add(picture);
-                            contador++;
+                                var picture = new PictureBox
+                                {
+                                    Name = "pictureBox",
+                                    Size = new Size(40, 50),
+                                    Location = new Point(550, 60 * contador),
+                                    SizeMode = PictureBoxSizeMode.StretchImage,
+                                    Image = Image.FromFile("Icones/Tricornio.jpg"),
+                                };
+                                this.Controls.Add(picture);
+                                contador++;
 
-                        }
-                        posQtd++;
-                        break;
+                            }
+                            posQtd++;
+                            break;
 
-                    case "E":
-                        for (int j = 0; j < qtd[posQtd]; j++)
-                        {
-                            var picture = new PictureBox
+                        case "E":
+                            for (int j = 0; j < qtd[posQtd]; j++)
                             {
-                                Name = "pictureBox",
-                                Size = new Size(40, 50),
-                                Location = new Point(550, 60 * contador),
-                                SizeMode = PictureBoxSizeMode.StretchImage,
-                                Image = Image.FromFile("Icones/Esqueleto.jpg"),
-                            };
-                            this.Controls.Add(picture);
-                            contador++;
+                                var picture = new PictureBox
+                                {
+                                    Name = "pictureBox",
+                                    Size = new Size(40, 50),
+                                    Location = new Point(550, 60 * contador),
+                                    SizeMode = PictureBoxSizeMode.StretchImage,
+                                    Image = Image.FromFile("Icones/Esqueleto.jpg"),
+                                };
+                                this.Controls.Add(picture);
+                                contador++;
 
-                        }
-                        posQtd++;
-                        break;
-                    case "F":
-                        for (int j = 0; j < qtd[posQtd]; j++)
-                        {
-                            var picture = new PictureBox
+                            }
+                            posQtd++;
+                            break;
+                        case "F":
+                            for (int j = 0; j < qtd[posQtd]; j++)
                             {
-                                Name = "pictureBox",
-                                Size = new Size(40, 50),
-                                Location = new Point(550, 60 * contador),
-                                SizeMode = PictureBoxSizeMode.StretchImage,
-                                Image = Image.FromFile("Icones/Faca.jpg"),
-                            };
-                            this.Controls.Add(picture);
-                            contador++;
+                                var picture = new PictureBox
+                                {
+                                    Name = "pictureBox",
+                                    Size = new Size(40, 50),
+                                    Location = new Point(550, 60 * contador),
+                                    SizeMode = PictureBoxSizeMode.StretchImage,
+                                    Image = Image.FromFile("Icones/Faca.jpg"),
+                                };
+                                this.Controls.Add(picture);
+                                contador++;
 
-                        }
-                        posQtd++;
-                        break;
-                    case "G":
-                        for (int j = 0; j < qtd[posQtd]; j++)
-                        {
-                            var picture = new PictureBox
+                            }
+                            posQtd++;
+                            break;
+                        case "G":
+                            for (int j = 0; j < qtd[posQtd]; j++)
                             {
-                                Name = "pictureBox",
-                                Size = new Size(40, 50),
-                                Location = new Point(550, 60 * contador),
-                                SizeMode = PictureBoxSizeMode.StretchImage,
-                                Image = Image.FromFile("Icones/Garrafa.jpg"),
+                                var picture = new PictureBox
+                                {
+                                    Name = "pictureBox",
+                                    Size = new Size(40, 50),
+                                    Location = new Point(550, 60 * contador),
+                                    SizeMode = PictureBoxSizeMode.StretchImage,
+                                    Image = Image.FromFile("Icones/Garrafa.jpg"),
 
-                            };
-                            this.Controls.Add(picture);
-                            contador++;
+                                };
+                                this.Controls.Add(picture);
+                                contador++;
 
-                        }
-                        posQtd++;
-                        break;
-                    case "P":
-                        for (int j = 0; j < qtd[posQtd]; j++)
-                        {
-                            var picture = new PictureBox
+                            }
+                            posQtd++;
+                            break;
+                        case "P":
+                            for (int j = 0; j < qtd[posQtd]; j++)
                             {
-                                Name = "pictureBox",
-                                Size = new Size(40, 50),
-                                Location = new Point(550, 60 * contador),
-                                SizeMode = PictureBoxSizeMode.StretchImage,
-                                Image = Image.FromFile("Icones/Pistola.jpg"),
-                            };
-                            this.Controls.Add(picture);
-                            contador++;
-                        }
-                        posQtd++;
-                        break;
+                                var picture = new PictureBox
+                                {
+                                    Name = "pictureBox",
+                                    Size = new Size(40, 50),
+                                    Location = new Point(550, 60 * contador),
+                                    SizeMode = PictureBoxSizeMode.StretchImage,
+                                    Image = Image.FromFile("Icones/Pistola.jpg"),
+                                };
+                                this.Controls.Add(picture);
+                                contador++;
+                            }
+                            posQtd++;
+                            break;
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Partida Não Iniciada");
+            }
+
 
         }
 
