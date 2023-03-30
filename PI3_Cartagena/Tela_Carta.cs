@@ -83,7 +83,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(550, 60 * contador),
+                                    Location = new Point(720, 60 * contador),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Chave.png"),
                                 };
@@ -100,7 +100,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(550, 60 * contador),
+                                    Location = new Point(720, 60 * contador),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Tricornio.jpg"),
                                 };
@@ -118,7 +118,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(550, 60 * contador),
+                                    Location = new Point(720, 60 * contador),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Esqueleto.jpg"),
                                 };
@@ -135,7 +135,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(550, 60 * contador),
+                                    Location = new Point(720, 60 * contador),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Faca.jpg"),
                                 };
@@ -152,7 +152,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(550, 60 * contador),
+                                    Location = new Point(720, 60 * contador),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Garrafa.jpg"),
 
@@ -170,7 +170,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(550, 60 * contador),
+                                    Location = new Point(720, 60 * contador),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Pistola.jpg"),
                                 };
