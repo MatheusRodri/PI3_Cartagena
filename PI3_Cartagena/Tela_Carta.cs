@@ -253,5 +253,15 @@ namespace PI3_Cartagena
         {
             lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario, numCasaSel, cartaParaJogar);
         }
+
+        private void btn_voltarPirata_Click(object sender, EventArgs e)
+        {
+            lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario, numCasaSel);
+        }
+
+        private void btn_pularVez_Click(object sender, EventArgs e)
+        {
+            lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario);
+        }
     }
 }

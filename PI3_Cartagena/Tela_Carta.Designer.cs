@@ -48,6 +48,8 @@
             this.btn_casaSel = new System.Windows.Forms.Button();
             this.lbl_cartaSel = new System.Windows.Forms.Label();
             this.btn_selCarta = new System.Windows.Forms.Button();
+            this.btn_voltarPirata = new System.Windows.Forms.Button();
+            this.btn_pularVez = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -188,6 +190,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel4.Controls.Add(this.btn_pularVez);
+            this.panel4.Controls.Add(this.btn_voltarPirata);
             this.panel4.Controls.Add(this.lbl_retornoJogar);
             this.panel4.Controls.Add(this.btn_andar);
             this.panel4.Controls.Add(this.lbl_casaSel);
@@ -202,7 +206,7 @@
             // lbl_retornoJogar
             // 
             this.lbl_retornoJogar.AutoSize = true;
-            this.lbl_retornoJogar.Location = new System.Drawing.Point(336, 44);
+            this.lbl_retornoJogar.Location = new System.Drawing.Point(336, 13);
             this.lbl_retornoJogar.Name = "lbl_retornoJogar";
             this.lbl_retornoJogar.Size = new System.Drawing.Size(83, 13);
             this.lbl_retornoJogar.TabIndex = 5;
@@ -210,9 +214,9 @@
             // 
             // btn_andar
             // 
-            this.btn_andar.Location = new System.Drawing.Point(254, 25);
+            this.btn_andar.Location = new System.Drawing.Point(255, 13);
             this.btn_andar.Name = "btn_andar";
-            this.btn_andar.Size = new System.Drawing.Size(75, 52);
+            this.btn_andar.Size = new System.Drawing.Size(75, 23);
             this.btn_andar.TabIndex = 4;
             this.btn_andar.Text = "Andar";
             this.btn_andar.UseVisualStyleBackColor = true;
@@ -255,6 +259,26 @@
             this.btn_selCarta.Text = "Selecionar Carta";
             this.btn_selCarta.UseVisualStyleBackColor = true;
             this.btn_selCarta.Click += new System.EventHandler(this.btn_selCarta_Click);
+            // 
+            // btn_voltarPirata
+            // 
+            this.btn_voltarPirata.Location = new System.Drawing.Point(255, 39);
+            this.btn_voltarPirata.Name = "btn_voltarPirata";
+            this.btn_voltarPirata.Size = new System.Drawing.Size(75, 23);
+            this.btn_voltarPirata.TabIndex = 6;
+            this.btn_voltarPirata.Text = "voltar";
+            this.btn_voltarPirata.UseVisualStyleBackColor = true;
+            this.btn_voltarPirata.Click += new System.EventHandler(this.btn_voltarPirata_Click);
+            // 
+            // btn_pularVez
+            // 
+            this.btn_pularVez.Location = new System.Drawing.Point(255, 64);
+            this.btn_pularVez.Name = "btn_pularVez";
+            this.btn_pularVez.Size = new System.Drawing.Size(75, 23);
+            this.btn_pularVez.TabIndex = 7;
+            this.btn_pularVez.Text = "Pular ";
+            this.btn_pularVez.UseVisualStyleBackColor = true;
+            this.btn_pularVez.Click += new System.EventHandler(this.btn_pularVez_Click);
             // 
             // Tela_Carta
             // 
@@ -300,5 +324,7 @@
         private System.Windows.Forms.Label lbl_cartaSel;
         private System.Windows.Forms.Button btn_selCarta;
         private System.Windows.Forms.Label lbl_retornoJogar;
+        private System.Windows.Forms.Button btn_pularVez;
+        private System.Windows.Forms.Button btn_voltarPirata;
     }
 }
