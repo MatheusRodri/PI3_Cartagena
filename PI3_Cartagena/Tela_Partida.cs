@@ -97,5 +97,12 @@ namespace PI3_Cartagena
             tela_Jogadores.Show();
             this.Close();
         }
+
+        private void btnTabuleiro_Click(object sender, EventArgs e)
+        {
+            Tela_Tabuleiro tela_Jogadores = new Tela_Tabuleiro(idpartida);
+            tela_Jogadores.Show();
+            this.Close();
+        }
     }
 }

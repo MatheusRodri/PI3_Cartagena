@@ -39,11 +39,7 @@ namespace PI3_Cartagena
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            {
-
-            
-            
-            
+            {               
             lb_cartas.Items.Clear();
             int id = Convert.ToInt32(txt_UserId.Text);
             string senha = txt_SenhaUser.Text;
@@ -262,6 +258,13 @@ namespace PI3_Cartagena
         private void btn_pularVez_Click(object sender, EventArgs e)
         {
             lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario);
+        }
+
+        private void btnTabuleiro_Click(object sender, EventArgs e)
+        {
+            Tela_Tabuleiro tela_Carta = new Tela_Tabuleiro(idPartida);
+            tela_Carta.Show();
+            this.Close();
         }
     }
 }

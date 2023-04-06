@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Classes\Jogador.cs" />
     <Compile Include="Classes\Partida.cs" />
+    <Compile Include="Tela_Tabuleiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Tabuleiro.Designer.cs">
+      <DependentUpon>Tela_Tabuleiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Carta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Tela_Partida.Designer.cs">
       <DependentUpon>Tela_Partida.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tela_Tabuleiro.resx">
+      <DependentUpon>Tela_Tabuleiro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tela_Carta.resx">
       <DependentUpon>Tela_Carta.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +109,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Tela_Jogadores.resx">
       <DependentUpon>Tela_Jogadores.cs</DependentUpon>
@@ -134,6 +144,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icones\Pistola.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icones\Tabuleiro.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icones\Tricornio.jpg">

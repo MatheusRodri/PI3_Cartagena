@@ -117,26 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Tabuleiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\Tabuleiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Tricornio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\Tricornio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Faca" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\Faca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Esqueleto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\Esqueleto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Garrafa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\Garrafa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pistola" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\Pistola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Chave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Icones\Chave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

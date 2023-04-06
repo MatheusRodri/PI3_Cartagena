@@ -37,6 +37,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_nomePartida = new System.Windows.Forms.Label();
             this.lb_jogadoresNaPartida = new System.Windows.Forms.ListBox();
+            this.btnTabuleiro = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -47,18 +48,19 @@
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lb_partidas);
-            this.panel1.Location = new System.Drawing.Point(30, 30);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(22, 24);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 325);
+            this.panel1.Size = new System.Drawing.Size(244, 264);
             this.panel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 17);
+            this.label1.Location = new System.Drawing.Point(75, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 16);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Partidas abertas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -66,31 +68,32 @@
             // lb_partidas
             // 
             this.lb_partidas.FormattingEnabled = true;
-            this.lb_partidas.ItemHeight = 16;
-            this.lb_partidas.Location = new System.Drawing.Point(29, 48);
-            this.lb_partidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lb_partidas.Location = new System.Drawing.Point(22, 39);
+            this.lb_partidas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lb_partidas.Name = "lb_partidas";
-            this.lb_partidas.Size = new System.Drawing.Size(243, 260);
+            this.lb_partidas.Size = new System.Drawing.Size(183, 212);
             this.lb_partidas.TabIndex = 0;
             this.lb_partidas.SelectedValueChanged += new System.EventHandler(this.lb_partidas_SelectedValueChanged);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnTabuleiro);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.btn_form_criar_partida);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1157, 662);
+            this.panel2.Size = new System.Drawing.Size(868, 538);
             this.panel2.TabIndex = 2;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(874, 162);
+            this.button2.Location = new System.Drawing.Point(656, 132);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 63);
+            this.button2.Size = new System.Drawing.Size(137, 51);
             this.button2.TabIndex = 3;
             this.button2.Text = "Entrar na partida";
             this.button2.UseVisualStyleBackColor = true;
@@ -98,9 +101,10 @@
             // 
             // btn_form_criar_partida
             // 
-            this.btn_form_criar_partida.Location = new System.Drawing.Point(874, 30);
+            this.btn_form_criar_partida.Location = new System.Drawing.Point(656, 24);
+            this.btn_form_criar_partida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_form_criar_partida.Name = "btn_form_criar_partida";
-            this.btn_form_criar_partida.Size = new System.Drawing.Size(183, 63);
+            this.btn_form_criar_partida.Size = new System.Drawing.Size(137, 51);
             this.btn_form_criar_partida.TabIndex = 2;
             this.btn_form_criar_partida.Text = "Criar partida";
             this.btn_form_criar_partida.UseVisualStyleBackColor = true;
@@ -111,19 +115,20 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel4.Controls.Add(this.lbl_nomePartida);
             this.panel4.Controls.Add(this.lb_jogadoresNaPartida);
-            this.panel4.Location = new System.Drawing.Point(411, 30);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(308, 24);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(315, 325);
+            this.panel4.Size = new System.Drawing.Size(236, 264);
             this.panel4.TabIndex = 1;
             // 
             // lbl_nomePartida
             // 
             this.lbl_nomePartida.AutoSize = true;
             this.lbl_nomePartida.Enabled = false;
-            this.lbl_nomePartida.Location = new System.Drawing.Point(63, 17);
+            this.lbl_nomePartida.Location = new System.Drawing.Point(47, 14);
+            this.lbl_nomePartida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_nomePartida.Name = "lbl_nomePartida";
-            this.lbl_nomePartida.Size = new System.Drawing.Size(28, 16);
+            this.lbl_nomePartida.Size = new System.Drawing.Size(28, 13);
             this.lbl_nomePartida.TabIndex = 1;
             this.lbl_nomePartida.Text = "       ";
             this.lbl_nomePartida.Visible = false;
@@ -131,20 +136,30 @@
             // lb_jogadoresNaPartida
             // 
             this.lb_jogadoresNaPartida.FormattingEnabled = true;
-            this.lb_jogadoresNaPartida.ItemHeight = 16;
-            this.lb_jogadoresNaPartida.Location = new System.Drawing.Point(21, 48);
-            this.lb_jogadoresNaPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lb_jogadoresNaPartida.Location = new System.Drawing.Point(16, 39);
+            this.lb_jogadoresNaPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lb_jogadoresNaPartida.Name = "lb_jogadoresNaPartida";
-            this.lb_jogadoresNaPartida.Size = new System.Drawing.Size(269, 260);
+            this.lb_jogadoresNaPartida.Size = new System.Drawing.Size(203, 212);
             this.lb_jogadoresNaPartida.TabIndex = 0;
+            // 
+            // btnTabuleiro
+            // 
+            this.btnTabuleiro.Location = new System.Drawing.Point(656, 237);
+            this.btnTabuleiro.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTabuleiro.Name = "btnTabuleiro";
+            this.btnTabuleiro.Size = new System.Drawing.Size(137, 51);
+            this.btnTabuleiro.TabIndex = 4;
+            this.btnTabuleiro.Text = "Tabuleiro";
+            this.btnTabuleiro.UseVisualStyleBackColor = true;
+            this.btnTabuleiro.Click += new System.EventHandler(this.btnTabuleiro_Click);
             // 
             // Tela_Partida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 642);
+            this.ClientSize = new System.Drawing.Size(868, 522);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Tela_Partida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Partida";
@@ -167,5 +182,6 @@
         private System.Windows.Forms.ListBox lb_jogadoresNaPartida;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_form_criar_partida;
+        private System.Windows.Forms.Button btnTabuleiro;
     }
 }
