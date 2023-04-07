@@ -17,17 +17,16 @@ namespace PI3_Cartagena
         {
             InitializeComponent();
             exibirPartidas();
+            button2.Enabled = false;
 
         }
          int idpartida;
-        private void exibirPartidas()
+        public void exibirPartidas()
         {
             lb_partidas.Items.Clear();
             string dados = Jogo.ListarPartidas("T");
             dados = dados.Replace("\r", "");
             string[] partidas = dados.Split('\n');  
-
-
 
 
             for (int i = 0; i < partidas.Length; i++)
@@ -58,24 +57,32 @@ namespace PI3_Cartagena
 
         private void lb_partidas_SelectedValueChanged(object sender, EventArgs e)
         {
-            string[] dadosPartidas = lb_partidas.SelectedItem.ToString().Split(',');
-
-            idpartida = Convert.ToInt32(dadosPartidas[0]);
-            string nomePartida = dadosPartidas[1];
-            lbl_nomePartida.Text = $"Partida selecionada foi {nomePartida}";
-            lbl_nomePartida.Visible = true;
-
-
-            lb_jogadoresNaPartida.Items.Clear();
-            string dados = Jogo.ListarJogadores(idpartida);
-            dados = dados.Replace("\r", "");
-            
-            string[] jogadores = dados.Split('\n');
-            
-
-            for (int i = 0; i < jogadores.Length; i++)
+            try
             {
-                lb_jogadoresNaPartida.Items.Add(jogadores[i]);
+                string[] dadosPartidas = lb_partidas.SelectedItem.ToString().Split(',');
+
+                idpartida = Convert.ToInt32(dadosPartidas[0]);
+                string nomePartida = dadosPartidas[1];
+                lbl_nomePartida.Text = $"Partida selecionada foi {nomePartida}";
+                lbl_nomePartida.Visible = true;
+
+
+                lb_jogadoresNaPartida.Items.Clear();
+                string dados = Jogo.ListarJogadores(idpartida);
+                dados = dados.Replace("\r", "");
+
+                string[] jogadores = dados.Split('\n');
+
+
+                for (int i = 0; i < jogadores.Length; i++)
+                {
+                    lb_jogadoresNaPartida.Items.Add(jogadores[i]);
+                }
+                button2.Enabled = true;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Houve um erro ao selecionar a partida, por favor selecione outra");
             }
         }
 
@@ -88,7 +95,7 @@ namespace PI3_Cartagena
         {
             Tela_CriarPartida partida = new Tela_CriarPartida();
             partida.Show();
-            
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -103,6 +110,11 @@ namespace PI3_Cartagena
             Tela_Tabuleiro tela_Jogadores = new Tela_Tabuleiro(idpartida);
             tela_Jogadores.Show();
             this.Close();
+        }
+
+        private void Tela_Partida_EnabledChanged(object sender, EventArgs e)
+        {
+            exibirPartidas();
         }
     }
 }

@@ -4,14 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PI3_Cartagena.Classes
 {
     public class Partida
     {
-        public void CriarPartida(string nomePartida,string senhaPartida)
+        public string CriarPartida(string nomePartida,string senhaPartida)
         {
-            Jogo.CriarPartida(nomePartida,senhaPartida);
+            try { 
+            return Jogo.CriarPartida(nomePartida,senhaPartida);
+            } catch(Exception ex)
+            {
+              MessageBox.Show(ex.Message);
+                return null;
+            }
         }
         public void IniciarPartida(int idJogador,string senha )
         {

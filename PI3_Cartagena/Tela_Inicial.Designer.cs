@@ -41,27 +41,24 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1012, 628);
+            this.panel3.Size = new System.Drawing.Size(900, 502);
             this.panel3.TabIndex = 6;
-            
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(351, 76);
+            this.label1.Location = new System.Drawing.Point(312, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(323, 55);
+            this.label1.Size = new System.Drawing.Size(270, 46);
             this.label1.TabIndex = 10;
             this.label1.Text = "CARTAGENA";
-            
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(306, 326);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(272, 261);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(378, 156);
+            this.button1.Size = new System.Drawing.Size(336, 125);
             this.button1.TabIndex = 7;
             this.button1.Text = "Partida";
             this.button1.UseVisualStyleBackColor = true;
@@ -69,14 +66,14 @@
             // 
             // Tela_Inicial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 625);
+            this.ClientSize = new System.Drawing.Size(899, 500);
             this.Controls.Add(this.panel3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Tela_Inicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-  
+            this.Text = "Neiva";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);

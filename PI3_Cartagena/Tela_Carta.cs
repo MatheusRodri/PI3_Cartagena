@@ -35,6 +35,8 @@ namespace PI3_Cartagena
             this.idPartida = idPartida;
             this.idUsuario = idUsuario;
             this.senhaUsuario = senhaUsuario;
+            txt_UserId.Text = idUsuario.ToString();
+            txt_SenhaUser.Text = senhaUsuario;
         }
         private void button1_Click(object sender, EventArgs e)
         {

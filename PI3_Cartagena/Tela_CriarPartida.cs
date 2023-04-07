@@ -1,4 +1,5 @@
 ﻿using CartagenaServer;
+using PI3_Cartagena.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,18 +40,37 @@ namespace PI3_Cartagena
 
         private void btn_criarPartida_Click(object sender, EventArgs e)
         {
+            Partida partida = new Partida();
+
             string nomePartida = txt_nomePartida.Text;
             string senhaPartida = txt_senhaPartida.Text;
 
-            string dadosPartidaNova = Jogo.CriarPartida(nomePartida, senhaPartida);
 
+            string dadosPartidaNova = partida.CriarPartida(nomePartida, senhaPartida);
             MessageBox.Show(dadosPartidaNova);
+            Tela_Partida tela = new Tela_Partida();
+            tela.Show();
             this.Close();
         }
 
         private void txt_senhaPartida_TextChanged(object sender, EventArgs e)
         {
             validaCampos();
+        }
+
+        private void Tela_CriarPartida_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tela_CriarPartida_VisibleChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Tela_CriarPartida_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }
