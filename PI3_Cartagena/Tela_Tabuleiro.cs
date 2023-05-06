@@ -1,10 +1,13 @@
 ﻿using CartagenaServer;
+using PI3_Cartagena.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +17,16 @@ namespace PI3_Cartagena
     public partial class Tela_Tabuleiro : Form
     {
         private int idPartida;
-        public Tela_Tabuleiro(int idPartida)
-        {
 
+        public Tela_Tabuleiro(int idPartida)
+        {            
             InitializeComponent();
+
+
+           
+
+
+
             this.idPartida = idPartida;
             string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
             tabuleiro = tabuleiro.Replace("\r", "");
@@ -29,7 +38,7 @@ namespace PI3_Cartagena
 
             foreach (Control control in this.Controls)
             {
-                if (control is PictureBox)
+                if (control is PictureBox && !char.IsLetter(control.Name[6]))
                 {
                     img.Add((PictureBox)control);
                 }
@@ -81,9 +90,268 @@ namespace PI3_Cartagena
                         img[i].Image = Image.FromFile("Icones/Pistola.jpg");
 
                         break;
+
+                        
+
                 }
             }
+
+            //Mostrar Jogadores
+           
+
+            List <string> lugar  = new List<string>();
+            string situacao = Jogo.VerificarVez(idPartida);
+            situacao = situacao.Replace("\r", "");
+            string[] eu = situacao.Split('\n');
+            lugar = eu.ToList();
+            string jogadorvez = lugar[0];
+            List<string> posi = new List<string>();
+            List<string> boneco = new List<string>();
+            List<string> bonecojogador = new List<string>();
+
+
+            string vez = lugar[0];
+            int posicaoInicial = vez.IndexOf(',');
+            int posicaoFinal = vez.LastIndexOf(',');
+            foreach (var item in lugar)
+            {
+                posicaoInicial = item.IndexOf(',');
+                posicaoFinal = item.LastIndexOf(',');
+
+                if (lugar.IndexOf(item) == 0 || item == "")
+                {
+                    continue;
+                }
+                else if(item == "")
+                {
+                    continue;
+                }
+                posi.Add(item.Substring(0,item.IndexOf(',')));
+                boneco.Add(item.Substring(item.LastIndexOf(',') + 1));
+                bonecojogador.Add(item.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1));
+
+
+            }
+
+            posicaoInicial = vez.IndexOf(',');
+            posicaoFinal = vez.LastIndexOf(',');
+
+
+            //pctBoxVm1.Visible = true;      
+            //pctBoxVm1.Location = pctBox10.Location;
+
+
+
+
+            vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
+            string contjogadores = Jogo.ListarJogadores(idPartida);
+            contjogadores = contjogadores.Replace("\r", "");
+            string[] players = contjogadores.Split('\n');
+
+            List<Jogador> jogadoresLista = new List<Jogador>();
+
+            for (int i = 0; i < players.Length - 1; i++)
+            {
+                int posvirgula1 = players[i].IndexOf(',');
+                int posvirgula2 = players[i].LastIndexOf(',');
+                int id = Convert.ToInt32(players[i].Substring(0, posvirgula1));
+                string nome = players[i].Substring(posvirgula1+1,posvirgula2 - posvirgula1 -1);
+                string cor = players[i].Substring(posvirgula2 + 1);
+                Jogador jogador = new Jogador(id, cor, nome);
+
+                jogadoresLista.Add(jogador);
+                
+            }
+
+            string pctBox0 = "pctBox";
+            string pctbox = "pctBoxVm";
+            
+            for (int i = 0; i < players.Length - 1; i++)
+            {
+
+                switch (players[i].Substring(players[i].LastIndexOf(',') + 1))
+                {
+                    case "Vermelho":
+                        pctbox = "pctBoxVm";
+                            
+                        break;
+                    case "Verde":
+                        pctbox = "pctBoxVd";
+
+                        break;
+                    case "Amarelo":
+                        pctbox = "pctBoxAm";
+
+                        break;
+                    case "Azul":
+                        pctbox = "pctBoxAz";
+
+                        break;
+                }                    
+                for (int j = 1; j <= 6; j++)
+                {
+                    string pctboxaux = pctbox + j.ToString();
+                    PictureBox pictureBox = this.Controls.Find(pctboxaux, true).FirstOrDefault() as PictureBox;
+                    pictureBox.Visible = true;
+                    
+                }
+            }
+            int aux = 0;
+          
+            for (int i = 0; i < posi.Count ; i++)
+            {
+                pctBox0 = "pctBox";
+                int posq = Convert.ToInt32(posi[i]);
+
+                if (posq == 0)
+                {
+                    continue;
+                }
+                else
+
+                {
+
+
+                    //for (int k = 0; k < 6; k++)
+                    //{
+
+                    //aux = 0;
+                    //   foreach (var item in jogadoresLista)
+                    //   {
+
+                    //       if (Convert.ToInt32(bonecojogador[i]) == item.id)
+                    //       {
+                    //          switch (bonecojogador[i])
+                    //            {
+                    //                case "Vermelho":
+                    //                    pctbox = "pctBoxVm";
+                    //                    aux += 1;
+                    //                    mover(boneco[i], pctbox, pctBox0, aux, posq);
+                    //                    break;
+                    //                case "Verde":
+                    //                    pctbox = "pctBoxVd";
+                    //                    aux  += 1;
+                    //                    mover(boneco[i], pctbox, pctBox0, aux, posq);
+                    //                    break;
+                    //                case "Amarelo":
+                    //                    pctbox = "pctBoxAm";
+                    //                    aux += 1;
+                    //                    break;
+                    //                case "Azul":
+                    //                    pctbox = "pctBoxAz";
+                    //                    aux += 1;
+                    //                    break;
+                    //            }
+                    //    }
+                    //    }
+
+                    //}
+
+                    foreach (var item in jogadoresLista)
+                    {
+                        bool t = true;
+                        if (Convert.ToInt32(bonecojogador[i]) == item.id)
+                        {
+                            switch (item.cor)
+                            {
+                                case "Vermelho":
+                                    int k = 0;
+                                    while (t ==true)
+                                    {
+                                        
+                                        if (item.piratas[k].posicao == 0)
+                                        {
+                                            aux += 1;
+                                            pctbox = item.piratas[k].nome;
+                                            item.piratas[k].posicao = posq;
+                                            t = false;
+                                        }
+                                        else k++;
+                                    }
+                                    break;
+                                case "Verde":
+
+                                     k = 0;
+                                    while (t == true)
+                                    {
+                                        
+                                        if (item.piratas[k].posicao == 0)
+                                        {
+                                            aux += 1;
+                                            pctbox = item.piratas[k].nome;
+                                            item.piratas[k].posicao = posq;
+                                            t = false;
+                                        }
+                                        else k++;
+                                    }
+                                    break;
+                                case "Amarelo":
+                                    k = 0;
+                                    while (t == true)
+                                    {
+                                        
+                                        if (item.piratas[k].posicao == 0)
+                                        {
+                                            aux += 1;
+                                            pctbox = item.piratas[k].nome;
+                                            item.piratas[k].posicao = posq;
+                                            t = false;
+                                        }
+                                        else k++;
+                                    }
+                                    break;
+                                case "Azul":
+                                    k = 0;
+                                    while (t == true)
+                                    {
+                                        
+                                        if (item.piratas[k].posicao == 0)
+                                        {
+                                            aux += 1;
+                                            pctbox = item.piratas[k].nome;
+                                            item.piratas[k].posicao = posq;
+                                            t = false;
+                                        }
+                                        else k++;
+                                    }
+                                    break;
+                            }
+                        }
+
+                    }
+
+
+                }
+
+                for (int j = 0; j < Convert.ToInt32(boneco[i]); j++)
+                {
+
+
+
+                    
+                    PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
+                    pctBox0 = pctBox0 + ((posq).ToString());
+                    PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
+
+                    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * j + 1);
+                }
+            }
+
+
         }
+        public void mover(string boneco ,string pctbox,string  pctBox0, int aux,int  posq)
+        {
+            for (int j = 0; j < Convert.ToInt32(boneco); j++)
+            {
+                pctbox = pctbox + ((aux).ToString());
+                PictureBox picturebox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
+                pctBox0 = pctBox0 + ((posq).ToString());
+                PictureBox pictureboxc = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
+
+                picturebox.Location = new Point(pictureboxc.Location.X, pictureboxc.Location.Y + 11 * j + 1);
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

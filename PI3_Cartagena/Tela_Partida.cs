@@ -1,4 +1,5 @@
 ﻿using CartagenaServer;
+using PI3_Cartagena.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,6 +74,8 @@ namespace PI3_Cartagena
 
                 string[] jogadores = dados.Split('\n');
 
+               
+
 
                 for (int i = 0; i < jogadores.Length; i++)
                 {
@@ -115,6 +118,21 @@ namespace PI3_Cartagena
         private void Tela_Partida_EnabledChanged(object sender, EventArgs e)
         {
             exibirPartidas();
+        }
+
+        private void lb_jogadoresNaPartida_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lb_partidas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

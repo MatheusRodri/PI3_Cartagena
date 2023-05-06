@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Classes\Jogador.cs" />
     <Compile Include="Classes\Partida.cs" />
+    <Compile Include="Classes\Pirata.cs" />
     <Compile Include="Tela_Tabuleiro.cs">
       <SubType>Form</SubType>
     </Compile>
