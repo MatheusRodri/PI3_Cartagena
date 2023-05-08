@@ -246,6 +246,11 @@ namespace PI3_Cartagena
                     //    }
 
                     //}
+                    int atual = 0;
+                    if (posi[i] == posi[i-1])
+                    {
+                        atual++;
+                    }
 
                     foreach (var item in jogadoresLista)
                     {
@@ -262,8 +267,8 @@ namespace PI3_Cartagena
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                            pctbox = item.piratas[k].nome;
-                                            item.piratas[k].posicao = posq;
+                                            
+                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
                                         else k++;
@@ -278,8 +283,8 @@ namespace PI3_Cartagena
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                            pctbox = item.piratas[k].nome;
-                                            item.piratas[k].posicao = posq;
+                                           
+                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
                                         else k++;
@@ -295,6 +300,7 @@ namespace PI3_Cartagena
                                             aux += 1;
                                             pctbox = item.piratas[k].nome;
                                             item.piratas[k].posicao = posq;
+                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
                                         else k++;
@@ -323,32 +329,44 @@ namespace PI3_Cartagena
 
                 }
 
-                for (int j = 0; j < Convert.ToInt32(boneco[i]); j++)
-                {
+                //for (int j = 0; j < Convert.ToInt32(boneco[i]); j++)
+                //{
 
 
 
                     
-                    PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
-                    pctBox0 = pctBox0 + ((posq).ToString());
-                    PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
+                //    PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
+                //    pctBox0 = pctBox0 + ((posq).ToString());
+                //    PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
 
-                    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * j + 1);
-                }
+                //    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * j + 1);
+                //    pctBox0 = "pctBox";
+
+                //}
             }
 
 
         }
-        public void mover(string boneco ,string pctbox,string  pctBox0, int aux,int  posq)
+        public void mover(int boneco ,string pctbox,string  pctBox0,int  posq, Jogador item, int k, int atual)
         {
-            for (int j = 0; j < Convert.ToInt32(boneco); j++)
+            for (int j = 0; j < boneco; j++)
             {
-                pctbox = pctbox + ((aux).ToString());
-                PictureBox picturebox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
+               
+                pctbox = item.piratas[k].nome;
+                PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
                 pctBox0 = pctBox0 + ((posq).ToString());
-                PictureBox pictureboxc = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
+                PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
 
-                picturebox.Location = new Point(pictureboxc.Location.X, pictureboxc.Location.Y + 11 * j + 1);
+                if (atual != 0)
+                {
+                    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j + 1) * atual);
+                }
+                pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); 
+                pctBox0 = "pctBox";
+                
+                item.piratas[k].posicao = posq;
+                k++;
+
             }
         }
 
