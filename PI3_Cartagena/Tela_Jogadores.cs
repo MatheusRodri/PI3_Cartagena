@@ -76,5 +76,12 @@ namespace PI3_Cartagena
             tela_Carta.Show();
             this.Close();
         }
+
+        private void btn_jgn_Click(object sender, EventArgs e)
+        {
+            jogando jogando = new jogando(idPartida, idUsuario, senhaUsuario);
+            jogando.Show();
+            this.Close();
+        }
     }
 }
