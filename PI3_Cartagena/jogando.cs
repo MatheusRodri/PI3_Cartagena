@@ -553,5 +553,15 @@ namespace PI3_Cartagena
             }
 
         }
+
+        private void tmrVerificarVez_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Verificar vez");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -164,6 +164,7 @@
             this.btn_voltar.TabIndex = 3;
             this.btn_voltar.Text = "Cartas";
             this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // pctBox36
             // 

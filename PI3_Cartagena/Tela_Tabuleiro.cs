@@ -377,5 +377,10 @@ namespace PI3_Cartagena
             tela_Partida.Show();
             Hide();
         }
+
+        private void btn_voltar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
