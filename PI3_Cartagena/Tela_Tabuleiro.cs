@@ -21,13 +21,42 @@ namespace PI3_Cartagena
         public Tela_Tabuleiro(int idPartida)
         {            
             InitializeComponent();
-
+            this.idPartida = idPartida;
+            mapa();
 
            
 
 
 
-            this.idPartida = idPartida;
+  
+
+
+        }
+        public void mover(int boneco ,string pctbox,string  pctBox0,int  posq, Jogador item, int k, int atual)
+        {
+            for (int j = 0; j < boneco; j++)
+            {
+               
+                pctbox = item.piratas[k].nome;
+                PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
+                pctBox0 = pctBox0 + ((posq).ToString());
+                PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
+
+                if (atual != 0)
+                {
+                    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j + 1) * atual);
+                }
+                else { pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); } 
+                pctBox0 = "pctBox";
+                
+                item.piratas[k].posicao = posq;
+                k++;
+
+            }
+        }
+        public void mapa()
+        {
+            
             string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
             tabuleiro = tabuleiro.Replace("\r", "");
             string[] posicao = tabuleiro.Split('\n');
@@ -56,7 +85,7 @@ namespace PI3_Cartagena
                     pos.Add(Convert.ToInt32(posicao[i].Substring(0, posicao[i].Length - 2)));
                     icone.Add(posicao[i].Substring(2));
                 }
-                else if(posicao[i].Length == 4)
+                else if (posicao[i].Length == 4)
                 {
                     pos.Add(Convert.ToInt32(posicao[i].Substring(0, posicao[i].Length - 2)));
                     icone.Add(posicao[i].Substring(3));
@@ -91,15 +120,15 @@ namespace PI3_Cartagena
 
                         break;
 
-                        
+
 
                 }
             }
 
             //Mostrar Jogadores
-           
 
-            List <string> lugar  = new List<string>();
+
+            List<string> lugar = new List<string>();
             string situacao = Jogo.VerificarVez(idPartida);
             situacao = situacao.Replace("\r", "");
             string[] eu = situacao.Split('\n');
@@ -122,11 +151,11 @@ namespace PI3_Cartagena
                 {
                     continue;
                 }
-                else if(item == "")
+                else if (item == "")
                 {
                     continue;
                 }
-                posi.Add(item.Substring(0,item.IndexOf(',')));
+                posi.Add(item.Substring(0, item.IndexOf(',')));
                 boneco.Add(item.Substring(item.LastIndexOf(',') + 1));
                 bonecojogador.Add(item.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1));
 
@@ -135,13 +164,6 @@ namespace PI3_Cartagena
 
             posicaoInicial = vez.IndexOf(',');
             posicaoFinal = vez.LastIndexOf(',');
-
-
-            //pctBoxVm1.Visible = true;      
-            //pctBoxVm1.Location = pctBox10.Location;
-
-
-
 
             vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
             string contjogadores = Jogo.ListarJogadores(idPartida);
@@ -155,17 +177,17 @@ namespace PI3_Cartagena
                 int posvirgula1 = players[i].IndexOf(',');
                 int posvirgula2 = players[i].LastIndexOf(',');
                 int id = Convert.ToInt32(players[i].Substring(0, posvirgula1));
-                string nome = players[i].Substring(posvirgula1+1,posvirgula2 - posvirgula1 -1);
+                string nome = players[i].Substring(posvirgula1 + 1, posvirgula2 - posvirgula1 - 1);
                 string cor = players[i].Substring(posvirgula2 + 1);
                 Jogador jogador = new Jogador(id, cor, nome);
 
                 jogadoresLista.Add(jogador);
-                
+
             }
 
             string pctBox0 = "pctBox";
             string pctbox = "pctBoxVm";
-            
+
             for (int i = 0; i < players.Length - 1; i++)
             {
 
@@ -173,7 +195,7 @@ namespace PI3_Cartagena
                 {
                     case "Vermelho":
                         pctbox = "pctBoxVm";
-                            
+
                         break;
                     case "Verde":
                         pctbox = "pctBoxVd";
@@ -187,18 +209,18 @@ namespace PI3_Cartagena
                         pctbox = "pctBoxAz";
 
                         break;
-                }                    
+                }
                 for (int j = 1; j <= 6; j++)
                 {
                     string pctboxaux = pctbox + j.ToString();
                     PictureBox pictureBox = this.Controls.Find(pctboxaux, true).FirstOrDefault() as PictureBox;
                     pictureBox.Visible = true;
-                    
+
                 }
             }
             int aux = 0;
-          
-            for (int i = 0; i < posi.Count ; i++)
+
+            for (int i = 0; i < posi.Count; i++)
             {
                 pctBox0 = "pctBox";
                 int posq = Convert.ToInt32(posi[i]);
@@ -211,45 +233,13 @@ namespace PI3_Cartagena
 
                 {
 
-
-                    //for (int k = 0; k < 6; k++)
-                    //{
-
-                    //aux = 0;
-                    //   foreach (var item in jogadoresLista)
-                    //   {
-
-                    //       if (Convert.ToInt32(bonecojogador[i]) == item.id)
-                    //       {
-                    //          switch (bonecojogador[i])
-                    //            {
-                    //                case "Vermelho":
-                    //                    pctbox = "pctBoxVm";
-                    //                    aux += 1;
-                    //                    mover(boneco[i], pctbox, pctBox0, aux, posq);
-                    //                    break;
-                    //                case "Verde":
-                    //                    pctbox = "pctBoxVd";
-                    //                    aux  += 1;
-                    //                    mover(boneco[i], pctbox, pctBox0, aux, posq);
-                    //                    break;
-                    //                case "Amarelo":
-                    //                    pctbox = "pctBoxAm";
-                    //                    aux += 1;
-                    //                    break;
-                    //                case "Azul":
-                    //                    pctbox = "pctBoxAz";
-                    //                    aux += 1;
-                    //                    break;
-                    //            }
-                    //    }
-                    //    }
-
-                    //}
                     int atual = 0;
-                    if (posi[i] == posi[i-1])
+                    if (posi[i] == posi[i - 1] && posi[i] != "0")
                     {
-                        atual++;
+                        int a = Convert.ToInt32(boneco[i]);
+                        int b = Convert.ToInt32(boneco[i - 1]);
+                        atual = (a + b)-1;
+                        
                     }
 
                     foreach (var item in jogadoresLista)
@@ -261,13 +251,13 @@ namespace PI3_Cartagena
                             {
                                 case "Vermelho":
                                     int k = 0;
-                                    while (t ==true)
+                                    while (t == true)
                                     {
-                                        
+
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                            
+
                                             mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
@@ -276,14 +266,14 @@ namespace PI3_Cartagena
                                     break;
                                 case "Verde":
 
-                                     k = 0;
+                                    k = 0;
                                     while (t == true)
                                     {
-                                        
+
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                           
+
                                             mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
@@ -294,12 +284,11 @@ namespace PI3_Cartagena
                                     k = 0;
                                     while (t == true)
                                     {
-                                        
+
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                            pctbox = item.piratas[k].nome;
-                                            item.piratas[k].posicao = posq;
+                                           
                                             mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
@@ -310,12 +299,12 @@ namespace PI3_Cartagena
                                     k = 0;
                                     while (t == true)
                                     {
-                                        
+
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                            pctbox = item.piratas[k].nome;
-                                            item.piratas[k].posicao = posq;
+                                           
+                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
                                         else k++;
@@ -328,44 +317,6 @@ namespace PI3_Cartagena
 
 
                 }
-
-                //for (int j = 0; j < Convert.ToInt32(boneco[i]); j++)
-                //{
-
-
-
-                    
-                //    PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
-                //    pctBox0 = pctBox0 + ((posq).ToString());
-                //    PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
-
-                //    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * j + 1);
-                //    pctBox0 = "pctBox";
-
-                //}
-            }
-
-
-        }
-        public void mover(int boneco ,string pctbox,string  pctBox0,int  posq, Jogador item, int k, int atual)
-        {
-            for (int j = 0; j < boneco; j++)
-            {
-               
-                pctbox = item.piratas[k].nome;
-                PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
-                pctBox0 = pctBox0 + ((posq).ToString());
-                PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
-
-                if (atual != 0)
-                {
-                    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j + 1) * atual);
-                }
-                pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); 
-                pctBox0 = "pctBox";
-                
-                item.piratas[k].posicao = posq;
-                k++;
 
             }
         }
