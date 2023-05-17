@@ -165,6 +165,7 @@ namespace PI3_Cartagena
             posicaoInicial = vez.IndexOf(',');
             posicaoFinal = vez.LastIndexOf(',');
 
+            //Erro: Não pode ser menor que zero
             vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
             string contjogadores = Jogo.ListarJogadores(idPartida);
             contjogadores = contjogadores.Replace("\r", "");

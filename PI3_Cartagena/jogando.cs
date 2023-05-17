@@ -150,7 +150,7 @@ namespace PI3_Cartagena
 
 
            
-
+            //Erro aqui
             vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
             string contjogadores = Jogo.ListarJogadores(idPartida);
             contjogadores = contjogadores.Replace("\r", "");
