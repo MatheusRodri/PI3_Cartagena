@@ -36,24 +36,80 @@ namespace PI3_Cartagena
         {
             for (int j = 0; j < boneco; j++)
             {
-               
+                
+                
                 pctbox = item.piratas[k].nome;
                 PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
                 pctBox0 = pctBox0 + ((posq).ToString());
                 PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
 
+
                 if (atual != 0)
                 {
                     pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j + 1) * atual);
                 }
+                else if (posq == 37)
+                {
+                    switch (pictureBox.Name) {
+                        case"Vermleho":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(651, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(638, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
+                        case "Verde":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(691, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(678, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
+                        case "Amarelo":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(731, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(718, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
+                        case "Azul":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(771, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(758, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
+
+                    }
+                        
+                 
+
+                }
                 else { pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); } 
-                pctBox0 = "pctBox";
-                
+
+                pctBox0 = "pctBox";    
                 item.piratas[k].posicao = posq;
                 k++;
 
             }
         }
+
         public void mapa()
         {
             
@@ -230,6 +286,7 @@ namespace PI3_Cartagena
                 {
                     continue;
                 }
+
                 else
 
                 {
