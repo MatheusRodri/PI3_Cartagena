@@ -78,6 +78,10 @@ namespace PI3_Cartagena
             //Mostrar Jogadores
 
 
+        }
+
+        public void attJogadores()
+        {
             List<string> lugar = new List<string>();
             string situacao = Jogo.VerificarVez(idPartida);
             situacao = situacao.Replace("\r", "");
@@ -116,7 +120,7 @@ namespace PI3_Cartagena
             posicaoFinal = vez.LastIndexOf(',');
 
 
-           
+
             //Erro aqui
             vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
             string contjogadores = Jogo.ListarJogadores(idPartida);
@@ -268,9 +272,8 @@ namespace PI3_Cartagena
 
                 }
 
-                
-            }
 
+            }
         }
 
 
@@ -304,6 +307,9 @@ namespace PI3_Cartagena
 
         private void btnPartida_Click(object sender, EventArgs e)
         {
+
+            //usando vaiaveis daq para att listar partida
+
             idUsuario = Convert.ToInt32(txtUser.Text);
             senhaUsuario = txtSenhaU.Text;
             string jogador = Jogo.IniciarPartida(idUsuario, senhaUsuario);
@@ -371,7 +377,7 @@ namespace PI3_Cartagena
 
         private void btn_Listar_Click(object sender, EventArgs e)
         {
-
+            attJogadores();
             try
             {
                 lb_cartas.Items.Clear();
@@ -526,14 +532,18 @@ namespace PI3_Cartagena
             MessageBox.Show("Verificar vez");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Tela_Jogadores jogadores = new Tela_Jogadores(idPartida);
+            jogadores.Show();
+            this.Close();
+        }
 
+        private void btn_Verificas_Click(object sender, EventArgs e)
+        {
+            lbl_Jogadas.Text = Jogo.VerificarVez(idPartida);
         }
     }
 }

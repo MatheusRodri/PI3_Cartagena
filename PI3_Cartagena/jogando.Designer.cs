@@ -113,6 +113,7 @@
             this.btn_mostratab = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_Listar = new System.Windows.Forms.Button();
             this.txt_SenhaUser = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -121,6 +122,9 @@
             this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pnl_Jogadas = new System.Windows.Forms.Panel();
+            this.lbl_Jogadas = new System.Windows.Forms.Label();
+            this.btn_Verificas = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAz6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAm6)).BeginInit();
@@ -187,6 +191,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.pnl_Jogadas.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -202,7 +207,7 @@
             this.panel4.Controls.Add(this.btn_selCarta);
             this.panel4.Location = new System.Drawing.Point(5, 498);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(429, 101);
+            this.panel4.Size = new System.Drawing.Size(492, 101);
             this.panel4.TabIndex = 6;
             // 
             // btn_pularVez
@@ -285,7 +290,7 @@
             // pctBoxAz6
             // 
             this.pctBoxAz6.BackColor = System.Drawing.Color.Blue;
-            this.pctBoxAz6.Location = new System.Drawing.Point(1011, 434);
+            this.pctBoxAz6.Location = new System.Drawing.Point(998, 448);
             this.pctBoxAz6.Name = "pctBoxAz6";
             this.pctBoxAz6.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAz6.TabIndex = 99;
@@ -295,7 +300,7 @@
             // pctBoxAm6
             // 
             this.pctBoxAm6.BackColor = System.Drawing.Color.Yellow;
-            this.pctBoxAm6.Location = new System.Drawing.Point(972, 434);
+            this.pctBoxAm6.Location = new System.Drawing.Point(959, 448);
             this.pctBoxAm6.Name = "pctBoxAm6";
             this.pctBoxAm6.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAm6.TabIndex = 98;
@@ -305,7 +310,7 @@
             // pctBoxAz5
             // 
             this.pctBoxAz5.BackColor = System.Drawing.Color.Blue;
-            this.pctBoxAz5.Location = new System.Drawing.Point(998, 434);
+            this.pctBoxAz5.Location = new System.Drawing.Point(985, 448);
             this.pctBoxAz5.Name = "pctBoxAz5";
             this.pctBoxAz5.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAz5.TabIndex = 102;
@@ -315,7 +320,7 @@
             // pctBoxVd6
             // 
             this.pctBoxVd6.BackColor = System.Drawing.Color.Lime;
-            this.pctBoxVd6.Location = new System.Drawing.Point(932, 434);
+            this.pctBoxVd6.Location = new System.Drawing.Point(919, 448);
             this.pctBoxVd6.Name = "pctBoxVd6";
             this.pctBoxVd6.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVd6.TabIndex = 97;
@@ -324,7 +329,7 @@
             // 
             // pctBox36
             // 
-            this.pctBox36.Location = new System.Drawing.Point(1008, 28);
+            this.pctBox36.Location = new System.Drawing.Point(995, 42);
             this.pctBox36.Name = "pctBox36";
             this.pctBox36.Size = new System.Drawing.Size(24, 26);
             this.pctBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -334,7 +339,7 @@
             // pctBoxAz4
             // 
             this.pctBoxAz4.BackColor = System.Drawing.Color.Blue;
-            this.pctBoxAz4.Location = new System.Drawing.Point(1011, 419);
+            this.pctBoxAz4.Location = new System.Drawing.Point(998, 433);
             this.pctBoxAz4.Name = "pctBoxAz4";
             this.pctBoxAz4.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAz4.TabIndex = 104;
@@ -343,7 +348,7 @@
             // 
             // pctBox35
             // 
-            this.pctBox35.Location = new System.Drawing.Point(946, 28);
+            this.pctBox35.Location = new System.Drawing.Point(933, 42);
             this.pctBox35.Name = "pctBox35";
             this.pctBox35.Size = new System.Drawing.Size(24, 26);
             this.pctBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -353,7 +358,7 @@
             // pctBoxAm5
             // 
             this.pctBoxAm5.BackColor = System.Drawing.Color.Yellow;
-            this.pctBoxAm5.Location = new System.Drawing.Point(959, 434);
+            this.pctBoxAm5.Location = new System.Drawing.Point(946, 448);
             this.pctBoxAm5.Name = "pctBoxAm5";
             this.pctBoxAm5.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAm5.TabIndex = 101;
@@ -362,7 +367,7 @@
             // 
             // pctBox34
             // 
-            this.pctBox34.Location = new System.Drawing.Point(877, 28);
+            this.pctBox34.Location = new System.Drawing.Point(864, 42);
             this.pctBox34.Name = "pctBox34";
             this.pctBox34.Size = new System.Drawing.Size(24, 26);
             this.pctBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -372,7 +377,7 @@
             // pctBoxAz2
             // 
             this.pctBoxAz2.BackColor = System.Drawing.Color.Blue;
-            this.pctBoxAz2.Location = new System.Drawing.Point(1011, 402);
+            this.pctBoxAz2.Location = new System.Drawing.Point(998, 416);
             this.pctBoxAz2.Name = "pctBoxAz2";
             this.pctBoxAz2.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAz2.TabIndex = 108;
@@ -381,7 +386,7 @@
             // 
             // pctBox33
             // 
-            this.pctBox33.Location = new System.Drawing.Point(877, 93);
+            this.pctBox33.Location = new System.Drawing.Point(864, 107);
             this.pctBox33.Name = "pctBox33";
             this.pctBox33.Size = new System.Drawing.Size(24, 26);
             this.pctBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -391,7 +396,7 @@
             // pctBoxVm6
             // 
             this.pctBoxVm6.BackColor = System.Drawing.Color.Red;
-            this.pctBoxVm6.Location = new System.Drawing.Point(890, 434);
+            this.pctBoxVm6.Location = new System.Drawing.Point(877, 448);
             this.pctBoxVm6.Name = "pctBoxVm6";
             this.pctBoxVm6.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVm6.TabIndex = 92;
@@ -400,7 +405,7 @@
             // 
             // pctBox32
             // 
-            this.pctBox32.Location = new System.Drawing.Point(946, 93);
+            this.pctBox32.Location = new System.Drawing.Point(933, 107);
             this.pctBox32.Name = "pctBox32";
             this.pctBox32.Size = new System.Drawing.Size(24, 26);
             this.pctBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -410,7 +415,7 @@
             // pctBoxAz3
             // 
             this.pctBoxAz3.BackColor = System.Drawing.Color.Blue;
-            this.pctBoxAz3.Location = new System.Drawing.Point(998, 419);
+            this.pctBoxAz3.Location = new System.Drawing.Point(985, 433);
             this.pctBoxAz3.Name = "pctBoxAz3";
             this.pctBoxAz3.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAz3.TabIndex = 110;
@@ -419,7 +424,7 @@
             // 
             // pctBox31
             // 
-            this.pctBox31.Location = new System.Drawing.Point(1008, 93);
+            this.pctBox31.Location = new System.Drawing.Point(995, 107);
             this.pctBox31.Name = "pctBox31";
             this.pctBox31.Size = new System.Drawing.Size(24, 26);
             this.pctBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -429,7 +434,7 @@
             // pctBoxAm4
             // 
             this.pctBoxAm4.BackColor = System.Drawing.Color.Yellow;
-            this.pctBoxAm4.Location = new System.Drawing.Point(972, 419);
+            this.pctBoxAm4.Location = new System.Drawing.Point(959, 433);
             this.pctBoxAm4.Name = "pctBoxAm4";
             this.pctBoxAm4.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAm4.TabIndex = 103;
@@ -439,7 +444,7 @@
             // pctBoxAz1
             // 
             this.pctBoxAz1.BackColor = System.Drawing.Color.Blue;
-            this.pctBoxAz1.Location = new System.Drawing.Point(998, 402);
+            this.pctBoxAz1.Location = new System.Drawing.Point(985, 416);
             this.pctBoxAz1.Name = "pctBoxAz1";
             this.pctBoxAz1.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAz1.TabIndex = 95;
@@ -448,7 +453,7 @@
             // 
             // pctBox30
             // 
-            this.pctBox30.Location = new System.Drawing.Point(1059, 93);
+            this.pctBox30.Location = new System.Drawing.Point(1046, 107);
             this.pctBox30.Name = "pctBox30";
             this.pctBox30.Size = new System.Drawing.Size(24, 26);
             this.pctBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -458,7 +463,7 @@
             // pctBoxVd5
             // 
             this.pctBoxVd5.BackColor = System.Drawing.Color.Lime;
-            this.pctBoxVd5.Location = new System.Drawing.Point(919, 434);
+            this.pctBoxVd5.Location = new System.Drawing.Point(906, 448);
             this.pctBoxVd5.Name = "pctBoxVd5";
             this.pctBoxVd5.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVd5.TabIndex = 100;
@@ -467,7 +472,7 @@
             // 
             // pctBox29
             // 
-            this.pctBox29.Location = new System.Drawing.Point(1124, 93);
+            this.pctBox29.Location = new System.Drawing.Point(1111, 107);
             this.pctBox29.Name = "pctBox29";
             this.pctBox29.Size = new System.Drawing.Size(24, 26);
             this.pctBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -477,7 +482,7 @@
             // pctBoxAm2
             // 
             this.pctBoxAm2.BackColor = System.Drawing.Color.Yellow;
-            this.pctBoxAm2.Location = new System.Drawing.Point(972, 402);
+            this.pctBoxAm2.Location = new System.Drawing.Point(959, 416);
             this.pctBoxAm2.Name = "pctBoxAm2";
             this.pctBoxAm2.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAm2.TabIndex = 106;
@@ -486,7 +491,7 @@
             // 
             // pctBox28
             // 
-            this.pctBox28.Location = new System.Drawing.Point(1194, 93);
+            this.pctBox28.Location = new System.Drawing.Point(1181, 107);
             this.pctBox28.Name = "pctBox28";
             this.pctBox28.Size = new System.Drawing.Size(24, 26);
             this.pctBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -496,7 +501,7 @@
             // pctBoxVm5
             // 
             this.pctBoxVm5.BackColor = System.Drawing.Color.Red;
-            this.pctBoxVm5.Location = new System.Drawing.Point(877, 434);
+            this.pctBoxVm5.Location = new System.Drawing.Point(864, 448);
             this.pctBoxVm5.Name = "pctBoxVm5";
             this.pctBoxVm5.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVm5.TabIndex = 93;
@@ -505,7 +510,7 @@
             // 
             // pctBox27
             // 
-            this.pctBox27.Location = new System.Drawing.Point(1194, 157);
+            this.pctBox27.Location = new System.Drawing.Point(1181, 171);
             this.pctBox27.Name = "pctBox27";
             this.pctBox27.Size = new System.Drawing.Size(24, 26);
             this.pctBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -515,7 +520,7 @@
             // pctBoxAm3
             // 
             this.pctBoxAm3.BackColor = System.Drawing.Color.Yellow;
-            this.pctBoxAm3.Location = new System.Drawing.Point(959, 419);
+            this.pctBoxAm3.Location = new System.Drawing.Point(946, 433);
             this.pctBoxAm3.Name = "pctBoxAm3";
             this.pctBoxAm3.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAm3.TabIndex = 109;
@@ -524,7 +529,7 @@
             // 
             // pctBox26
             // 
-            this.pctBox26.Location = new System.Drawing.Point(1124, 157);
+            this.pctBox26.Location = new System.Drawing.Point(1111, 171);
             this.pctBox26.Name = "pctBox26";
             this.pctBox26.Size = new System.Drawing.Size(24, 26);
             this.pctBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -534,7 +539,7 @@
             // pctBoxVd4
             // 
             this.pctBoxVd4.BackColor = System.Drawing.Color.Lime;
-            this.pctBoxVd4.Location = new System.Drawing.Point(932, 419);
+            this.pctBoxVd4.Location = new System.Drawing.Point(919, 433);
             this.pctBoxVd4.Name = "pctBoxVd4";
             this.pctBoxVd4.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVd4.TabIndex = 105;
@@ -543,7 +548,7 @@
             // 
             // pctBox25
             // 
-            this.pctBox25.Location = new System.Drawing.Point(1059, 157);
+            this.pctBox25.Location = new System.Drawing.Point(1046, 171);
             this.pctBox25.Name = "pctBox25";
             this.pctBox25.Size = new System.Drawing.Size(24, 26);
             this.pctBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -553,7 +558,7 @@
             // pctBoxAm1
             // 
             this.pctBoxAm1.BackColor = System.Drawing.Color.Yellow;
-            this.pctBoxAm1.Location = new System.Drawing.Point(959, 402);
+            this.pctBoxAm1.Location = new System.Drawing.Point(946, 416);
             this.pctBoxAm1.Name = "pctBoxAm1";
             this.pctBoxAm1.Size = new System.Drawing.Size(11, 11);
             this.pctBoxAm1.TabIndex = 96;
@@ -562,7 +567,7 @@
             // 
             // pctBox24
             // 
-            this.pctBox24.Location = new System.Drawing.Point(1008, 157);
+            this.pctBox24.Location = new System.Drawing.Point(995, 171);
             this.pctBox24.Name = "pctBox24";
             this.pctBox24.Size = new System.Drawing.Size(24, 26);
             this.pctBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -572,7 +577,7 @@
             // pctBoxVm4
             // 
             this.pctBoxVm4.BackColor = System.Drawing.Color.Red;
-            this.pctBoxVm4.Location = new System.Drawing.Point(890, 419);
+            this.pctBoxVm4.Location = new System.Drawing.Point(877, 433);
             this.pctBoxVm4.Name = "pctBoxVm4";
             this.pctBoxVm4.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVm4.TabIndex = 89;
@@ -581,7 +586,7 @@
             // 
             // pctBox23
             // 
-            this.pctBox23.Location = new System.Drawing.Point(946, 157);
+            this.pctBox23.Location = new System.Drawing.Point(933, 171);
             this.pctBox23.Name = "pctBox23";
             this.pctBox23.Size = new System.Drawing.Size(24, 26);
             this.pctBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -591,7 +596,7 @@
             // pctBoxVd2
             // 
             this.pctBoxVd2.BackColor = System.Drawing.Color.Lime;
-            this.pctBoxVd2.Location = new System.Drawing.Point(932, 402);
+            this.pctBoxVd2.Location = new System.Drawing.Point(919, 416);
             this.pctBoxVd2.Name = "pctBoxVd2";
             this.pctBoxVd2.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVd2.TabIndex = 107;
@@ -600,7 +605,7 @@
             // 
             // pctBox22
             // 
-            this.pctBox22.Location = new System.Drawing.Point(877, 157);
+            this.pctBox22.Location = new System.Drawing.Point(864, 171);
             this.pctBox22.Name = "pctBox22";
             this.pctBox22.Size = new System.Drawing.Size(24, 26);
             this.pctBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -610,7 +615,7 @@
             // pctBoxVd3
             // 
             this.pctBoxVd3.BackColor = System.Drawing.Color.Lime;
-            this.pctBoxVd3.Location = new System.Drawing.Point(919, 419);
+            this.pctBoxVd3.Location = new System.Drawing.Point(906, 433);
             this.pctBoxVd3.Name = "pctBoxVd3";
             this.pctBoxVd3.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVd3.TabIndex = 111;
@@ -619,7 +624,7 @@
             // 
             // pctBox21
             // 
-            this.pctBox21.Location = new System.Drawing.Point(877, 223);
+            this.pctBox21.Location = new System.Drawing.Point(864, 237);
             this.pctBox21.Name = "pctBox21";
             this.pctBox21.Size = new System.Drawing.Size(24, 26);
             this.pctBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -629,7 +634,7 @@
             // pctBoxVm3
             // 
             this.pctBoxVm3.BackColor = System.Drawing.Color.Red;
-            this.pctBoxVm3.Location = new System.Drawing.Point(877, 419);
+            this.pctBoxVm3.Location = new System.Drawing.Point(864, 433);
             this.pctBoxVm3.Name = "pctBoxVm3";
             this.pctBoxVm3.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVm3.TabIndex = 91;
@@ -639,7 +644,7 @@
             // pctBoxVm2
             // 
             this.pctBoxVm2.BackColor = System.Drawing.Color.Red;
-            this.pctBoxVm2.Location = new System.Drawing.Point(890, 402);
+            this.pctBoxVm2.Location = new System.Drawing.Point(877, 416);
             this.pctBoxVm2.Name = "pctBoxVm2";
             this.pctBoxVm2.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVm2.TabIndex = 90;
@@ -649,7 +654,7 @@
             // pctBoxVd1
             // 
             this.pctBoxVd1.BackColor = System.Drawing.Color.Lime;
-            this.pctBoxVd1.Location = new System.Drawing.Point(919, 402);
+            this.pctBoxVd1.Location = new System.Drawing.Point(906, 416);
             this.pctBoxVd1.Name = "pctBoxVd1";
             this.pctBoxVd1.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVd1.TabIndex = 94;
@@ -658,7 +663,7 @@
             // 
             // pctBox20
             // 
-            this.pctBox20.Location = new System.Drawing.Point(946, 223);
+            this.pctBox20.Location = new System.Drawing.Point(933, 237);
             this.pctBox20.Name = "pctBox20";
             this.pctBox20.Size = new System.Drawing.Size(24, 26);
             this.pctBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -667,7 +672,7 @@
             // 
             // pctBox19
             // 
-            this.pctBox19.Location = new System.Drawing.Point(1008, 223);
+            this.pctBox19.Location = new System.Drawing.Point(995, 237);
             this.pctBox19.Name = "pctBox19";
             this.pctBox19.Size = new System.Drawing.Size(24, 26);
             this.pctBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -676,7 +681,7 @@
             // 
             // pctBox18
             // 
-            this.pctBox18.Location = new System.Drawing.Point(1059, 223);
+            this.pctBox18.Location = new System.Drawing.Point(1046, 237);
             this.pctBox18.Name = "pctBox18";
             this.pctBox18.Size = new System.Drawing.Size(24, 26);
             this.pctBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -685,7 +690,7 @@
             // 
             // pctBox17
             // 
-            this.pctBox17.Location = new System.Drawing.Point(1124, 223);
+            this.pctBox17.Location = new System.Drawing.Point(1111, 237);
             this.pctBox17.Name = "pctBox17";
             this.pctBox17.Size = new System.Drawing.Size(24, 26);
             this.pctBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -695,7 +700,7 @@
             // pctBoxVm1
             // 
             this.pctBoxVm1.BackColor = System.Drawing.Color.Red;
-            this.pctBoxVm1.Location = new System.Drawing.Point(877, 402);
+            this.pctBoxVm1.Location = new System.Drawing.Point(864, 416);
             this.pctBoxVm1.Name = "pctBoxVm1";
             this.pctBoxVm1.Size = new System.Drawing.Size(11, 11);
             this.pctBoxVm1.TabIndex = 88;
@@ -704,7 +709,7 @@
             // 
             // pctBox16
             // 
-            this.pctBox16.Location = new System.Drawing.Point(1194, 223);
+            this.pctBox16.Location = new System.Drawing.Point(1181, 237);
             this.pctBox16.Name = "pctBox16";
             this.pctBox16.Size = new System.Drawing.Size(24, 26);
             this.pctBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -713,7 +718,7 @@
             // 
             // pctBox15
             // 
-            this.pctBox15.Location = new System.Drawing.Point(1194, 287);
+            this.pctBox15.Location = new System.Drawing.Point(1181, 301);
             this.pctBox15.Name = "pctBox15";
             this.pctBox15.Size = new System.Drawing.Size(24, 26);
             this.pctBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -722,7 +727,7 @@
             // 
             // pctBox14
             // 
-            this.pctBox14.Location = new System.Drawing.Point(1124, 287);
+            this.pctBox14.Location = new System.Drawing.Point(1111, 301);
             this.pctBox14.Name = "pctBox14";
             this.pctBox14.Size = new System.Drawing.Size(24, 26);
             this.pctBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -731,7 +736,7 @@
             // 
             // pctBox13
             // 
-            this.pctBox13.Location = new System.Drawing.Point(1059, 287);
+            this.pctBox13.Location = new System.Drawing.Point(1046, 301);
             this.pctBox13.Name = "pctBox13";
             this.pctBox13.Size = new System.Drawing.Size(24, 26);
             this.pctBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -740,7 +745,7 @@
             // 
             // pctBox12
             // 
-            this.pctBox12.Location = new System.Drawing.Point(1008, 287);
+            this.pctBox12.Location = new System.Drawing.Point(995, 301);
             this.pctBox12.Name = "pctBox12";
             this.pctBox12.Size = new System.Drawing.Size(24, 26);
             this.pctBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -749,7 +754,7 @@
             // 
             // pctBox11
             // 
-            this.pctBox11.Location = new System.Drawing.Point(946, 287);
+            this.pctBox11.Location = new System.Drawing.Point(933, 301);
             this.pctBox11.Name = "pctBox11";
             this.pctBox11.Size = new System.Drawing.Size(24, 26);
             this.pctBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -758,7 +763,7 @@
             // 
             // pctBox10
             // 
-            this.pctBox10.Location = new System.Drawing.Point(877, 287);
+            this.pctBox10.Location = new System.Drawing.Point(864, 301);
             this.pctBox10.Name = "pctBox10";
             this.pctBox10.Size = new System.Drawing.Size(24, 26);
             this.pctBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -767,7 +772,7 @@
             // 
             // pctBox9
             // 
-            this.pctBox9.Location = new System.Drawing.Point(877, 353);
+            this.pctBox9.Location = new System.Drawing.Point(864, 367);
             this.pctBox9.Name = "pctBox9";
             this.pctBox9.Size = new System.Drawing.Size(24, 26);
             this.pctBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -776,7 +781,7 @@
             // 
             // pctBox8
             // 
-            this.pctBox8.Location = new System.Drawing.Point(946, 353);
+            this.pctBox8.Location = new System.Drawing.Point(933, 367);
             this.pctBox8.Name = "pctBox8";
             this.pctBox8.Size = new System.Drawing.Size(24, 26);
             this.pctBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -785,7 +790,7 @@
             // 
             // pctBox7
             // 
-            this.pctBox7.Location = new System.Drawing.Point(1008, 353);
+            this.pctBox7.Location = new System.Drawing.Point(995, 367);
             this.pctBox7.Name = "pctBox7";
             this.pctBox7.Size = new System.Drawing.Size(24, 26);
             this.pctBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -794,7 +799,7 @@
             // 
             // pctBox6
             // 
-            this.pctBox6.Location = new System.Drawing.Point(1059, 353);
+            this.pctBox6.Location = new System.Drawing.Point(1046, 367);
             this.pctBox6.Name = "pctBox6";
             this.pctBox6.Size = new System.Drawing.Size(24, 26);
             this.pctBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -803,7 +808,7 @@
             // 
             // pctBox5
             // 
-            this.pctBox5.Location = new System.Drawing.Point(1124, 353);
+            this.pctBox5.Location = new System.Drawing.Point(1111, 367);
             this.pctBox5.Name = "pctBox5";
             this.pctBox5.Size = new System.Drawing.Size(24, 26);
             this.pctBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -812,7 +817,7 @@
             // 
             // pctBox4
             // 
-            this.pctBox4.Location = new System.Drawing.Point(1194, 353);
+            this.pctBox4.Location = new System.Drawing.Point(1181, 367);
             this.pctBox4.Name = "pctBox4";
             this.pctBox4.Size = new System.Drawing.Size(24, 26);
             this.pctBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -821,7 +826,7 @@
             // 
             // pctBox3
             // 
-            this.pctBox3.Location = new System.Drawing.Point(1194, 419);
+            this.pctBox3.Location = new System.Drawing.Point(1181, 433);
             this.pctBox3.Name = "pctBox3";
             this.pctBox3.Size = new System.Drawing.Size(24, 26);
             this.pctBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -830,7 +835,7 @@
             // 
             // pctBox2
             // 
-            this.pctBox2.Location = new System.Drawing.Point(1124, 419);
+            this.pctBox2.Location = new System.Drawing.Point(1111, 433);
             this.pctBox2.Name = "pctBox2";
             this.pctBox2.Size = new System.Drawing.Size(24, 26);
             this.pctBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -839,7 +844,7 @@
             // 
             // pctBox1
             // 
-            this.pctBox1.Location = new System.Drawing.Point(1059, 419);
+            this.pctBox1.Location = new System.Drawing.Point(1046, 433);
             this.pctBox1.Name = "pctBox1";
             this.pctBox1.Size = new System.Drawing.Size(24, 26);
             this.pctBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -849,7 +854,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PI3_Cartagena.Properties.Resources.Tabuleiro;
-            this.pictureBox1.Location = new System.Drawing.Point(854, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(841, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(384, 451);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -858,6 +863,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel3.Controls.Add(this.btnPartida);
             this.panel3.Controls.Add(this.txtSenhaU);
@@ -865,15 +871,15 @@
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.txtUser);
-            this.panel3.Location = new System.Drawing.Point(5, 11);
+            this.panel3.Location = new System.Drawing.Point(5, 40);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(337, 264);
+            this.panel3.Size = new System.Drawing.Size(236, 127);
             this.panel3.TabIndex = 112;
             // 
             // btnPartida
             // 
-            this.btnPartida.Location = new System.Drawing.Point(51, 208);
+            this.btnPartida.Location = new System.Drawing.Point(13, 96);
             this.btnPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnPartida.Name = "btnPartida";
             this.btnPartida.Size = new System.Drawing.Size(152, 19);
@@ -884,7 +890,7 @@
             // 
             // txtSenhaU
             // 
-            this.txtSenhaU.Location = new System.Drawing.Point(26, 159);
+            this.txtSenhaU.Location = new System.Drawing.Point(13, 72);
             this.txtSenhaU.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenhaU.Name = "txtSenhaU";
             this.txtSenhaU.Size = new System.Drawing.Size(196, 20);
@@ -893,7 +899,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 136);
+            this.label10.Location = new System.Drawing.Point(13, 57);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 13);
@@ -903,7 +909,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 54);
+            this.label11.Location = new System.Drawing.Point(13, 20);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
@@ -913,7 +919,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(80, 19);
+            this.label12.Location = new System.Drawing.Point(13, 7);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 13);
@@ -922,7 +928,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(23, 77);
+            this.txtUser.Location = new System.Drawing.Point(13, 35);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(198, 20);
@@ -933,16 +939,16 @@
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lb_cartas);
-            this.panel1.Location = new System.Drawing.Point(259, 287);
+            this.panel1.Location = new System.Drawing.Point(5, 330);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(244, 206);
+            this.panel1.Size = new System.Drawing.Size(131, 143);
             this.panel1.TabIndex = 113;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 14);
+            this.label1.Location = new System.Drawing.Point(25, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
@@ -953,10 +959,10 @@
             // lb_cartas
             // 
             this.lb_cartas.FormattingEnabled = true;
-            this.lb_cartas.Location = new System.Drawing.Point(26, 39);
+            this.lb_cartas.Location = new System.Drawing.Point(15, 39);
             this.lb_cartas.Margin = new System.Windows.Forms.Padding(2);
             this.lb_cartas.Name = "lb_cartas";
-            this.lb_cartas.Size = new System.Drawing.Size(183, 147);
+            this.lb_cartas.Size = new System.Drawing.Size(99, 82);
             this.lb_cartas.TabIndex = 0;
             // 
             // lb_mostraTab
@@ -964,12 +970,12 @@
             this.lb_mostraTab.FormattingEnabled = true;
             this.lb_mostraTab.Location = new System.Drawing.Point(19, 39);
             this.lb_mostraTab.Name = "lb_mostraTab";
-            this.lb_mostraTab.Size = new System.Drawing.Size(154, 147);
+            this.lb_mostraTab.Size = new System.Drawing.Size(81, 108);
             this.lb_mostraTab.TabIndex = 1;
             // 
             // btn_mostratab
             // 
-            this.btn_mostratab.Location = new System.Drawing.Point(59, 14);
+            this.btn_mostratab.Location = new System.Drawing.Point(19, 14);
             this.btn_mostratab.Name = "btn_mostratab";
             this.btn_mostratab.Size = new System.Drawing.Size(75, 23);
             this.btn_mostratab.TabIndex = 0;
@@ -982,28 +988,38 @@
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Controls.Add(this.lb_mostraTab);
             this.panel2.Controls.Add(this.btn_mostratab);
-            this.panel2.Location = new System.Drawing.Point(510, 287);
+            this.panel2.Location = new System.Drawing.Point(141, 330);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 206);
+            this.panel2.Size = new System.Drawing.Size(120, 164);
             this.panel2.TabIndex = 4;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.btn_Listar);
             this.panel5.Controls.Add(this.txt_SenhaUser);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.txt_UserId);
-            this.panel5.Location = new System.Drawing.Point(5, 287);
+            this.panel5.Location = new System.Drawing.Point(5, 173);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(250, 206);
+            this.panel5.Size = new System.Drawing.Size(233, 151);
             this.panel5.TabIndex = 114;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(202, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Digete o id e senha do jogador para jogar";
             // 
             // btn_Listar
             // 
-            this.btn_Listar.Location = new System.Drawing.Point(50, 167);
+            this.btn_Listar.Location = new System.Drawing.Point(35, 125);
             this.btn_Listar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Listar.Name = "btn_Listar";
             this.btn_Listar.Size = new System.Drawing.Size(152, 19);
@@ -1014,7 +1030,7 @@
             // 
             // txt_SenhaUser
             // 
-            this.txt_SenhaUser.Location = new System.Drawing.Point(25, 118);
+            this.txt_SenhaUser.Location = new System.Drawing.Point(16, 102);
             this.txt_SenhaUser.Margin = new System.Windows.Forms.Padding(2);
             this.txt_SenhaUser.Name = "txt_SenhaUser";
             this.txt_SenhaUser.Size = new System.Drawing.Size(196, 20);
@@ -1023,7 +1039,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 95);
+            this.label2.Location = new System.Drawing.Point(18, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
@@ -1034,7 +1050,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 13);
+            this.label3.Location = new System.Drawing.Point(18, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
@@ -1043,7 +1059,7 @@
             // 
             // txt_UserId
             // 
-            this.txt_UserId.Location = new System.Drawing.Point(22, 36);
+            this.txt_UserId.Location = new System.Drawing.Point(16, 65);
             this.txt_UserId.Margin = new System.Windows.Forms.Padding(2);
             this.txt_UserId.Name = "txt_UserId";
             this.txt_UserId.Size = new System.Drawing.Size(198, 20);
@@ -1056,30 +1072,60 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(439, 535);
+            this.button1.Location = new System.Drawing.Point(298, 447);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 40);
             this.button1.TabIndex = 6;
             this.button1.Text = "Iniciar partida";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(348, 11);
+            this.button2.Location = new System.Drawing.Point(5, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 115;
-            this.button2.Text = "button2";
+            this.button2.Text = "Voltar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pnl_Jogadas
+            // 
+            this.pnl_Jogadas.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnl_Jogadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_Jogadas.Controls.Add(this.btn_Verificas);
+            this.pnl_Jogadas.Controls.Add(this.lbl_Jogadas);
+            this.pnl_Jogadas.Location = new System.Drawing.Point(262, 40);
+            this.pnl_Jogadas.Name = "pnl_Jogadas";
+            this.pnl_Jogadas.Size = new System.Drawing.Size(81, 284);
+            this.pnl_Jogadas.TabIndex = 116;
+            // 
+            // lbl_Jogadas
+            // 
+            this.lbl_Jogadas.AutoSize = true;
+            this.lbl_Jogadas.Location = new System.Drawing.Point(18, 34);
+            this.lbl_Jogadas.Name = "lbl_Jogadas";
+            this.lbl_Jogadas.Size = new System.Drawing.Size(47, 13);
+            this.lbl_Jogadas.TabIndex = 0;
+            this.lbl_Jogadas.Text = "Jogadas";
+            // 
+            // btn_Verificas
+            // 
+            this.btn_Verificas.Location = new System.Drawing.Point(3, 3);
+            this.btn_Verificas.Name = "btn_Verificas";
+            this.btn_Verificas.Size = new System.Drawing.Size(73, 23);
+            this.btn_Verificas.TabIndex = 1;
+            this.btn_Verificas.Text = "Verificar";
+            this.btn_Verificas.UseVisualStyleBackColor = true;
+            this.btn_Verificas.Click += new System.EventHandler(this.btn_Verificas_Click);
             // 
             // jogando
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 638);
+            this.Controls.Add(this.pnl_Jogadas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel5);
@@ -1220,6 +1266,8 @@
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.pnl_Jogadas.ResumeLayout(false);
+            this.pnl_Jogadas.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1318,5 +1366,9 @@
         private System.Windows.Forms.Timer tmrVerificarVez;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pnl_Jogadas;
+        private System.Windows.Forms.Button btn_Verificas;
+        private System.Windows.Forms.Label lbl_Jogadas;
     }
 }

@@ -24,13 +24,6 @@ namespace PI3_Cartagena
             this.idPartida = idPartida;
             mapa();
 
-           
-
-
-
-  
-
-
         }
         public void mover(int boneco ,string pctbox,string  pctBox0,int  posq, Jogador item, int k, int atual)
         {
