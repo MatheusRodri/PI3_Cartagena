@@ -249,17 +249,23 @@ namespace PI3_Cartagena
 
         private void btn_andar_Click(object sender, EventArgs e)
         {
-            lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario, numCasaSel, cartaParaJogar);
+            int id = Convert.ToInt32(txt_UserId.Text);
+            string senha = txt_SenhaUser.Text;
+            lbl_retornoJogar.Text = Jogo.Jogar(id, senha, numCasaSel, cartaParaJogar);
         }
 
         private void btn_voltarPirata_Click(object sender, EventArgs e)
         {
-            lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario, numCasaSel);
+            int id = Convert.ToInt32(txt_UserId.Text);
+            string senha = txt_SenhaUser.Text;
+            lbl_retornoJogar.Text = Jogo.Jogar(id, senha, numCasaSel);
         }
 
         private void btn_pularVez_Click(object sender, EventArgs e)
         {
-            lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario);
+            int id = Convert.ToInt32(txt_UserId.Text);
+            string senha = txt_SenhaUser.Text;
+            lbl_retornoJogar.Text = Jogo.Jogar(id, senha);
         }
 
         private void btnTabuleiro_Click(object sender, EventArgs e)
@@ -267,6 +273,11 @@ namespace PI3_Cartagena
             Tela_Tabuleiro tela_Carta = new Tela_Tabuleiro(idPartida);
             tela_Carta.Show();
             this.Close();
+        }
+
+        private void btn_verificaVez_Click(object sender, EventArgs e)
+        {
+            lbl_vez.Text = Jogo.VerificarVez(idPartida);
         }
     }
 }

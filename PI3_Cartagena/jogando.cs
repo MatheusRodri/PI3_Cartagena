@@ -73,40 +73,7 @@ namespace PI3_Cartagena
                     icone.Add(posicao[i].Substring(3));
                 }
             }
-            /*
-            for (int i = 1; i < icone.Count - 1; i++)
-            {
-                switch (icone[i])
-                {
-                    case "C":
-                        img[i].Image = Image.FromFile("Icones/Chave.png");
-
-                        break;
-                    case "E":
-                        img[i].Image = Image.FromFile("Icones/Esqueleto.jpg");
-
-                        break;
-                    case "T":
-                        img[i].Image = Image.FromFile("Icones/Tricornio.jpg");
-
-                        break;
-                    case "F":
-                        img[i].Image = Image.FromFile("Icones/Faca.jpg");
-
-                        break;
-                    case "G":
-                        img[i].Image = Image.FromFile("Icones/Garrafa.jpg");
-
-                        break;
-                    case "P":
-                        img[i].Image = Image.FromFile("Icones/Pistola.jpg");
-
-                        break;
-
-
-
-                }
-            }*/
+            
 
             //Mostrar Jogadores
 
@@ -560,6 +527,11 @@ namespace PI3_Cartagena
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
