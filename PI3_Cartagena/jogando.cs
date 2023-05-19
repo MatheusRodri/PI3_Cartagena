@@ -43,9 +43,17 @@ namespace PI3_Cartagena
             this.idUsuario = idUsuario;
             this.senhaUsuario = senhaUsuario;
 
-            
+            attJogadores();
 
 
+
+
+
+
+        }
+
+        public void attJogadores()
+        {
             string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
             tabuleiro = tabuleiro.Replace("\r", "");
             string[] posicao = tabuleiro.Split('\n');
@@ -80,15 +88,43 @@ namespace PI3_Cartagena
                     icone.Add(posicao[i].Substring(3));
                 }
             }
-            
+            for (int i = 1; i < icone.Count - 1; i++)
+            {
+                switch (icone[i])
+                {
+                    case "C":
+                        img[i].Image = Image.FromFile("Icones/Chave.png");
+
+                        break;
+                    case "E":
+                        img[i].Image = Image.FromFile("Icones/Esqueleto.jpg");
+
+                        break;
+                    case "T":
+                        img[i].Image = Image.FromFile("Icones/Tricornio.jpg");
+
+                        break;
+                    case "F":
+                        img[i].Image = Image.FromFile("Icones/Faca.jpg");
+
+                        break;
+                    case "G":
+                        img[i].Image = Image.FromFile("Icones/Garrafa.jpg");
+
+                        break;
+                    case "P":
+                        img[i].Image = Image.FromFile("Icones/Pistola.jpg");
+
+                        break;
+
+
+
+                }
+            }
 
             //Mostrar Jogadores
 
 
-        }
-
-        public void attJogadores()
-        {
             List<string> lugar = new List<string>();
             string situacao = Jogo.VerificarVez(idPartida);
             situacao = situacao.Replace("\r", "");
@@ -126,9 +162,7 @@ namespace PI3_Cartagena
             posicaoInicial = vez.IndexOf(',');
             posicaoFinal = vez.LastIndexOf(',');
 
-
-
-            //Erro aqui
+            //Erro: Não pode ser menor que zero
             vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
             string contjogadores = Jogo.ListarJogadores(idPartida);
             contjogadores = contjogadores.Replace("\r", "");
@@ -193,13 +227,18 @@ namespace PI3_Cartagena
                 {
                     continue;
                 }
+
                 else
 
                 {
+
                     int atual = 0;
-                    if (posi[i] == posi[i - 1])
+                    if (posi[i] == posi[i - 1] && posi[i] != "0")
                     {
-                        atual++;
+                        int a = Convert.ToInt32(boneco[i]);
+                        int b = Convert.ToInt32(boneco[i - 1]);
+                        atual = (a + b) - 1;
+
                     }
 
                     foreach (var item in jogadoresLista)
@@ -248,8 +287,7 @@ namespace PI3_Cartagena
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                            pctbox = item.piratas[k].nome;
-                                            item.piratas[k].posicao = posq;
+
                                             mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
@@ -264,8 +302,8 @@ namespace PI3_Cartagena
                                         if (item.piratas[k].posicao == 0)
                                         {
                                             aux += 1;
-                                            pctbox = item.piratas[k].nome;
-                                            item.piratas[k].posicao = posq;
+
+                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
                                             t = false;
                                         }
                                         else k++;
@@ -279,7 +317,6 @@ namespace PI3_Cartagena
 
                 }
 
-
             }
         }
 
@@ -290,18 +327,74 @@ namespace PI3_Cartagena
             for (int j = 0; j < boneco; j++)
             {
 
+
                 pctbox = item.piratas[k].nome;
                 PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
                 pctBox0 = pctBox0 + ((posq).ToString());
                 PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
 
+
                 if (atual != 0)
                 {
                     pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j + 1) * atual);
                 }
-                pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j));
-                pctBox0 = "pctBox";
+                else if (posq == 37)
+                {
+                    switch (pictureBox.Name)
+                    {
+                        case "Vermleho":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(651, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(638, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
+                        case "Verde":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(691, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(678, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
+                        case "Amarelo":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(731, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(718, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
+                        case "Azul":
+                            if (j == 3)
+                            {
+                                int l = j - 3;
+                                pictureBox.Location = new Point(771, 20 + 11 * (l + 1) * atual);
+                            }
+                            else
+                            {
+                                pictureBox.Location = new Point(758, 20 + 11 * (j + 1) * atual);
+                            }
+                            break;
 
+                    }
+
+
+
+                }
+                else { pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); }
+
+                pctBox0 = "pctBox";
                 item.piratas[k].posicao = posq;
                 k++;
 
