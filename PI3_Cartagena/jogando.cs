@@ -42,18 +42,11 @@ namespace PI3_Cartagena
             this.idPartida = idPartida;
             this.idUsuario = idUsuario;
             this.senhaUsuario = senhaUsuario;
-
-            attJogadores();
-
-
-
-
-
-
+            mapa();
         }
-
-        public void attJogadores()
+        public void mapa()
         {
+
             string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
             tabuleiro = tabuleiro.Replace("\r", "");
             string[] posicao = tabuleiro.Split('\n');
@@ -90,6 +83,8 @@ namespace PI3_Cartagena
             }
             for (int i = 1; i < icone.Count - 1; i++)
             {
+               
+              
                 switch (icone[i])
                 {
                     case "C":
@@ -319,8 +314,7 @@ namespace PI3_Cartagena
 
             }
         }
-
-
+        
 
         public void mover(int boneco, string pctbox, string pctBox0, int posq, Jogador item, int k, int atual)
         {
@@ -477,7 +471,7 @@ namespace PI3_Cartagena
 
         private void btn_Listar_Click(object sender, EventArgs e)
         {
-            attJogadores();
+            mapa();
             try
             {
                 lb_cartas.Items.Clear();
@@ -649,6 +643,11 @@ namespace PI3_Cartagena
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
            // exibirPartidas(comboBox1.SelectedItem.ToString());
+        }
+
+        private void pctBox1_Click(object sender, EventArgs e)
+        {
+
         }
         //public void exibirPartidas(string tipoPartida)
         //{

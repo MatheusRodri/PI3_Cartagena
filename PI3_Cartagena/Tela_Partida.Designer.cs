@@ -183,6 +183,7 @@
             this.Name = "Tela_Partida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neiva";
+            this.Load += new System.EventHandler(this.Tela_Partida_Load);
             this.EnabledChanged += new System.EventHandler(this.Tela_Partida_EnabledChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

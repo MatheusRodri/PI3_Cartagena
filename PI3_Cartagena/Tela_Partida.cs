@@ -18,7 +18,6 @@ namespace PI3_Cartagena
         {
             InitializeComponent();
             exibirPartidas("T");
-            button2.Enabled = false;
 
         }
          int idpartida;
@@ -143,6 +142,11 @@ namespace PI3_Cartagena
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             exibirPartidas(comboBox1.SelectedItem.ToString());
+        }
+
+        private void Tela_Partida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

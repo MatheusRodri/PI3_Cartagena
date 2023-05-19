@@ -98,7 +98,7 @@
             this.pctBox3 = new System.Windows.Forms.PictureBox();
             this.pctBox2 = new System.Windows.Forms.PictureBox();
             this.pctBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctBox0 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnPartida = new System.Windows.Forms.Button();
             this.txtSenhaU = new System.Windows.Forms.TextBox();
@@ -193,7 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox0)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -928,17 +928,18 @@
             this.pctBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBox1.TabIndex = 52;
             this.pctBox1.TabStop = false;
+            this.pctBox1.Click += new System.EventHandler(this.pctBox1_Click);
             // 
-            // pictureBox1
+            // pctBox0
             // 
-            this.pictureBox1.Image = global::PI3_Cartagena.Properties.Resources.Tabuleiro;
-            this.pictureBox1.Location = new System.Drawing.Point(1121, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(512, 555);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
+            this.pctBox0.Image = global::PI3_Cartagena.Properties.Resources.Tabuleiro;
+            this.pctBox0.Location = new System.Drawing.Point(1121, 32);
+            this.pctBox0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox0.Name = "pctBox0";
+            this.pctBox0.Size = new System.Drawing.Size(512, 555);
+            this.pctBox0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox0.TabIndex = 51;
+            this.pctBox0.TabStop = false;
             // 
             // panel3
             // 
@@ -1356,7 +1357,7 @@
             this.Controls.Add(this.pctBox3);
             this.Controls.Add(this.pctBox2);
             this.Controls.Add(this.pctBox1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctBox0);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "jogando";
             this.Text = "jogando";
@@ -1422,7 +1423,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox0)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1511,7 +1512,7 @@
         private System.Windows.Forms.PictureBox pctBox3;
         private System.Windows.Forms.PictureBox pctBox2;
         private System.Windows.Forms.PictureBox pctBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctBox0;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnPartida;
         private System.Windows.Forms.TextBox txtSenhaU;
