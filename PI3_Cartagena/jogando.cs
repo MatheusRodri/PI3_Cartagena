@@ -30,13 +30,20 @@ namespace PI3_Cartagena
         string[] mao;
         string[] casasSeparadas;
 
+        
+
+
+        
         public jogando(int idPartida, int idUsuario, string senhaUsuario)
         {
-                     
+
+            //exibirPartidas("T");
             InitializeComponent();
             this.idPartida = idPartida;
             this.idUsuario = idUsuario;
             this.senhaUsuario = senhaUsuario;
+
+            
 
 
             string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
@@ -545,5 +552,23 @@ namespace PI3_Cartagena
         {
             lbl_Jogadas.Text = Jogo.VerificarVez(idPartida);
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // exibirPartidas(comboBox1.SelectedItem.ToString());
+        }
+        //public void exibirPartidas(string tipoPartida)
+        //{
+        //    lb_partidas.Items.Clear();
+        //    string dados = Jogo.ListarPartidas(tipoPartida);
+        //    dados = dados.Replace("\r", "");
+        //    string[] partidas = dados.Split('\n');
+
+
+        //    for (int i = 0; i < partidas.Length; i++)
+        //    {
+        //        lb_partidas.Items.Add(partidas[i]);
+        //    }
+        //}
     }
 }

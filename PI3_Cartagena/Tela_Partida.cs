@@ -17,15 +17,15 @@ namespace PI3_Cartagena
         public Tela_Partida()
         {
             InitializeComponent();
-            exibirPartidas();
+            exibirPartidas("T");
             button2.Enabled = false;
 
         }
          int idpartida;
-        public void exibirPartidas()
+        public void exibirPartidas(string tipoPartida)
         {
             lb_partidas.Items.Clear();
-            string dados = Jogo.ListarPartidas("T");
+            string dados = Jogo.ListarPartidas(tipoPartida);
             dados = dados.Replace("\r", "");
             string[] partidas = dados.Split('\n');  
 
@@ -117,7 +117,7 @@ namespace PI3_Cartagena
 
         private void Tela_Partida_EnabledChanged(object sender, EventArgs e)
         {
-            exibirPartidas();
+            exibirPartidas("T");
         }
 
         private void lb_jogadoresNaPartida_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,6 +133,16 @@ namespace PI3_Cartagena
         private void lb_partidas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            exibirPartidas(comboBox1.SelectedItem.ToString());
         }
     }
 }
