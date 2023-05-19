@@ -649,6 +649,11 @@ namespace PI3_Cartagena
         {
 
         }
+
+        private void jogando_Load(object sender, EventArgs e)
+        {
+
+        }
         //public void exibirPartidas(string tipoPartida)
         //{
         //    lb_partidas.Items.Clear();

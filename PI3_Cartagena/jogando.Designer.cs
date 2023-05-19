@@ -1361,6 +1361,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "jogando";
             this.Text = "jogando";
+            this.Load += new System.EventHandler(this.jogando_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAz6)).EndInit();
