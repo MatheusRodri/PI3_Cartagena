@@ -100,6 +100,9 @@ namespace PI3_Cartagena
             this.Close();
         }
 
+
+        //botão entrar na partida
+
         private void button2_Click(object sender, EventArgs e)
         {
             Tela_Jogadores tela_Jogadores = new Tela_Jogadores(idpartida);

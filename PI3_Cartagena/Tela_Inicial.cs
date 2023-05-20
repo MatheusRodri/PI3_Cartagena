@@ -25,5 +25,12 @@ namespace PI3_Cartagena
             tela_Partida.Show();
             Hide();
         }
+
+        private void btn_tela_de_criacao_Click(object sender, EventArgs e)
+        {
+            Tela_Criacao_Inicio tela_criacao_inicio = new Tela_Criacao_Inicio();
+            tela_criacao_inicio.Show();
+            this.Hide();
+        }
     }
 }

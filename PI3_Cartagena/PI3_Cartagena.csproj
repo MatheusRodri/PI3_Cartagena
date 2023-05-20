@@ -58,6 +58,12 @@
     <Compile Include="jogando.Designer.cs">
       <DependentUpon>jogando.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tela_Criacao_Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Criacao_Inicio.Designer.cs">
+      <DependentUpon>Tela_Criacao_Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Tabuleiro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="jogando.resx">
       <DependentUpon>jogando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tela_Criacao_Inicio.resx">
+      <DependentUpon>Tela_Criacao_Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Tabuleiro.resx">
       <DependentUpon>Tela_Tabuleiro.cs</DependentUpon>

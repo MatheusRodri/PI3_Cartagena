@@ -33,10 +33,10 @@ namespace PI3_Cartagena
         
 
 
-        
+        //construtor da Tela 
         public jogando(int idPartida, int idUsuario, string senhaUsuario)
         {
-
+            
             //exibirPartidas("T");
             InitializeComponent();
             this.idPartida = idPartida;
@@ -399,17 +399,7 @@ namespace PI3_Cartagena
         /////////////////////////////////////////////////////////////////////////////////////////
         ///botoes e funcoes deles 
 
-        private void btnPartida_Click(object sender, EventArgs e)
-        {
-
-            //usando vaiaveis daq para att listar partida
-
-            idUsuario = Convert.ToInt32(txtUser.Text);
-            senhaUsuario = txtSenhaU.Text;
-            string jogador = Jogo.IniciarPartida(idUsuario, senhaUsuario);
-
-            MessageBox.Show($"Jogador: {jogador} iniciara");
-        }
+       
 
         private void btn_selCarta_Click(object sender, EventArgs e)
         {
@@ -476,8 +466,8 @@ namespace PI3_Cartagena
             {
                 lb_cartas.Items.Clear();
 
-                int id = Convert.ToInt32(txtUser.Text);
-                string senha = txtSenhaU.Text;
+                int id = Convert.ToInt32(txt_UserId.Text);
+                string senha = txt_SenhaUser.Text;
 
                 string cartas = Jogo.ConsultarMao(id, senha);
 
