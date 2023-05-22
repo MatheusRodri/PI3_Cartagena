@@ -42,6 +42,9 @@ namespace PI3_Cartagena
             this.idPartida = idPartida;
             this.idUsuario = idUsuario;
             this.senhaUsuario = senhaUsuario;
+
+            lblIdJogador.Text = idUsuario.ToString();
+            lblSenhaJogador.Text = senhaUsuario;
             mapa();
         }
         public void mapa()
@@ -466,10 +469,10 @@ namespace PI3_Cartagena
             {
                 lb_cartas.Items.Clear();
 
-                int id = Convert.ToInt32(txt_UserId.Text);
-                string senha = txt_SenhaUser.Text;
+                //int id = Convert.ToInt32(txt_UserId.Text);
+                //string senha = txt_SenhaUser.Text;
 
-                string cartas = Jogo.ConsultarMao(id, senha);
+                string cartas = Jogo.ConsultarMao(idUsuario, senhaUsuario);
 
                 cartas = cartas.Replace("\r", "");
                 mao = cartas.Split('\n');
@@ -641,6 +644,11 @@ namespace PI3_Cartagena
         }
 
         private void jogando_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -47,8 +47,10 @@ namespace PI3_Cartagena
 
 
             string dadosPartidaNova = partida.CriarPartida(nomePartida, senhaPartida);
-            MessageBox.Show(dadosPartidaNova);
-            Tela_Partida tela = new Tela_Partida();
+            MessageBox.Show("Partida criada com sucesso");
+            int idPartida = Convert.ToInt32(dadosPartidaNova);
+
+            Tela_Jogadores tela = new Tela_Jogadores(idPartida,senhaPartida);
             tela.Show();
             this.Close();
         }
