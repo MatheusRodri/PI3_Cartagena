@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,8 +43,8 @@ namespace PI3_Cartagena
             this.idUsuario = idUsuario;
             this.senhaUsuario = senhaUsuario;
 
-            lblIdJogador.Text = idUsuario.ToString();
-            lblSenhaJogador.Text = senhaUsuario;
+            //lblIdJogador.Text = idUsuario.ToString();
+            //lblSenhaJogador.Text = senhaUsuario;
             mapa();
         }
         public void mapa()
@@ -435,6 +436,8 @@ namespace PI3_Cartagena
 
         private void btn_andar_Click(object sender, EventArgs e)
         {
+            Console.WriteLine($"Id do jogador:{idUsuario}");
+            Console.WriteLine($"Senha do jogador:{senhaUsuario}");
             lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario, numCasaSel, cartaParaJogar);
         }
 
@@ -463,13 +466,15 @@ namespace PI3_Cartagena
 
         private void btn_Listar_Click(object sender, EventArgs e)
         {
+            idUsuario = Convert.ToInt32(textBox1.Text);
+            senhaUsuario = textBox2.Text;
             mapa();
             try
             {
                 lb_cartas.Items.Clear();
 
-                //int id = Convert.ToInt32(txt_UserId.Text);
-                //string senha = txt_SenhaUser.Text;
+                int id = Convert.ToInt32(textBox1.Text);
+                string senha = textBox2.Text;
 
                 string cartas = Jogo.ConsultarMao(idUsuario, senhaUsuario);
 
@@ -615,7 +620,55 @@ namespace PI3_Cartagena
 
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("Verificar vez");
+            mapa();
+
+            //separação basica
+            string retornando = Jogo.VerificarVez(idPartida);
+            retornando = retornando.Replace("\r", "");
+            string[] arrayRetornando = retornando.Split('\n');
+
+            //dados de quem joga
+            string[] jogandoAgora = arrayRetornando[0].Split(',');
+
+
+            string[] jogadas= { };
+            
+            //dados da partida geral
+            for (int i = 1; i < arrayRetornando.Length -1; i++)
+            {
+                jogadas[i - 1] = arrayRetornando[i];
+            }
+
+
+            if (jogandoAgora[1] == idUsuario.ToString())
+            {
+                string cartasNaMao = Jogo.ConsultarMao(idUsuario, senhaUsuario);
+                cartasNaMao = cartasNaMao.Replace("\r", "");
+                string[] maoo = cartasNaMao.Split('\n');
+                int qtd = 0;
+                //string[] cartaQuero = maoo.Split();
+                for (int i = 0; i < maoo.Length - 1; i++)
+                {
+
+                    qtd += (Convert.ToInt32(maoo[i].Substring(2)));
+
+                }
+
+                if (qtd < 3)
+                {
+                    //Jogo.Jogar(idUsuario,senhaUsuario,);
+                }
+                else
+                {
+                    
+                }
+            }
+            else
+            {
+                return;
+            }
+
+            
         }
 
        
@@ -651,18 +704,15 @@ namespace PI3_Cartagena
         {
 
         }
-        //public void exibirPartidas(string tipoPartida)
-        //{
-        //    lb_partidas.Items.Clear();
-        //    string dados = Jogo.ListarPartidas(tipoPartida);
-        //    dados = dados.Replace("\r", "");
-        //    string[] partidas = dados.Split('\n');
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tmrVerificarVez.Enabled = true;
+        }
 
-        //    for (int i = 0; i < partidas.Length; i++)
-        //    {
-        //        lb_partidas.Items.Add(partidas[i]);
-        //    }
-        //}
+        public void teste()
+        {
+           
+        }
     }
 }

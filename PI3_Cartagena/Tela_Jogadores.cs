@@ -41,7 +41,7 @@ namespace PI3_Cartagena
         {
 
             string nomeUsuario = txt_nomeUsuario.Text;
-            senhaPartida = txt_senha.Text;
+            string senhaPartida = txt_senha.Text;
             string dadosDaPartida = Jogo.EntrarPartida(idPartida, nomeUsuario, senhaPartida);
 
             Console.WriteLine(dadosDaPartida);
@@ -50,7 +50,7 @@ namespace PI3_Cartagena
             txtUser.Text = dadosUser[0];
             txtSenhaU.Text = dadosUser[1];
 
-            btn_entrarPartida.Enabled = false;
+            //btn_entrarPartida.Enabled = false;
         }
 
         private void partidaToolStripMenuItem_Click(object sender, EventArgs e)
