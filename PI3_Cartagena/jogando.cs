@@ -36,8 +36,7 @@ namespace PI3_Cartagena
         //construtor da Tela 
         public jogando(int idPartida, int idUsuario, string senhaUsuario)
         {
-            
-            //exibirPartidas("T");
+         
             InitializeComponent();
             this.idPartida = idPartida;
             this.idUsuario = idUsuario;
