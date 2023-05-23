@@ -415,6 +415,7 @@ namespace PI3_Cartagena
         private void btn_andar_Click(object sender, EventArgs e)
         {
             lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario, numCasaSel, cartaParaJogar);
+            mapa();
         }
 
         private void btn_voltarPirata_Click(object sender, EventArgs e)
@@ -598,7 +599,7 @@ namespace PI3_Cartagena
 
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
-            mapa();
+            
 
             //separação basica
             string retornando = Jogo.VerificarVez(idPartida);
@@ -610,11 +611,13 @@ namespace PI3_Cartagena
 
             string[] jogadas = { };
 
+
+
             //dados da partida geral
-            for (int i = 1; i < arrayRetornando.Length - 1; i++)
-            {
-                jogadas[i - 1] = arrayRetornando[i];
-            }
+            //for (int i = 1; i < arrayRetornando.Length - 1; i++)
+            //{
+            //    jogadas[i - 1] = arrayRetornando[i];
+            //}
 
 
             if (jogandoAgora[1] == idUsuario.ToString())
@@ -624,6 +627,30 @@ namespace PI3_Cartagena
                 string[] maoo = cartasNaMao.Split('\n');
                 int qtd = 0;
                 //string[] cartaQuero = maoo.Split();
+
+
+                //CODIGO RANDOM AQUI EM BAIXO
+
+                //Lista de posição dos piratas
+                List<int> minhaPos = new List<int>();
+                Random random = new Random();
+
+
+                //Alimenta uma lista de onde estão os piratas do jogador
+                for (int i = 1; i < arrayRetornando.Length-1; i++)
+                {
+                    
+                    int posicaoInicial = arrayRetornando[i].IndexOf(',');
+                    int posicaoFinal = arrayRetornando[i].LastIndexOf(',');
+
+
+                    if (arrayRetornando[i].Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1) == idUsuario.ToString())
+                    {
+                        minhaPos.Add(Convert.ToInt32(arrayRetornando[i].Substring(0, posicaoInicial)));
+                    }
+                }
+
+
                 for (int i = 0; i < maoo.Length - 1; i++)
                 {
 
@@ -633,18 +660,39 @@ namespace PI3_Cartagena
 
                 if (qtd < 3)
                 {
-                    //Jogo.Jogar(idUsuario,senhaUsuario,);
+                    int valorAleatorio = 0;
+                    //gera aleatotio pra não tentar voltar pirata na base
+                    while (valorAleatorio == 0)
+                    {
+                        int indiceAleatorio = random.Next(minhaPos.Count);
+                        valorAleatorio = minhaPos[indiceAleatorio];
+
+                        //verifica se a posição anterior ao numero que gerou não é a base se for faz o while denovo
+                        if(minhaPos[indiceAleatorio - 1] == 0)
+                        {
+                            valorAleatorio = 0;
+                        }
+                    }
+
+                    Jogo.Jogar(idUsuario,senhaUsuario, valorAleatorio);
                 }
+               
+                //JOGA UM pirata aleatorio e uma cart aleatoria
                 else
                 {
-
+                    int indiceAleatorio = random.Next(minhaPos.Count);
+                    int valorAleatorio = minhaPos[indiceAleatorio];
+                    indiceAleatorio = random.Next(maoo.Length -1);
+                    
+                    Jogo.Jogar(idUsuario, senhaUsuario, valorAleatorio, maoo[indiceAleatorio].Substring(0, 1));
                 }
             }
             else
             {
+                mapa();
                 return;
             }
-
+            mapa();
         }
 
 
