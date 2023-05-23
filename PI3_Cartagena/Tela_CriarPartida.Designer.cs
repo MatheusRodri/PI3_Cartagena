@@ -40,6 +40,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_senhaPartida);
             this.panel1.Controls.Add(this.label2);
@@ -48,7 +49,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(380, 508);
+            this.panel1.Size = new System.Drawing.Size(380, 406);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -97,7 +98,7 @@
             this.txt_nomePartida.Name = "txt_nomePartida";
             this.txt_nomePartida.Size = new System.Drawing.Size(311, 34);
             this.txt_nomePartida.TabIndex = 1;
-            this.txt_nomePartida.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_nomePartida.TextChanged += new System.EventHandler(this.txt_nomePartida_TextChanged);
             // 
             // label1
             // 
@@ -118,9 +119,6 @@
             this.Name = "Tela_CriarPartida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neiva";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tela_CriarPartida_FormClosed);
-            this.Load += new System.EventHandler(this.Tela_CriarPartida_Load);
-            this.VisibleChanged += new System.EventHandler(this.Tela_CriarPartida_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

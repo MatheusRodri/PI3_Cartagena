@@ -29,54 +29,43 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_tela_de_criacao = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btn_tela_de_criacao);
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnEntrar);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(900, 502);
             this.panel3.TabIndex = 6;
             // 
-            // btn_tela_de_criacao
-            // 
-            this.btn_tela_de_criacao.Location = new System.Drawing.Point(281, 340);
-            this.btn_tela_de_criacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_tela_de_criacao.Name = "btn_tela_de_criacao";
-            this.btn_tela_de_criacao.Size = new System.Drawing.Size(321, 28);
-            this.btn_tela_de_criacao.TabIndex = 11;
-            this.btn_tela_de_criacao.Text = "Tela Criacao (Op1)";
-            this.btn_tela_de_criacao.UseVisualStyleBackColor = true;
-            this.btn_tela_de_criacao.Click += new System.EventHandler(this.btn_tela_de_criacao_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(312, 62);
+            this.label1.Location = new System.Drawing.Point(115, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 46);
+            this.label1.Size = new System.Drawing.Size(670, 46);
             this.label1.TabIndex = 10;
-            this.label1.Text = "CARTAGENA";
+            this.label1.Text = "SEJA BEM VINDO(A) CARTAGENA";
             // 
-            // button1
+            // btnEntrar
             // 
-            this.button1.Location = new System.Drawing.Point(281, 143);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(336, 46);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Partida(Op2)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnEntrar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEntrar.Location = new System.Drawing.Point(255, 164);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(391, 174);
+            this.btnEntrar.TabIndex = 7;
+            this.btnEntrar.Text = "Partida";
+            this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
             // 
             // Tela_Inicial
             // 
@@ -97,8 +86,7 @@
         #endregion
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_tela_de_criacao;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }
 

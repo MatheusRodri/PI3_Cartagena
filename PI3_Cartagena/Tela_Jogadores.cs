@@ -13,18 +13,25 @@ namespace PI3_Cartagena
 {
     public partial class Tela_Jogadores : Form
     {
-        
-        private int idPartida;
-        private int idUsuario;
-        private string senhaUsuario;
-        private string senhaPartida;
+
+        private int idPartida {get;set;}
+        private int idUsuario { get;set;}
+        private string senhaUsuario { get;set;}
+        private string senhaPartida { get;set;}
+        private string nomeUsuario { get;set;}
+
+        private string dadosPartida { get;set;}
+        private string idJogadorInicial { get;set;}
         public Tela_Jogadores(int idPartida, string senhaPartida)
         {
             InitializeComponent();
             this.idPartida = idPartida;
-            this.senhaPartida = senhaPartida;
-
-            txt_senha.Text = senhaPartida;
+            txt_senhaPartida.Text = senhaPartida;
+            btn_entrarPartida.Enabled = false;
+            txt_idUser.Enabled = false;
+            txt_senhaUsuario.Enabled = false;
+            btn_iniciarPartida.Enabled = false;
+            btn_telaJogo.Enabled = false;
         }
         public Tela_Jogadores(int idPartida)
         {
@@ -32,49 +39,45 @@ namespace PI3_Cartagena
             this.idPartida = idPartida;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void validaCampos()
         {
-
+            if (txt_nomeUsuario.Text.Length > 0 && txt_senhaPartida.Text.Length > 0)
+            {
+                btn_entrarPartida.Enabled = true;
+                btn_telaJogo.Enabled = true;
+            }
+            else
+            {
+                btn_entrarPartida.Enabled = false;
+                btn_telaJogo.Enabled = false;
+            }
         }
-      
+
+
         private void btn_entrarPartida_Click(object sender, EventArgs e)
         {
+            nomeUsuario = txt_nomeUsuario.Text;
+            senhaPartida = txt_senhaPartida.Text;
+            dadosPartida = Jogo.EntrarPartida(idPartida, nomeUsuario, senhaPartida);
 
-            string nomeUsuario = txt_nomeUsuario.Text;
-            string senhaPartida = txt_senha.Text;
-            string dadosDaPartida = Jogo.EntrarPartida(idPartida, nomeUsuario, senhaPartida);
-
-            Console.WriteLine(dadosDaPartida);
-            string[] dadosUser = dadosDaPartida.Split(',');
+            Console.WriteLine(dadosPartida);
+            string[] dadosUser = dadosPartida.Split(',');
             
-            txtUser.Text = dadosUser[0];
-            txtSenhaU.Text = dadosUser[1];
+            txt_idUser.Text = dadosUser[0];
+            txt_senhaUsuario.Text = dadosUser[1];
 
-            //btn_entrarPartida.Enabled = false;
+            btn_iniciarPartida.Enabled = true;
         }
 
-        private void partidaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btn_iniciarPartida_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void partidaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+            idUsuario = Convert.ToInt32(txt_idUser.Text);
+            senhaUsuario = txt_senhaUsuario.Text;
+            idJogadorInicial = Jogo.IniciarPartida(idUsuario, senhaUsuario);
             
-            Tela_Carta partida = new Tela_Carta(idPartida,idUsuario,senhaUsuario);
-            partida.Show();
-            this.Close();
-        }
+            MessageBox.Show($"Jogador: {idJogadorInicial} iniciara");
 
-        private void btnPartida_Click(object sender, EventArgs e)
-        {
-            idUsuario = Convert.ToInt32(txtUser.Text);
-            senhaUsuario = txtSenhaU.Text;
-            string jogador = Jogo.IniciarPartida(idUsuario, senhaUsuario);
-            
-            MessageBox.Show($"Jogador: {jogador} iniciara");
-
-            jogando tela = new jogando(idPartida, idUsuario, senhaUsuario);
+            Tela_jogo tela = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
             tela.Show();
             this.Close();
         }
@@ -86,18 +89,21 @@ namespace PI3_Cartagena
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_telaJogo_Click(object sender, EventArgs e)
         {
-            Tela_Carta tela_Carta = new Tela_Carta(idPartida, idUsuario, senhaUsuario);
-            tela_Carta.Show();
+            Tela_jogo jogando = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
+            jogando.Show();
             this.Close();
         }
 
-        private void btn_jgn_Click(object sender, EventArgs e)
+        private void txt_nomeUsuario_TextChanged(object sender, EventArgs e)
         {
-            jogando jogando = new jogando(idPartida, idUsuario, senhaUsuario);
-            jogando.Show();
-            this.Close();
+            validaCampos();
+        }
+
+        private void txt_senhaPartida_TextChanged(object sender, EventArgs e)
+        {
+            validaCampos();
         }
     }
 }

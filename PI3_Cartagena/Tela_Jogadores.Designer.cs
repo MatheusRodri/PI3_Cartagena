@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_jgn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_telaJogo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnPartida = new System.Windows.Forms.Button();
-            this.txtSenhaU = new System.Windows.Forms.TextBox();
+            this.btn_iniciarPartida = new System.Windows.Forms.Button();
+            this.txt_senhaUsuario = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txt_idUser = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_entrarPartida = new System.Windows.Forms.Button();
-            this.txt_senha = new System.Windows.Forms.TextBox();
+            this.txt_senhaPartida = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,72 +52,59 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_jgn);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.btn_telaJogo);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1035, 651);
+            this.panel1.Size = new System.Drawing.Size(1035, 473);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btn_jgn
+            // btn_telaJogo
             // 
-            this.btn_jgn.Location = new System.Drawing.Point(451, 537);
-            this.btn_jgn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_jgn.Name = "btn_jgn";
-            this.btn_jgn.Size = new System.Drawing.Size(100, 28);
-            this.btn_jgn.TabIndex = 4;
-            this.btn_jgn.Text = "tela jogando ";
-            this.btn_jgn.UseVisualStyleBackColor = true;
-            this.btn_jgn.Click += new System.EventHandler(this.btn_jgn_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(451, 491);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cartas";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_telaJogo.Location = new System.Drawing.Point(440, 422);
+            this.btn_telaJogo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_telaJogo.Name = "btn_telaJogo";
+            this.btn_telaJogo.Size = new System.Drawing.Size(100, 28);
+            this.btn_telaJogo.TabIndex = 4;
+            this.btn_telaJogo.Text = "tela jogando ";
+            this.btn_telaJogo.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel3.Controls.Add(this.btnPartida);
-            this.panel3.Controls.Add(this.txtSenhaU);
+            this.panel3.Controls.Add(this.btn_iniciarPartida);
+            this.panel3.Controls.Add(this.txt_senhaUsuario);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.txtUser);
+            this.panel3.Controls.Add(this.txt_idUser);
             this.panel3.Location = new System.Drawing.Point(571, 42);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(449, 325);
             this.panel3.TabIndex = 1;
             // 
-            // btnPartida
+            // btn_iniciarPartida
             // 
-            this.btnPartida.Location = new System.Drawing.Point(68, 256);
-            this.btnPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPartida.Name = "btnPartida";
-            this.btnPartida.Size = new System.Drawing.Size(203, 23);
-            this.btnPartida.TabIndex = 5;
-            this.btnPartida.Text = "Iniciar partida";
-            this.btnPartida.UseVisualStyleBackColor = true;
-            this.btnPartida.Click += new System.EventHandler(this.btnPartida_Click);
+            this.btn_iniciarPartida.Location = new System.Drawing.Point(68, 256);
+            this.btn_iniciarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_iniciarPartida.Name = "btn_iniciarPartida";
+            this.btn_iniciarPartida.Size = new System.Drawing.Size(203, 23);
+            this.btn_iniciarPartida.TabIndex = 5;
+            this.btn_iniciarPartida.Text = "Iniciar partida";
+            this.btn_iniciarPartida.UseVisualStyleBackColor = true;
+            this.btn_iniciarPartida.Click += new System.EventHandler(this.btn_iniciarPartida_Click);
             // 
-            // txtSenhaU
+            // txt_senhaUsuario
             // 
-            this.txtSenhaU.Location = new System.Drawing.Point(35, 196);
-            this.txtSenhaU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSenhaU.Name = "txtSenhaU";
-            this.txtSenhaU.Size = new System.Drawing.Size(260, 22);
-            this.txtSenhaU.TabIndex = 4;
+            this.txt_senhaUsuario.Location = new System.Drawing.Point(35, 196);
+            this.txt_senhaUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_senhaUsuario.Name = "txt_senhaUsuario";
+            this.txt_senhaUsuario.Size = new System.Drawing.Size(260, 22);
+            this.txt_senhaUsuario.TabIndex = 4;
             // 
             // label10
             // 
@@ -147,19 +133,19 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Iniciar Partida";
             // 
-            // txtUser
+            // txt_idUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(31, 95);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(263, 22);
-            this.txtUser.TabIndex = 0;
+            this.txt_idUser.Location = new System.Drawing.Point(31, 95);
+            this.txt_idUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_idUser.Name = "txt_idUser";
+            this.txt_idUser.Size = new System.Drawing.Size(263, 22);
+            this.txt_idUser.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel2.Controls.Add(this.btn_entrarPartida);
-            this.panel2.Controls.Add(this.txt_senha);
+            this.panel2.Controls.Add(this.txt_senhaPartida);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
@@ -181,13 +167,14 @@
             this.btn_entrarPartida.UseVisualStyleBackColor = true;
             this.btn_entrarPartida.Click += new System.EventHandler(this.btn_entrarPartida_Click);
             // 
-            // txt_senha
+            // txt_senhaPartida
             // 
-            this.txt_senha.Location = new System.Drawing.Point(35, 196);
-            this.txt_senha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.Size = new System.Drawing.Size(260, 22);
-            this.txt_senha.TabIndex = 4;
+            this.txt_senhaPartida.Location = new System.Drawing.Point(35, 196);
+            this.txt_senhaPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_senhaPartida.Name = "txt_senhaPartida";
+            this.txt_senhaPartida.Size = new System.Drawing.Size(260, 22);
+            this.txt_senhaPartida.TabIndex = 4;
+            this.txt_senhaPartida.TextChanged += new System.EventHandler(this.txt_senhaPartida_TextChanged);
             // 
             // label3
             // 
@@ -223,6 +210,7 @@
             this.txt_nomeUsuario.Name = "txt_nomeUsuario";
             this.txt_nomeUsuario.Size = new System.Drawing.Size(263, 22);
             this.txt_nomeUsuario.TabIndex = 0;
+            this.txt_nomeUsuario.TextChanged += new System.EventHandler(this.txt_nomeUsuario_TextChanged);
             // 
             // btn_voltar
             // 
@@ -239,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 652);
+            this.ClientSize = new System.Drawing.Size(1035, 471);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -259,20 +247,19 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_entrarPartida;
-        private System.Windows.Forms.TextBox txt_senha;
+        private System.Windows.Forms.TextBox txt_senhaPartida;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nomeUsuario;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnPartida;
-        private System.Windows.Forms.TextBox txtSenhaU;
+        private System.Windows.Forms.Button btn_iniciarPartida;
+        private System.Windows.Forms.TextBox txt_senhaUsuario;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txt_idUser;
         private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_jgn;
+        private System.Windows.Forms.Button btn_telaJogo;
     }
 }

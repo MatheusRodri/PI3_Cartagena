@@ -1,6 +1,6 @@
 ﻿namespace PI3_Cartagena
 {
-    partial class jogando
+    partial class Tela_jogo
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,7 @@
             this.lbl_retornoJogar = new System.Windows.Forms.Label();
             this.btn_andar = new System.Windows.Forms.Button();
             this.lbl_casaSel = new System.Windows.Forms.Label();
-            this.btn_casaSel = new System.Windows.Forms.Button();
             this.lbl_cartaSel = new System.Windows.Forms.Label();
-            this.btn_selCarta = new System.Windows.Forms.Button();
             this.pctBoxAz6 = new System.Windows.Forms.PictureBox();
             this.pctBoxAm6 = new System.Windows.Forms.PictureBox();
             this.pctBoxAz5 = new System.Windows.Forms.PictureBox();
@@ -103,27 +101,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lb_cartas = new System.Windows.Forms.ListBox();
             this.lb_mostraTab = new System.Windows.Forms.ListBox();
-            this.btn_mostratab = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblSenhaJogador = new System.Windows.Forms.Label();
-            this.lblIdJogador = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Listar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_senhaJogador = new System.Windows.Forms.Label();
+            this.lbl_idJogador = new System.Windows.Forms.Label();
             this.tmrVerificarVez = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnl_Jogadas = new System.Windows.Forms.Panel();
             this.btn_Verificas = new System.Windows.Forms.Button();
             this.lbl_Jogadas = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAz6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAm6)).BeginInit();
@@ -200,9 +189,7 @@
             this.panel4.Controls.Add(this.lbl_retornoJogar);
             this.panel4.Controls.Add(this.btn_andar);
             this.panel4.Controls.Add(this.lbl_casaSel);
-            this.panel4.Controls.Add(this.btn_casaSel);
             this.panel4.Controls.Add(this.lbl_cartaSel);
-            this.panel4.Controls.Add(this.btn_selCarta);
             this.panel4.Location = new System.Drawing.Point(428, 614);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
@@ -255,44 +242,23 @@
             // lbl_casaSel
             // 
             this.lbl_casaSel.AutoSize = true;
-            this.lbl_casaSel.Location = new System.Drawing.Point(175, 79);
+            this.lbl_casaSel.Location = new System.Drawing.Point(33, 79);
             this.lbl_casaSel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_casaSel.Name = "lbl_casaSel";
             this.lbl_casaSel.Size = new System.Drawing.Size(128, 16);
             this.lbl_casaSel.TabIndex = 3;
             this.lbl_casaSel.Text = "Casa Selecionada...";
             // 
-            // btn_casaSel
-            // 
-            this.btn_casaSel.Location = new System.Drawing.Point(31, 66);
-            this.btn_casaSel.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_casaSel.Name = "btn_casaSel";
-            this.btn_casaSel.Size = new System.Drawing.Size(136, 28);
-            this.btn_casaSel.TabIndex = 2;
-            this.btn_casaSel.Text = "Selecionar Casa";
-            this.btn_casaSel.UseVisualStyleBackColor = true;
-            this.btn_casaSel.Click += new System.EventHandler(this.btn_casaSel_Click);
-            // 
             // lbl_cartaSel
             // 
             this.lbl_cartaSel.AutoSize = true;
-            this.lbl_cartaSel.Location = new System.Drawing.Point(173, 43);
+            this.lbl_cartaSel.Location = new System.Drawing.Point(33, 31);
             this.lbl_cartaSel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cartaSel.Name = "lbl_cartaSel";
             this.lbl_cartaSel.Size = new System.Drawing.Size(128, 16);
             this.lbl_cartaSel.TabIndex = 1;
             this.lbl_cartaSel.Text = "Carta Selecionada...";
-            // 
-            // btn_selCarta
-            // 
-            this.btn_selCarta.Location = new System.Drawing.Point(31, 31);
-            this.btn_selCarta.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_selCarta.Name = "btn_selCarta";
-            this.btn_selCarta.Size = new System.Drawing.Size(136, 28);
-            this.btn_selCarta.TabIndex = 0;
-            this.btn_selCarta.Text = "Selecionar Carta";
-            this.btn_selCarta.UseVisualStyleBackColor = true;
-            this.btn_selCarta.Click += new System.EventHandler(this.btn_selCarta_Click);
+            this.lbl_cartaSel.Click += new System.EventHandler(this.lbl_cartaSel_Click);
             // 
             // pctBoxAz6
             // 
@@ -519,7 +485,7 @@
             // 
             // pctBox28
             // 
-            this.pctBox28.Location = new System.Drawing.Point(1575, 132);
+            this.pctBox28.Location = new System.Drawing.Point(1559, 130);
             this.pctBox28.Margin = new System.Windows.Forms.Padding(4);
             this.pctBox28.Name = "pctBox28";
             this.pctBox28.Size = new System.Drawing.Size(32, 32);
@@ -540,7 +506,7 @@
             // 
             // pctBox27
             // 
-            this.pctBox27.Location = new System.Drawing.Point(1575, 210);
+            this.pctBox27.Location = new System.Drawing.Point(1554, 210);
             this.pctBox27.Margin = new System.Windows.Forms.Padding(4);
             this.pctBox27.Name = "pctBox27";
             this.pctBox27.Size = new System.Drawing.Size(32, 32);
@@ -760,7 +726,7 @@
             // 
             // pctBox16
             // 
-            this.pctBox16.Location = new System.Drawing.Point(1575, 292);
+            this.pctBox16.Location = new System.Drawing.Point(1560, 292);
             this.pctBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pctBox16.Name = "pctBox16";
             this.pctBox16.Size = new System.Drawing.Size(32, 32);
@@ -770,7 +736,7 @@
             // 
             // pctBox15
             // 
-            this.pctBox15.Location = new System.Drawing.Point(1575, 370);
+            this.pctBox15.Location = new System.Drawing.Point(1554, 370);
             this.pctBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pctBox15.Name = "pctBox15";
             this.pctBox15.Size = new System.Drawing.Size(32, 32);
@@ -880,7 +846,7 @@
             // 
             // pctBox4
             // 
-            this.pctBox4.Location = new System.Drawing.Point(1575, 452);
+            this.pctBox4.Location = new System.Drawing.Point(1561, 452);
             this.pctBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pctBox4.Name = "pctBox4";
             this.pctBox4.Size = new System.Drawing.Size(32, 32);
@@ -890,7 +856,7 @@
             // 
             // pctBox3
             // 
-            this.pctBox3.Location = new System.Drawing.Point(1575, 533);
+            this.pctBox3.Location = new System.Drawing.Point(1556, 531);
             this.pctBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pctBox3.Name = "pctBox3";
             this.pctBox3.Size = new System.Drawing.Size(32, 32);
@@ -917,7 +883,6 @@
             this.pctBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBox1.TabIndex = 52;
             this.pctBox1.TabStop = false;
-            this.pctBox1.Click += new System.EventHandler(this.pctBox1_Click);
             // 
             // pctBox0
             // 
@@ -960,86 +925,57 @@
             this.lb_cartas.Name = "lb_cartas";
             this.lb_cartas.Size = new System.Drawing.Size(131, 100);
             this.lb_cartas.TabIndex = 0;
+            this.lb_cartas.SelectedIndexChanged += new System.EventHandler(this.lb_cartas_SelectedIndexChanged);
+            this.lb_cartas.SelectedValueChanged += new System.EventHandler(this.lb_cartas_SelectedValueChanged);
             // 
             // lb_mostraTab
             // 
             this.lb_mostraTab.FormattingEnabled = true;
             this.lb_mostraTab.ItemHeight = 16;
-            this.lb_mostraTab.Location = new System.Drawing.Point(25, 48);
+            this.lb_mostraTab.Location = new System.Drawing.Point(27, 7);
             this.lb_mostraTab.Margin = new System.Windows.Forms.Padding(4);
             this.lb_mostraTab.Name = "lb_mostraTab";
-            this.lb_mostraTab.Size = new System.Drawing.Size(107, 132);
+            this.lb_mostraTab.Size = new System.Drawing.Size(107, 308);
             this.lb_mostraTab.TabIndex = 1;
-            // 
-            // btn_mostratab
-            // 
-            this.btn_mostratab.Location = new System.Drawing.Point(25, 17);
-            this.btn_mostratab.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_mostratab.Name = "btn_mostratab";
-            this.btn_mostratab.Size = new System.Drawing.Size(100, 28);
-            this.btn_mostratab.TabIndex = 0;
-            this.btn_mostratab.Text = "Mostar Tabuleior";
-            this.btn_mostratab.UseVisualStyleBackColor = true;
-            this.btn_mostratab.Click += new System.EventHandler(this.btn_mostratab_Click);
+            this.lb_mostraTab.SelectedIndexChanged += new System.EventHandler(this.lb_mostraTab_SelectedIndexChanged);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Controls.Add(this.lb_mostraTab);
-            this.panel2.Controls.Add(this.btn_mostratab);
             this.panel2.Location = new System.Drawing.Point(206, 262);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(160, 202);
+            this.panel2.Size = new System.Drawing.Size(160, 325);
             this.panel2.TabIndex = 4;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Controls.Add(this.lblSenhaJogador);
-            this.panel5.Controls.Add(this.lblIdJogador);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.btn_Listar);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.lbl_senhaJogador);
+            this.panel5.Controls.Add(this.lbl_idJogador);
             this.panel5.Location = new System.Drawing.Point(12, 56);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 186);
+            this.panel5.Size = new System.Drawing.Size(354, 186);
             this.panel5.TabIndex = 114;
-            // 
-            // lblSenhaJogador
-            // 
-            this.lblSenhaJogador.AutoSize = true;
-            this.lblSenhaJogador.Location = new System.Drawing.Point(146, 107);
-            this.lblSenhaJogador.Name = "lblSenhaJogador";
-            this.lblSenhaJogador.Size = new System.Drawing.Size(111, 16);
-            this.lblSenhaJogador.TabIndex = 8;
-            this.lblSenhaJogador.Text = "lblSenhaJogador";
-            // 
-            // lblIdJogador
-            // 
-            this.lblIdJogador.AutoSize = true;
-            this.lblIdJogador.Location = new System.Drawing.Point(99, 62);
-            this.lblIdJogador.Name = "lblIdJogador";
-            this.lblIdJogador.Size = new System.Drawing.Size(83, 16);
-            this.lblIdJogador.TabIndex = 7;
-            this.lblIdJogador.Text = "lblIdJogador";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 19);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 14);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(209, 16);
+            this.label4.Size = new System.Drawing.Size(301, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Infomações do jogador na partida";
             // 
             // btn_Listar
             // 
-            this.btn_Listar.Location = new System.Drawing.Point(47, 154);
+            this.btn_Listar.Location = new System.Drawing.Point(47, 141);
             this.btn_Listar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Listar.Name = "btn_Listar";
             this.btn_Listar.Size = new System.Drawing.Size(203, 23);
@@ -1048,25 +984,26 @@
             this.btn_Listar.UseVisualStyleBackColor = true;
             this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click);
             // 
-            // label2
+            // lbl_senhaJogador
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Senha do Usuario";
+            this.lbl_senhaJogador.AutoSize = true;
+            this.lbl_senhaJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_senhaJogador.Location = new System.Drawing.Point(24, 88);
+            this.lbl_senhaJogador.Name = "lbl_senhaJogador";
+            this.lbl_senhaJogador.Size = new System.Drawing.Size(142, 20);
+            this.lbl_senhaJogador.TabIndex = 3;
+            this.lbl_senhaJogador.Text = "Senha do Usuario";
             // 
-            // label3
+            // lbl_idJogador
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Id Usuario";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lbl_idJogador.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_idJogador.AutoSize = true;
+            this.lbl_idJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_idJogador.Location = new System.Drawing.Point(24, 62);
+            this.lbl_idJogador.Name = "lbl_idJogador";
+            this.lbl_idJogador.Size = new System.Drawing.Size(85, 20);
+            this.lbl_idJogador.TabIndex = 2;
+            this.lbl_idJogador.Text = "Id Usuario";
             // 
             // tmrVerificarVez
             // 
@@ -1075,7 +1012,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(506, 361);
+            this.button1.Location = new System.Drawing.Point(747, 310);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 49);
@@ -1101,7 +1038,7 @@
             this.pnl_Jogadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Jogadas.Controls.Add(this.btn_Verificas);
             this.pnl_Jogadas.Controls.Add(this.lbl_Jogadas);
-            this.pnl_Jogadas.Location = new System.Drawing.Point(676, 32);
+            this.pnl_Jogadas.Location = new System.Drawing.Point(926, 89);
             this.pnl_Jogadas.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Jogadas.Name = "pnl_Jogadas";
             this.pnl_Jogadas.Size = new System.Drawing.Size(107, 349);
@@ -1128,62 +1065,12 @@
             this.lbl_Jogadas.TabIndex = 0;
             this.lbl_Jogadas.Text = "Jogadas";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(663, 422);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(185, 16);
-            this.label6.TabIndex = 119;
-            this.label6.Text = "Agora podemos jogar de boa";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(663, 446);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(353, 16);
-            this.label7.TabIndex = 120;
-            this.label7.Text = "Sem bugs apenas inserindo o id do jogador e senha dele ";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(453, 190);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 121;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(194, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(275, 163);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 10;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // jogando
+            // Tela_jogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1667, 785);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1655, 789);
             this.Controls.Add(this.pnl_Jogadas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -1253,9 +1140,10 @@
             this.Controls.Add(this.pctBox1);
             this.Controls.Add(this.pctBox0);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "jogando";
-            this.Text = "jogando";
-            this.Load += new System.EventHandler(this.jogando_Load);
+            this.Name = "Tela_jogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Neiva";
+            this.Load += new System.EventHandler(this.Tela_jogo_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAz6)).EndInit();
@@ -1327,7 +1215,6 @@
             this.pnl_Jogadas.ResumeLayout(false);
             this.pnl_Jogadas.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1339,9 +1226,7 @@
         private System.Windows.Forms.Label lbl_retornoJogar;
         private System.Windows.Forms.Button btn_andar;
         private System.Windows.Forms.Label lbl_casaSel;
-        private System.Windows.Forms.Button btn_casaSel;
         private System.Windows.Forms.Label lbl_cartaSel;
-        private System.Windows.Forms.Button btn_selCarta;
         private System.Windows.Forms.PictureBox pctBoxAz6;
         private System.Windows.Forms.PictureBox pctBoxAm6;
         private System.Windows.Forms.PictureBox pctBoxAz5;
@@ -1407,12 +1292,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lb_cartas;
         private System.Windows.Forms.ListBox lb_mostraTab;
-        private System.Windows.Forms.Button btn_mostratab;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_Listar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer tmrVerificarVez;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -1420,13 +1302,7 @@
         private System.Windows.Forms.Panel pnl_Jogadas;
         private System.Windows.Forms.Button btn_Verificas;
         private System.Windows.Forms.Label lbl_Jogadas;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblSenhaJogador;
-        private System.Windows.Forms.Label lblIdJogador;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lbl_senhaJogador;
+        private System.Windows.Forms.Label lbl_idJogador;
     }
 }

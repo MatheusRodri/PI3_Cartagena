@@ -15,9 +15,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace PI3_Cartagena
 {
-    public partial class Tela_Criacao_Inicio : Form
+    public partial class Tela_Criacao_Inicio_Reserva : Form
     {
-        public Tela_Criacao_Inicio()
+        public Tela_Criacao_Inicio_Reserva()
         {
             InitializeComponent();
             
@@ -208,7 +208,7 @@ namespace PI3_Cartagena
 
             MessageBox.Show($"Jogador: {jogador} iniciara");
 
-            jogando jogando = new jogando(idPartida, idUsuario, senhaUsuario);
+            Tela_jogo jogando = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
             jogando.Show();
             this.Hide();
         }

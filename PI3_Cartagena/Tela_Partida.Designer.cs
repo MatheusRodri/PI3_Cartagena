@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_filtro = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_partidas = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_form_criar_partida = new System.Windows.Forms.Button();
+            this.btn_entrarNaPartida = new System.Windows.Forms.Button();
+            this.btn_formCriarPartida = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_nomePartida = new System.Windows.Forms.Label();
             this.lb_jogadoresNaPartida = new System.Windows.Forms.ListBox();
@@ -45,8 +45,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel1.Controls.Add(this.cmb_filtro);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lb_partidas);
             this.panel1.Location = new System.Drawing.Point(29, 30);
@@ -55,20 +55,20 @@
             this.panel1.Size = new System.Drawing.Size(325, 325);
             this.panel1.TabIndex = 1;
             // 
-            // comboBox1
+            // cmb_filtro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "T",
-            "A",
-            "J",
-            "E"});
-            this.comboBox1.Location = new System.Drawing.Point(96, 17);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(176, 24);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmb_filtro.FormattingEnabled = true;
+            this.cmb_filtro.Items.AddRange(new object[] {
+            "Todas",
+            "Abertas",
+            "Jogando",
+            "Encerradas"});
+            this.cmb_filtro.Location = new System.Drawing.Point(96, 17);
+            this.cmb_filtro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_filtro.Name = "cmb_filtro";
+            this.cmb_filtro.Size = new System.Drawing.Size(176, 24);
+            this.cmb_filtro.TabIndex = 2;
+            this.cmb_filtro.SelectedIndexChanged += new System.EventHandler(this.cmb_filtro_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -79,7 +79,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Partidas: ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lb_partidas
             // 
@@ -90,46 +89,48 @@
             this.lb_partidas.Name = "lb_partidas";
             this.lb_partidas.Size = new System.Drawing.Size(243, 260);
             this.lb_partidas.TabIndex = 0;
-            this.lb_partidas.SelectedIndexChanged += new System.EventHandler(this.lb_partidas_SelectedIndexChanged);
             this.lb_partidas.SelectedValueChanged += new System.EventHandler(this.lb_partidas_SelectedValueChanged);
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.btn_form_criar_partida);
+            this.panel2.Controls.Add(this.btn_entrarNaPartida);
+            this.panel2.Controls.Add(this.btn_formCriarPartida);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1157, 662);
+            this.panel2.Size = new System.Drawing.Size(1029, 506);
             this.panel2.TabIndex = 2;
             // 
-            // button2
+            // btn_entrarNaPartida
             // 
-            this.button2.Location = new System.Drawing.Point(875, 162);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 63);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Entrar na partida";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_entrarNaPartida.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_entrarNaPartida.Location = new System.Drawing.Point(827, 151);
+            this.btn_entrarNaPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_entrarNaPartida.Name = "btn_entrarNaPartida";
+            this.btn_entrarNaPartida.Size = new System.Drawing.Size(183, 63);
+            this.btn_entrarNaPartida.TabIndex = 3;
+            this.btn_entrarNaPartida.Text = "Entrar na partida";
+            this.btn_entrarNaPartida.UseVisualStyleBackColor = false;
+            this.btn_entrarNaPartida.Click += new System.EventHandler(this.btn_entrarNaPartida_Click);
             // 
-            // btn_form_criar_partida
+            // btn_formCriarPartida
             // 
-            this.btn_form_criar_partida.Location = new System.Drawing.Point(875, 30);
-            this.btn_form_criar_partida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_form_criar_partida.Name = "btn_form_criar_partida";
-            this.btn_form_criar_partida.Size = new System.Drawing.Size(183, 63);
-            this.btn_form_criar_partida.TabIndex = 2;
-            this.btn_form_criar_partida.Text = "Criar partida";
-            this.btn_form_criar_partida.UseVisualStyleBackColor = true;
-            this.btn_form_criar_partida.Click += new System.EventHandler(this.btn_form_criar_partida_Click);
+            this.btn_formCriarPartida.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_formCriarPartida.Location = new System.Drawing.Point(827, 30);
+            this.btn_formCriarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_formCriarPartida.Name = "btn_formCriarPartida";
+            this.btn_formCriarPartida.Size = new System.Drawing.Size(183, 63);
+            this.btn_formCriarPartida.TabIndex = 2;
+            this.btn_formCriarPartida.Text = "Criar partida";
+            this.btn_formCriarPartida.UseVisualStyleBackColor = false;
+            this.btn_formCriarPartida.Click += new System.EventHandler(this.btn_formCriarPartida_Click);
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel4.Controls.Add(this.lbl_nomePartida);
             this.panel4.Controls.Add(this.lb_jogadoresNaPartida);
             this.panel4.Location = new System.Drawing.Point(411, 30);
@@ -137,7 +138,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(315, 325);
             this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // lbl_nomePartida
             // 
@@ -159,20 +159,17 @@
             this.lb_jogadoresNaPartida.Name = "lb_jogadoresNaPartida";
             this.lb_jogadoresNaPartida.Size = new System.Drawing.Size(269, 260);
             this.lb_jogadoresNaPartida.TabIndex = 0;
-            this.lb_jogadoresNaPartida.SelectedIndexChanged += new System.EventHandler(this.lb_jogadoresNaPartida_SelectedIndexChanged);
             // 
             // Tela_Partida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 642);
+            this.ClientSize = new System.Drawing.Size(1024, 506);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Tela_Partida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neiva";
-            this.Load += new System.EventHandler(this.Tela_Partida_Load);
-            this.EnabledChanged += new System.EventHandler(this.Tela_Partida_EnabledChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -190,8 +187,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbl_nomePartida;
         private System.Windows.Forms.ListBox lb_jogadoresNaPartida;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_form_criar_partida;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btn_entrarNaPartida;
+        private System.Windows.Forms.Button btn_formCriarPartida;
+        private System.Windows.Forms.ComboBox cmb_filtro;
     }
 }

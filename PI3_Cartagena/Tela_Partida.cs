@@ -14,13 +14,14 @@ namespace PI3_Cartagena
 {
     public partial class Tela_Partida : Form
     {
+        private int idpartida;
         public Tela_Partida()
         {
             InitializeComponent();
             exibirPartidas("T");
-
+            btn_entrarNaPartida.Enabled = false;
+            cmb_filtro.SelectedIndex = 0;
         }
-         int idpartida;
         public void exibirPartidas(string tipoPartida)
         {
             lb_partidas.Items.Clear();
@@ -33,26 +34,6 @@ namespace PI3_Cartagena
             {
                 lb_partidas.Items.Add(partidas[i]);
             }
-        }
-
-        private void jogadoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string dadosPartidas = lb_partidas.SelectedItem.ToString();
-            string[] itens = dadosPartidas.Split(',');
-
-            idpartida = Convert.ToInt32(itens[0]);
-            
-
-            Tela_Jogadores tela_Jogadores = new Tela_Jogadores(idpartida);
-            tela_Jogadores.Show();
-            this.Close();
-        }
-
-        private void inicialToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Tela_Inicial tela_Inicial = new Tela_Inicial();
-            tela_Inicial.Show();
-            this.Close();
         }
 
         private void lb_partidas_SelectedValueChanged(object sender, EventArgs e)
@@ -73,14 +54,11 @@ namespace PI3_Cartagena
 
                 string[] jogadores = dados.Split('\n');
 
-               
-
-
                 for (int i = 0; i < jogadores.Length; i++)
                 {
                     lb_jogadoresNaPartida.Items.Add(jogadores[i]);
                 }
-                button2.Enabled = true;
+                btn_entrarNaPartida.Enabled = true;
             }
             catch (Exception error)
             {
@@ -88,68 +66,46 @@ namespace PI3_Cartagena
             }
         }
 
-        private void cartaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btn_form_criar_partida_Click(object sender, EventArgs e)
+        private void btn_formCriarPartida_Click(object sender, EventArgs e)
         {
             Tela_CriarPartida partida = new Tela_CriarPartida();
             partida.Show();
             this.Close();
         }
 
-
-        //botão entrar na partida
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_entrarNaPartida_Click(object sender, EventArgs e)
         {
             Tela_Jogadores tela_Jogadores = new Tela_Jogadores(idpartida);
             tela_Jogadores.Show();
             this.Close();
         }
 
-        private void btnTabuleiro_Click(object sender, EventArgs e)
+        private void cmb_filtro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tela_Tabuleiro tela_Jogadores = new Tela_Tabuleiro(idpartida);
-            tela_Jogadores.Show();
-            this.Close();
+            // (T)odas, (A)bertas, (J)ogando, (E)ncerradas
+
+            string filtro = cmb_filtro.SelectedItem.ToString();
+            switch (filtro)
+            {
+                case "Todas":
+                    exibirPartidas("T");
+                    break;
+                case "Abertas":
+                    exibirPartidas("A");
+                    break;
+                case "Encerradas":
+                  exibirPartidas("E");
+                    break;
+                case "Jogando":
+                    exibirPartidas("J");
+                    break;
+                default:
+                    exibirPartidas("T");
+                    break;
+            }
+
+            
         }
 
-        private void Tela_Partida_EnabledChanged(object sender, EventArgs e)
-        {
-            exibirPartidas("T");
-        }
-
-        private void lb_jogadoresNaPartida_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lb_partidas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            exibirPartidas(comboBox1.SelectedItem.ToString());
-        }
-
-        private void Tela_Partida_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

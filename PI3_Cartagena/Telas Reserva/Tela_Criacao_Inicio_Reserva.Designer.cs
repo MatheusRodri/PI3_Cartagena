@@ -1,6 +1,6 @@
 ﻿namespace PI3_Cartagena
 {
-    partial class Tela_Criacao_Inicio
+    partial class Tela_Criacao_Inicio_Reserva
     {
         /// <summary>
         /// Required designer variable.

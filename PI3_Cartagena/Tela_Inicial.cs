@@ -18,19 +18,12 @@ namespace PI3_Cartagena
             InitializeComponent();
         }
 
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnEntrar_Click_1(object sender, EventArgs e)
         {
             Tela_Partida tela_Partida = new Tela_Partida();
             tela_Partida.Show();
             Hide();
         }
 
-        private void btn_tela_de_criacao_Click(object sender, EventArgs e)
-        {
-            Tela_Criacao_Inicio tela_criacao_inicio = new Tela_Criacao_Inicio();
-            tela_criacao_inicio.Show();
-            this.Hide();
-        }
     }
 }

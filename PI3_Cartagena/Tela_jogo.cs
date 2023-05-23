@@ -13,46 +13,55 @@ using System.Windows.Forms;
 
 namespace PI3_Cartagena
 {
-    public partial class jogando : Form
+    public partial class Tela_jogo : Form
     {
+        private int idPartida { get; set; }
+        private int idUsuario { get; set; }
+        private string senhaUsuario { get; set; }
+        private string cartaParaJogar { get; set; }
+        private int numCartaAjogar { get; set; }
+        private string tipoCasaSel { get; set; }
+        private int numCasaSel { get; set; }
+        private string[] mao { get; set; }
+        private string[] casasSeparadas { get; set; }
+        private string tabuleiro { get; set; }
+        private string[] posicao { get; set; }
+        private int posicaoInicial {get; set; }
+        private int posicaoFinal { get; set; }
 
-        private int idPartida;
-        private int idUsuario;
-        private string senhaUsuario;
-
-
-        string cartaParaJogar;
-        int numCartaAjogar;
-
-
-        string tipoCasaSel;
-        int numCasaSel;
-
-        string[] mao;
-        string[] casasSeparadas;
-
-        
-
-
-        //construtor da Tela 
-        public jogando(int idPartida, int idUsuario, string senhaUsuario)
+        public Tela_jogo(int idPartida, int idUsuario, string senhaUsuario)
         {
-         
             InitializeComponent();
             this.idPartida = idPartida;
             this.idUsuario = idUsuario;
             this.senhaUsuario = senhaUsuario;
 
-            //lblIdJogador.Text = idUsuario.ToString();
-            //lblSenhaJogador.Text = senhaUsuario;
+            lbl_idJogador.Text =  $"ID do jogador: {idUsuario.ToString()}";
+            lbl_senhaJogador.Text = $"Senha do jogador: {Esconde(senhaUsuario)}"  ;
+            mostrarTabuleiro();
+            MostrarCartas();
             mapa();
+        }
+
+        private string Esconde(string senha)
+        {
+            char[] chars = senha.ToCharArray();
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                if (Char.IsLetterOrDigit(chars[i]))
+                {
+                    chars[i] = '*';
+                }
+            }
+
+            return new string(chars);
         }
         public void mapa()
         {
-
-            string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
+            tabuleiro = Jogo.ExibirTabuleiro(idPartida);
             tabuleiro = tabuleiro.Replace("\r", "");
-            string[] posicao = tabuleiro.Split('\n');
+            posicao = tabuleiro.Split('\n');
 
             List<int> pos = new List<int>();
             List<string> icone = new List<string>();
@@ -86,8 +95,6 @@ namespace PI3_Cartagena
             }
             for (int i = 1; i < icone.Count - 1; i++)
             {
-               
-              
                 switch (icone[i])
                 {
                     case "C":
@@ -114,14 +121,10 @@ namespace PI3_Cartagena
                         img[i].Image = Image.FromFile("Icones/Pistola.jpg");
 
                         break;
-
-
-
                 }
             }
 
             //Mostrar Jogadores
-
 
             List<string> lugar = new List<string>();
             string situacao = Jogo.VerificarVez(idPartida);
@@ -133,10 +136,8 @@ namespace PI3_Cartagena
             List<string> boneco = new List<string>();
             List<string> bonecojogador = new List<string>();
 
-
             string vez = lugar[0];
-            int posicaoInicial = vez.IndexOf(',');
-            int posicaoFinal = vez.LastIndexOf(',');
+            
             foreach (var item in lugar)
             {
                 posicaoInicial = item.IndexOf(',');
@@ -153,14 +154,11 @@ namespace PI3_Cartagena
                 posi.Add(item.Substring(0, item.IndexOf(',')));
                 boneco.Add(item.Substring(item.LastIndexOf(',') + 1));
                 bonecojogador.Add(item.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1));
-
-
             }
 
             posicaoInicial = vez.IndexOf(',');
             posicaoFinal = vez.LastIndexOf(',');
 
-            //Erro: Não pode ser menor que zero
             vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
             string contjogadores = Jogo.ListarJogadores(idPartida);
             contjogadores = contjogadores.Replace("\r", "");
@@ -317,7 +315,7 @@ namespace PI3_Cartagena
 
             }
         }
-        
+
 
         public void mover(int boneco, string pctbox, string pctBox0, int posq, Jogador item, int k, int atual)
         {
@@ -402,42 +400,20 @@ namespace PI3_Cartagena
         /////////////////////////////////////////////////////////////////////////////////////////
         ///botoes e funcoes deles 
 
-       
+
 
         private void btn_selCarta_Click(object sender, EventArgs e)
         {
-            //pega a informacao da cara selecionada na listbox da mao
-            string cartaSel = lb_cartas.SelectedItem.ToString();
-
-            //separa carta selecionada (Tipo,numCartas)
-            string[] cartaSelecionada = cartaSel.Split(',');
-
-            cartaParaJogar = Convert.ToString(cartaSelecionada[0]);
-
-            numCartaAjogar = Convert.ToInt32(cartaSelecionada[1]);
-
-            lbl_cartaSel.Text = cartaParaJogar + " " + Convert.ToString(numCartaAjogar);
+            
         }
 
         private void btn_casaSel_Click(object sender, EventArgs e)
         {
-            //pega informacao da casa selecionada
-
-            string casas = lb_mostraTab.SelectedItem.ToString();
-            string[] casasSele = casas.Split(',');
-            //corta info em num e tipo casa
-
-            //convert informacoes e as passa para as variaveis a ser tratada
-            numCasaSel = Convert.ToInt32(casasSele[0]);
-            tipoCasaSel = Convert.ToString(casasSele[1]);
-
-            lbl_casaSel.Text = tipoCasaSel + " " + Convert.ToString(numCasaSel);
+            
         }
 
         private void btn_andar_Click(object sender, EventArgs e)
         {
-            Console.WriteLine($"Id do jogador:{idUsuario}");
-            Console.WriteLine($"Senha do jogador:{senhaUsuario}");
             lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario, numCasaSel, cartaParaJogar);
         }
 
@@ -451,7 +427,9 @@ namespace PI3_Cartagena
             lbl_retornoJogar.Text = Jogo.Jogar(idUsuario, senhaUsuario);
         }
 
-        private void btn_mostratab_Click(object sender, EventArgs e)
+        
+
+        private void mostrarTabuleiro()
         {
             //tebuleiro por completo (Casa,Tipo)
             string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
@@ -461,26 +439,23 @@ namespace PI3_Cartagena
             for (int i = 0; i < casasSeparadas.Length; i++)
             {
                 lb_mostraTab.Items.Add(casasSeparadas[i]);
-            }
+            }        
         }
 
-        private void btn_Listar_Click(object sender, EventArgs e)
+        private void MostrarCartas()
         {
-            idUsuario = Convert.ToInt32(textBox1.Text);
-            senhaUsuario = textBox2.Text;
+            idUsuario = Convert.ToInt32(idUsuario);
+            senhaUsuario = senhaUsuario;
+
             mapa();
             try
             {
                 lb_cartas.Items.Clear();
 
-                int id = Convert.ToInt32(textBox1.Text);
-                string senha = textBox2.Text;
-
                 string cartas = Jogo.ConsultarMao(idUsuario, senhaUsuario);
 
                 cartas = cartas.Replace("\r", "");
                 mao = cartas.Split('\n');
-
 
                 List<int> qtd = new List<int>();
                 List<string> icone = new List<string>();
@@ -612,10 +587,13 @@ namespace PI3_Cartagena
             }
             catch (Exception)
             {
-
-                MessageBox.Show("Partida Não Iniciada");
+                MessageBox.Show("Erro ao gerar o mapa");
             }
+        }
 
+        private void btn_Listar_Click(object sender, EventArgs e)
+        {
+            MostrarCartas();
         }
 
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
@@ -630,11 +608,10 @@ namespace PI3_Cartagena
             //dados de quem joga
             string[] jogandoAgora = arrayRetornando[0].Split(',');
 
+            string[] jogadas = { };
 
-            string[] jogadas= { };
-            
             //dados da partida geral
-            for (int i = 1; i < arrayRetornando.Length -1; i++)
+            for (int i = 1; i < arrayRetornando.Length - 1; i++)
             {
                 jogadas[i - 1] = arrayRetornando[i];
             }
@@ -660,7 +637,7 @@ namespace PI3_Cartagena
                 }
                 else
                 {
-                    
+
                 }
             }
             else
@@ -668,10 +645,9 @@ namespace PI3_Cartagena
                 return;
             }
 
-            
         }
 
-       
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -685,34 +661,53 @@ namespace PI3_Cartagena
             lbl_Jogadas.Text = Jogo.VerificarVez(idPartida);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           // exibirPartidas(comboBox1.SelectedItem.ToString());
-        }
-
-        private void pctBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void jogando_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             tmrVerificarVez.Enabled = true;
         }
 
-        public void teste()
+        private void lbl_cartaSel_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void lb_cartas_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void lb_cartas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //pega a informacao da cara selecionada na listbox da mao
+            string cartaSel = lb_cartas.SelectedItem.ToString();
+
+            //separa carta selecionada (Tipo,numCartas)
+            string[] cartaSelecionada = cartaSel.Split(',');
+
+            cartaParaJogar = Convert.ToString(cartaSelecionada[0]);
+
+            numCartaAjogar = Convert.ToInt32(cartaSelecionada[1]);
+
+            lbl_cartaSel.Text = $"Carta selecionada {cartaParaJogar + " " + Convert.ToString(numCartaAjogar)}";
+        }
+
+        private void lb_mostraTab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //pega informacao da casa selecionada
+
+            string casas = lb_mostraTab.SelectedItem.ToString();
+            string[] casasSele = casas.Split(',');
+            //corta info em num e tipo casa
+
+            //convert informacoes e as passa para as variaveis a ser tratada
+            numCasaSel = Convert.ToInt32(casasSele[0]);
+            tipoCasaSel = Convert.ToString(casasSele[1]);
+
+            lbl_casaSel.Text = $"Casa selecionada: {tipoCasaSel + " " + Convert.ToString(numCasaSel)}";
+        }
+
+        private void Tela_jogo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
