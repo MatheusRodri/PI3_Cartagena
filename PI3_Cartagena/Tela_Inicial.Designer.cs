@@ -42,18 +42,18 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(900, 502);
+            this.panel3.Size = new System.Drawing.Size(938, 502);
             this.panel3.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 31);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(63, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(670, 46);
+            this.label1.Size = new System.Drawing.Size(812, 42);
             this.label1.TabIndex = 10;
-            this.label1.Text = "SEJA BEM VINDO(A) CARTAGENA";
+            this.label1.Text = "SEJA BEM VINDO(A), AO JOGO CARTAGENA";
             // 
             // btnEntrar
             // 
@@ -71,7 +71,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 500);
+            this.ClientSize = new System.Drawing.Size(936, 500);
             this.Controls.Add(this.panel3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Tela_Inicial";

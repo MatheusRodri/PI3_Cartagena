@@ -24,6 +24,5 @@ namespace PI3_Cartagena
             tela_Partida.Show();
             Hide();
         }
-
     }
 }
