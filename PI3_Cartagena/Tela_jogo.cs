@@ -588,7 +588,7 @@ namespace PI3_Cartagena
             }
             catch (Exception)
             {
-                MessageBox.Show("Erro ao gerar o mapa");
+                MessageBox.Show("Erro ao gerar as cartas");
             }
         }
 

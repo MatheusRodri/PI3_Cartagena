@@ -37,6 +37,10 @@ namespace PI3_Cartagena
         {
             InitializeComponent();
             this.idPartida = idPartida;
+            txt_idUser.Enabled = false;
+            txt_senhaUsuario.Enabled = false;
+            btn_iniciarPartida.Enabled = false;
+            btn_telaJogo.Enabled = false;
         }
 
         private void validaCampos()
