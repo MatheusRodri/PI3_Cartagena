@@ -37,26 +37,26 @@ namespace PI3_Cartagena
             this.senhaUsuario = senhaUsuario;
 
             lbl_idJogador.Text =  $"ID do jogador: {idUsuario.ToString()}";
-            lbl_senhaJogador.Text = $"Senha do jogador: {Esconde(senhaUsuario)}"  ;
+            //lbl_senhaJogador.Text = $"Senha do jogador: {Esconde(senhaUsuario)}"  ;
             mostrarTabuleiro();
             MostrarCartas();
             mapa();
         }
 
-        private string Esconde(string senha)
-        {
-            char[] chars = senha.ToCharArray();
+        //private string Esconde(string senha)
+        //{
+        //    char[] chars = senha.ToCharArray();
 
-            for (int i = 0; i < chars.Length; i++)
-            {
-                if (Char.IsLetterOrDigit(chars[i]))
-                {
-                    chars[i] = '*';
-                }
-            }
+        //    for (int i = 0; i < chars.Length; i++)
+        //    {
+        //        if (Char.IsLetterOrDigit(chars[i]))
+        //        {
+        //            chars[i] = '*';
+        //        }
+        //    }
 
-            return new string(chars);
-        }
+        //    return new string(chars);
+        //}
         public void mapa()
         {
             tabuleiro = Jogo.ExibirTabuleiro(idPartida);
