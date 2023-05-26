@@ -105,5 +105,12 @@ namespace PI3_Cartagena
         {
             validaCampos();
         }
+
+        private void btn_telaJogo_Click_1(object sender, EventArgs e)
+        {
+            Tela_jogo jogando = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
+            jogando.Show();
+            this.Close();
+        }
     }
 }

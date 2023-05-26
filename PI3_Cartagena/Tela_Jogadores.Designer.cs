@@ -71,6 +71,7 @@
             this.btn_telaJogo.TabIndex = 4;
             this.btn_telaJogo.Text = "tela jogando ";
             this.btn_telaJogo.UseVisualStyleBackColor = true;
+            this.btn_telaJogo.Click += new System.EventHandler(this.btn_telaJogo_Click_1);
             // 
             // panel3
             // 
