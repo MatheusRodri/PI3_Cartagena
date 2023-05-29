@@ -221,95 +221,100 @@ namespace PI3_Cartagena
 
                 if (posq == 0)
                 {
-                    return;
+                    continue;
                 }
-
                 else
-
                 {
-
-                    int atual = 0;
-                    if (posi[i] == posi[i - 1] && posi[i] != "0")
+                    if (i <= 0)
                     {
-                        int a = Convert.ToInt32(boneco[i]);
-                        int b = Convert.ToInt32(boneco[i - 1]);
-                        atual = (a + b) - 1;
-
+                        return;
                     }
-
-                    foreach (var item in jogadoresLista)
+                    else
                     {
-                        bool t = true;
-                        if (Convert.ToInt32(bonecojogador[i]) == item.id)
+
+                        int atual = 0;
+                        if (posi[i] == posi[i - 1] && posi[i] != "0")
                         {
-                            switch (item.cor)
-                            {
-                                case "Vermelho":
-                                    int k = 0;
-                                    while (t == true)
-                                    {
+                            int a = Convert.ToInt32(boneco[i]);
+                            int b = Convert.ToInt32(boneco[i - 1]);
+                            atual = (a + b) - 1;
 
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                                case "Verde":
-
-                                    k = 0;
-                                    while (t == true)
-                                    {
-
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                                case "Amarelo":
-                                    k = 0;
-                                    while (t == true)
-                                    {
-
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                                case "Azul":
-                                    k = 0;
-                                    while (t == true)
-                                    {
-
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                            }
                         }
 
-                    }
+                        foreach (var item in jogadoresLista)
+                        {
+                            bool t = true;
+                            if (Convert.ToInt32(bonecojogador[i]) == item.id)
+                            {
+                                switch (item.cor)
+                                {
+                                    case "Vermelho":
+                                        int k = 0;
+                                        while (t == true)
+                                        {
 
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                    case "Verde":
+
+                                        k = 0;
+                                        while (t == true)
+                                        {
+
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                    case "Amarelo":
+                                        k = 0;
+                                        while (t == true)
+                                        {
+
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                    case "Azul":
+                                        k = 0;
+                                        while (t == true)
+                                        {
+
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                }
+                            }
+
+                        }
+                    }
+                    
 
                 }
 
