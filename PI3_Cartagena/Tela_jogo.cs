@@ -601,15 +601,7 @@ namespace PI3_Cartagena
         {
             
 
-            /*
-             Isso nao pode estar no main
             
-
-            adwadaw
-            dwadwad
-
-             */
-
             //separação basica
             string retornando = Jogo.VerificarVez(idPartida);
             retornando = retornando.Replace("\r", "");
@@ -716,6 +708,7 @@ namespace PI3_Cartagena
         private void btn_Verificas_Click(object sender, EventArgs e)
         {
             lbl_Jogadas.Text = Jogo.VerificarVez(idPartida);
+            Mostra_Historico(idPartida);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -764,6 +757,19 @@ namespace PI3_Cartagena
 
         private void Tela_jogo_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void Mostra_Historico(int partidaAtual)
+        {
+            string retornoHistorico = Jogo.ExibirHistorico(partidaAtual);
+            retornoHistorico = retornoHistorico.Replace("\r", "");
+            string[] historico = retornoHistorico.Split('\n');
+            for(int i = 0; i < historico.Length; i++)
+            {
+                lbx_historico.Items.Add(historico[i]);
+            }
+            
 
         }
     }

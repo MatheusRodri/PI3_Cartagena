@@ -113,6 +113,9 @@
             this.pnl_Jogadas = new System.Windows.Forms.Panel();
             this.btn_Verificas = new System.Windows.Forms.Button();
             this.lbl_Jogadas = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbx_historico = new System.Windows.Forms.ListBox();
+            this.lbl_historico = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAz6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAm6)).BeginInit();
@@ -179,6 +182,7 @@
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnl_Jogadas.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -833,7 +837,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lb_cartas);
             this.panel1.Location = new System.Drawing.Point(9, 213);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(131, 143);
             this.panel1.TabIndex = 113;
@@ -853,7 +857,7 @@
             // 
             this.lb_cartas.FormattingEnabled = true;
             this.lb_cartas.Location = new System.Drawing.Point(15, 39);
-            this.lb_cartas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lb_cartas.Margin = new System.Windows.Forms.Padding(2);
             this.lb_cartas.Name = "lb_cartas";
             this.lb_cartas.Size = new System.Drawing.Size(99, 82);
             this.lb_cartas.TabIndex = 0;
@@ -886,7 +890,7 @@
             this.panel5.Controls.Add(this.lbl_senhaJogador);
             this.panel5.Controls.Add(this.lbl_idJogador);
             this.panel5.Location = new System.Drawing.Point(9, 46);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(266, 151);
             this.panel5.TabIndex = 114;
@@ -904,7 +908,7 @@
             // btn_Listar
             // 
             this.btn_Listar.Location = new System.Drawing.Point(35, 115);
-            this.btn_Listar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Listar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Listar.Name = "btn_Listar";
             this.btn_Listar.Size = new System.Drawing.Size(152, 19);
             this.btn_Listar.TabIndex = 5;
@@ -943,7 +947,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(513, 448);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 40);
             this.button1.TabIndex = 6;
@@ -991,12 +995,42 @@
             this.lbl_Jogadas.TabIndex = 0;
             this.lbl_Jogadas.Text = "Jogadas";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lbl_historico);
+            this.panel3.Controls.Add(this.lbx_historico);
+            this.panel3.Location = new System.Drawing.Point(437, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 284);
+            this.panel3.TabIndex = 117;
+            // 
+            // lbx_historico
+            // 
+            this.lbx_historico.FormattingEnabled = true;
+            this.lbx_historico.Location = new System.Drawing.Point(16, 32);
+            this.lbx_historico.Name = "lbx_historico";
+            this.lbx_historico.Size = new System.Drawing.Size(156, 238);
+            this.lbx_historico.TabIndex = 0;
+            // 
+            // lbl_historico
+            // 
+            this.lbl_historico.AutoSize = true;
+            this.lbl_historico.Location = new System.Drawing.Point(39, 12);
+            this.lbl_historico.Name = "lbl_historico";
+            this.lbl_historico.Size = new System.Drawing.Size(48, 13);
+            this.lbl_historico.TabIndex = 1;
+            this.lbl_historico.Text = "Historico";
+            // 
             // Tela_jogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1241, 641);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_Jogadas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -1139,6 +1173,8 @@
             this.panel5.PerformLayout();
             this.pnl_Jogadas.ResumeLayout(false);
             this.pnl_Jogadas.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1229,5 +1265,8 @@
         private System.Windows.Forms.Label lbl_Jogadas;
         private System.Windows.Forms.Label lbl_senhaJogador;
         private System.Windows.Forms.Label lbl_idJogador;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lbl_historico;
+        private System.Windows.Forms.ListBox lbx_historico;
     }
 }
