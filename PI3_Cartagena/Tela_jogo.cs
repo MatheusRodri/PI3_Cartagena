@@ -697,7 +697,71 @@ namespace PI3_Cartagena
             mapa();
         }
 
+        private void estrategia()
+        {
+            string retornando = Jogo.VerificarVez(idPartida);
+            retornando = retornando.Replace("\r", "");
+            string[] arrayRetornando = retornando.Split('\n');
 
+            string estado = arrayRetornando[0].Substring(0, 1);
+
+            List<string> jogada = new List<string>();
+
+            for(int i = 1; i <= arrayRetornando.Length-1; i++)
+            {
+                jogada.Add(arrayRetornando[i]);
+            }
+
+            List<string> estadoTabuleiro = new List<string>();
+
+            //separar tabuleiro
+            string retorno_tabuleiro = Jogo.ExibirTabuleiro(idPartida);
+            retorno_tabuleiro = retorno_tabuleiro.Replace("\r", "");
+            string[] tabuleiro = retorno_tabuleiro.Split('\n');
+
+            /* ex de array:
+                0,0
+                1,E
+                2,C
+                3,P
+            */
+            
+            for(int i = 0; i <= tabuleiro.Length-1; i++)
+            {
+                //ex tab: 1,E
+                int tabNumInicio = tabuleiro[i].IndexOf(',');
+                int tabNumFim = tabuleiro[i].LastIndexOf(',');
+                
+                //ex jogada: 12,167,2
+                int jogadaNumInicio = jogada[i].IndexOf(',');
+                int jogadaNumFim = jogada[i].LastIndexOf(',');
+
+                if (tabuleiro[i].Substring(0,tabNumInicio-1) == jogada[i].Substring(0, jogadaNumInicio-1))
+                {
+                    //adicionar simbolo da casa ao array jogada 
+                    //basicamente quero fazer um novo verificar vez 
+                    //so que dessa vez atribuir tambem o simbulo da casa para podermos acessar facilmente para fins de comparações
+                }
+            }
+
+
+
+
+            //verificar estado da partida
+            if (estado == "J")
+            {
+
+                //aqui botaremos as estrategias
+
+            }else if(estado == "A")
+            {
+                Console.WriteLine("Partida nâo jogando ainda");
+            }
+            else
+            {
+                Console.WriteLine("Partida Encerrada");
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
