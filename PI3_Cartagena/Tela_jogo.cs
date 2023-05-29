@@ -612,7 +612,7 @@ namespace PI3_Cartagena
             string[] jogadas = { };
 
 
-
+            
             //dados da partida geral
             //for (int i = 1; i < arrayRetornando.Length - 1; i++)
             //{
@@ -668,8 +668,10 @@ namespace PI3_Cartagena
                         valorAleatorio = minhaPos[indiceAleatorio];
 
                         //verifica se a posição anterior ao numero que gerou não é a base se for faz o while denovo
-                        if(minhaPos[indiceAleatorio ] == 0 || minhaPos[indiceAleatorio -1] <= 0)
+                        if(minhaPos[indiceAleatorio ] == 0 )
                         {
+                            valorAleatorio = 0;
+                        } else if(minhaPos[indiceAleatorio - 1] <= 0){
                             valorAleatorio = 0;
                         }
                     }
