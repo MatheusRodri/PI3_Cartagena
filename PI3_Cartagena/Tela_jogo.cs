@@ -221,7 +221,7 @@ namespace PI3_Cartagena
 
                 if (posq == 0)
                 {
-                    continue;
+                    return;
                 }
 
                 else
