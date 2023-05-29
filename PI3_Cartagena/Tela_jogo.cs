@@ -601,6 +601,15 @@ namespace PI3_Cartagena
         {
             
 
+            /*
+             Isso nao pode estar no main
+            
+
+            adwadaw
+            dwadwad
+
+             */
+
             //separação basica
             string retornando = Jogo.VerificarVez(idPartida);
             retornando = retornando.Replace("\r", "");
