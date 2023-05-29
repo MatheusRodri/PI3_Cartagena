@@ -615,15 +615,15 @@ namespace PI3_Cartagena
             //dados de quem joga
             string[] jogandoAgora = arrayRetornando[0].Split(',');
 
-            string[] jogadas = { };
 
 
+            List<string> jogadas = new List<string>();
 
             //dados da partida geral
-            //for (int i = 1; i < arrayRetornando.Length - 1; i++)
-            //{
-            //    jogadas[i - 1] = arrayRetornando[i];
-            //}
+            for (int i = 1; i <= arrayRetornando.Length - 1; i++)
+            {
+                jogadas.Add(arrayRetornando[i]);
+            }
 
 
             if (jogandoAgora[1] == idUsuario.ToString())
