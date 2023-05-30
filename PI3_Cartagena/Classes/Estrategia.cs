@@ -19,6 +19,10 @@ namespace PI3_Cartagena.Classes
 
         public void AtribuirInfos(int idPartida, int idJogador,string senhaJogador)
         {
+
+            //OBS:  estou chamando a classe e a função na parte do timer
+
+
             this.idJogador = idJogador;
             string retornoPartidaVez = Jogo.VerificarVez(idPartida);
             retornoPartidaVez = retornoPartidaVez.Replace("\r", "");
@@ -58,7 +62,7 @@ namespace PI3_Cartagena.Classes
                 //pega o numero da casa
                 int casa  = Convert.ToInt32(casasSeparadas[i].Substring(0,virg));
 
-                //
+                //atribui o icone se tiver na base eu optei por deixa B e se for o barco deixei N
                 char icon;
                 if (casa == 0)
                 {
@@ -72,6 +76,8 @@ namespace PI3_Cartagena.Classes
 
                 int qtd = 0;
 
+                //Passa pelas posições onde tem pirata e compara se é igual a posição do tabuleiro que ta sendo adicionada,
+                //Se for igual soma a quantidade de pirata naquela posição, incrementando caso na linha anterior tenha pirata de outro jogadoe 
                 for (int j = 1; j < arrayRetornando.Length -1; j++)
                 {
 
@@ -84,6 +90,7 @@ namespace PI3_Cartagena.Classes
                    
                     
                 }
+                //add um novo item na lista de tabuleiro com as informações geradas
                 infoTabuleiros.Add(new InfoTabuleiro(casa, icon, qtd));
 
                
