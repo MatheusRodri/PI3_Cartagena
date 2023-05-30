@@ -49,10 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Estrategia.cs" />
+    <Compile Include="Classes\InfoTabuleiro.cs" />
     <Compile Include="Classes\Jogador.cs" />
     <Compile Include="Classes\Partida.cs" />
     <Compile Include="Classes\Pirata.cs" />
-    <Compile Include="Classes\RegistrarLogs.cs" />
     <Compile Include="Tela_jogo.cs">
       <SubType>Form</SubType>
     </Compile>

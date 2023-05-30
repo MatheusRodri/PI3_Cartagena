@@ -255,7 +255,6 @@
             this.lbl_cartaSel.Size = new System.Drawing.Size(103, 13);
             this.lbl_cartaSel.TabIndex = 1;
             this.lbl_cartaSel.Text = "Carta Selecionada...";
-            this.lbl_cartaSel.Click += new System.EventHandler(this.lbl_cartaSel_Click);
             // 
             // pctBoxAz6
             // 
@@ -862,7 +861,6 @@
             this.lb_cartas.Size = new System.Drawing.Size(99, 82);
             this.lb_cartas.TabIndex = 0;
             this.lb_cartas.SelectedIndexChanged += new System.EventHandler(this.lb_cartas_SelectedIndexChanged);
-            this.lb_cartas.SelectedValueChanged += new System.EventHandler(this.lb_cartas_SelectedValueChanged);
             // 
             // lb_mostraTab
             // 
@@ -1102,7 +1100,6 @@
             this.Name = "Tela_jogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Neiva";
-            this.Load += new System.EventHandler(this.Tela_jogo_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAz6)).EndInit();

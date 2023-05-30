@@ -326,8 +326,6 @@ namespace PI3_Cartagena
         {
             for (int j = 0; j < boneco; j++)
             {
-
-
                 pctbox = item.piratas[k].nome;
                 PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
                 pctBox0 = pctBox0 + ((posq).ToString());
@@ -388,9 +386,6 @@ namespace PI3_Cartagena
                             break;
 
                     }
-
-
-
                 }
                 else { pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); }
 
@@ -401,21 +396,7 @@ namespace PI3_Cartagena
             }
         }
 
-
-        /////////////////////////////////////////////////////////////////////////////////////////
-        ///botoes e funcoes deles 
-
-
-
-        private void btn_selCarta_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btn_casaSel_Click(object sender, EventArgs e)
-        {
-            
-        }
+        //////////////////////////////////////////////////////botoes e funcoes deles 
 
         private void btn_andar_Click(object sender, EventArgs e)
         {
@@ -604,9 +585,6 @@ namespace PI3_Cartagena
 
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
-            
-
-            
             //separação basica
             string retornando = Jogo.VerificarVez(idPartida);
             retornando = retornando.Replace("\r", "");
@@ -614,8 +592,6 @@ namespace PI3_Cartagena
 
             //dados de quem joga
             string[] jogandoAgora = arrayRetornando[0].Split(',');
-
-
 
             List<string> jogadas = new List<string>();
 
@@ -721,15 +697,6 @@ namespace PI3_Cartagena
             tmrVerificarVez.Enabled = true;
         }
 
-        private void lbl_cartaSel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_cartas_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
         private void lb_cartas_SelectedIndexChanged(object sender, EventArgs e)
         {
             //pega a informacao da cara selecionada na listbox da mao
@@ -758,11 +725,6 @@ namespace PI3_Cartagena
             tipoCasaSel = Convert.ToString(casasSele[1]);
 
             lbl_casaSel.Text = $"Casa selecionada: {tipoCasaSel + " " + Convert.ToString(numCasaSel)}";
-        }
-
-        private void Tela_jogo_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Mostra_Historico(int partidaAtual)
