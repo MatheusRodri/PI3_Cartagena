@@ -28,6 +28,8 @@ namespace PI3_Cartagena
         private string[] posicao { get; set; }
         private int posicaoInicial {get; set; }
         private int posicaoFinal { get; set; }
+        
+       
 
         public Tela_jogo(int idPartida, int idUsuario, string senhaUsuario)
         {
@@ -585,6 +587,11 @@ namespace PI3_Cartagena
 
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
+            Estrategia estrategia = new Estrategia( );
+
+            estrategia.AtribuirInfos(idPartida, idUsuario, senhaUsuario);
+
+            
             //separação basica
             string retornando = Jogo.VerificarVez(idPartida);
             retornando = retornando.Replace("\r", "");
@@ -594,6 +601,10 @@ namespace PI3_Cartagena
             string[] jogandoAgora = arrayRetornando[0].Split(',');
 
             List<string> jogadas = new List<string>();
+
+            //tabuleiro
+             List<InfoTabuleiro> infoTabuleiro = new List<InfoTabuleiro>();
+           
 
             //dados da partida geral
             for (int i = 1; i <= arrayRetornando.Length - 1; i++)
@@ -628,6 +639,7 @@ namespace PI3_Cartagena
 
                     if (arrayRetornando[i].Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1) == idUsuario.ToString())
                     {
+                        
                         minhaPos.Add(Convert.ToInt32(arrayRetornando[i].Substring(0, posicaoInicial)));
                     }
                 }
@@ -650,7 +662,11 @@ namespace PI3_Cartagena
                         valorAleatorio = minhaPos[indiceAleatorio];
 
                         //verifica se a posição anterior ao numero que gerou não é a base se for faz o while denovo
-                        if(minhaPos[indiceAleatorio ] == 0 || minhaPos[indiceAleatorio -1] <= 0)
+                        if(minhaPos[indiceAleatorio ] == 0 )
+                        {
+                            valorAleatorio = 0;
+                        }
+                        else if(minhaPos[indiceAleatorio - 1] <= 0)
                         {
                             valorAleatorio = 0;
                         }

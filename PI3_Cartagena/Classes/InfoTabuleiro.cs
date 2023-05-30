@@ -8,9 +8,15 @@ namespace PI3_Cartagena.Classes
 {
     public class InfoTabuleiro
     {   
-        public string nCasa { get; set; }
+        public int nCasa { get; set; }
         public char simbolo { get; set; }
         public int nPiratas { get; set; }
 
+        public InfoTabuleiro(int nCasa, char simbolo, int nPiratas )
+        {
+            this.nCasa = nCasa;
+            this.simbolo = simbolo;
+            this.nPiratas = nPiratas;
+        }
     }
 }

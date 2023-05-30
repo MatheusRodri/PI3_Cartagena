@@ -13,7 +13,9 @@ namespace PI3_Cartagena.Classes
         public int idJogador { get; set; }
         public int idJogadorVez { get; set; }
         public int qtdCartas { get; set; }
-        public InfoTabuleiro[] infoTabuleiros;
+        public List<InfoTabuleiro> infoTabuleiros = new List<InfoTabuleiro>();
+
+      
 
         public void AtribuirInfos(int idPartida, int idJogador,string senhaJogador)
         {
@@ -41,13 +43,50 @@ namespace PI3_Cartagena.Classes
             retornoHistorico = retornoHistorico.Replace("\r", "");
             string[] historico = retornoHistorico.Split('\n');
 
+            string tabuleiro = Jogo.ExibirTabuleiro(idPartida);          
+            tabuleiro = tabuleiro.Replace("\r", "");
+            string [] casasSeparadas = tabuleiro.Split('\n');
+
+            string retornando = Jogo.VerificarVez(idPartida);
+            retornando = retornando.Replace("\r", "");
+            string[] arrayRetornando = retornando.Split('\n');
+
             //Retorna o numero de cartas
             //string retorno = Jogo.
 
-            for (int i = 0; i < historico.Length; i++)
+            for (int i = 0; i < casasSeparadas.Length -1; i++)
             {
-                infoTabuleiros[i].simbolo = historico[i][1];
-                //infoTabuleiros[i].nCasa = 
+                int virg = casasSeparadas[i].IndexOf(',');
+               
+               int casa  = Convert.ToInt32(casasSeparadas[i].Substring(0,virg));
+                char icon;
+                if (casa == 0)
+                {
+                    icon = 'B';
+                }
+                else if (casa == 3)
+                {
+                    icon = 'N';
+                }
+                else icon = Convert.ToChar(casasSeparadas[i].Substring(virg+1));
+
+                int qtd = 0;
+
+                for (int j = 1; j < arrayRetornando.Length -1; j++)
+                {
+
+                    int virg2 = arrayRetornando[j].LastIndexOf(',');
+                    if (casasSeparadas[i].Substring(0,virg) == arrayRetornando[j].Substring(0,virg))
+                    {
+                        qtd += Convert.ToInt32(arrayRetornando[j].Substring(virg2 + 1));
+                    }
+
+                   
+                    
+                }
+                infoTabuleiros.Add(new InfoTabuleiro(casa, icon, qtd));
+
+               
             }
         }
     }
