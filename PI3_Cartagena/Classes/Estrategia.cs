@@ -39,10 +39,7 @@ namespace PI3_Cartagena.Classes
             }
 
             //Retorna o simbolo
-            string retornoHistorico = Jogo.ExibirHistorico(idPartida);
-            retornoHistorico = retornoHistorico.Replace("\r", "");
-            string[] historico = retornoHistorico.Split('\n');
-
+           
             string tabuleiro = Jogo.ExibirTabuleiro(idPartida);          
             tabuleiro = tabuleiro.Replace("\r", "");
             string [] casasSeparadas = tabuleiro.Split('\n');
@@ -58,13 +55,16 @@ namespace PI3_Cartagena.Classes
             {
                 int virg = casasSeparadas[i].IndexOf(',');
                
-               int casa  = Convert.ToInt32(casasSeparadas[i].Substring(0,virg));
+                //pega o numero da casa
+                int casa  = Convert.ToInt32(casasSeparadas[i].Substring(0,virg));
+
+                //
                 char icon;
                 if (casa == 0)
                 {
                     icon = 'B';
                 }
-                else if (casa == 3)
+                else if (casa == 37)
                 {
                     icon = 'N';
                 }

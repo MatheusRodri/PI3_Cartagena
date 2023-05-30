@@ -588,7 +588,6 @@ namespace PI3_Cartagena
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
             Estrategia estrategia = new Estrategia( );
-
             estrategia.AtribuirInfos(idPartida, idUsuario, senhaUsuario);
 
             
