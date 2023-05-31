@@ -650,28 +650,40 @@ namespace PI3_Cartagena
                     qtd += (Convert.ToInt32(maoo[i].Substring(2)));
 
                 }
-
-                if (qtd < 3)
+                //Estrategia para volta
+                if (qtd <= 4)
                 {
-                    int valorAleatorio = 0;
-                    //gera aleatotio pra não tentar voltar pirata na base
-                    while (valorAleatorio == 0)
+                    //Verifica onde esta os piratas do jogador e ve se na lista de info tem alguma casa menor que possua qtd de pirtas
+                    //diferente de 0 e menor q 3
+                    int posicaoVolta = VerificaVolta(estrategia, minhaPos);
+                    if(posicaoVolta != 0)
                     {
-                        int indiceAleatorio = random.Next(minhaPos.Count);
-                        valorAleatorio = minhaPos[indiceAleatorio];
-
-                        //verifica se a posição anterior ao numero que gerou não é a base se for faz o while denovo
-                        if(minhaPos[indiceAleatorio ] == 0 )
-                        {
-                            valorAleatorio = 0;
-                        }
-                        else if(minhaPos[indiceAleatorio - 1] <= 0)
-                        {
-                            valorAleatorio = 0;
-                        }
+                        Jogo.Jogar(idUsuario, senhaUsuario, posicaoVolta);
                     }
+                    else if (posicaoVolta == 0 && qtd <= 2)
+                    {
+                        //Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Max());
+                        int valorAleatorio = 0;
+                        //gera aleatotio pra não tentar voltar pirata na base
 
-                    Jogo.Jogar(idUsuario,senhaUsuario, valorAleatorio);
+                        while (valorAleatorio == 0)
+                        {
+                            int indiceAleatorio = random.Next(minhaPos.Count);
+                            valorAleatorio = minhaPos[indiceAleatorio];
+
+                            //verifica se a posição anterior ao numero que gerou não é a base se for faz o while denovo
+                            if (minhaPos[indiceAleatorio] == 0)
+                            {
+                                valorAleatorio = 0;
+                            }
+                            else if (minhaPos[indiceAleatorio - 1] <= 0)
+                            {
+                                valorAleatorio = 0;
+                            }
+                        }
+
+                        Jogo.Jogar(idUsuario, senhaUsuario, valorAleatorio);
+                    }                                          
                 }
                
                 //JOGA UM pirata aleatorio e uma cart aleatoria
@@ -740,6 +752,31 @@ namespace PI3_Cartagena
             tipoCasaSel = Convert.ToString(casasSele[1]);
 
             lbl_casaSel.Text = $"Casa selecionada: {tipoCasaSel + " " + Convert.ToString(numCasaSel)}";
+        }
+
+        private int VerificaVolta(Estrategia estrategia, List<int> minhaPos)
+        {
+            minhaPos.Reverse();
+            int posicaoVolta = 0;
+            //Verifica onde esta os piratas do jogador e ve se na lista de info tem alguma casa menor que possua qtd de pirtas
+            //diferente de 0 e menor q 3
+            foreach (int item in minhaPos)
+            {
+                // Where para filtrar os itens da lista com nCasa menor que a minhaPos e nPiratas < 3.FirstOrDefault para obter o primeiro item dessa lista filtrada.
+                //To criando essa classe pq o retorno do where é uma classe
+                InfoTabuleiro primeiroMenorQuantidade = estrategia.infoTabuleiros.Where(posicao => posicao.nCasa < item && (posicao.nPiratas != 0 && posicao.nPiratas < 3)).FirstOrDefault();
+
+
+                if (primeiroMenorQuantidade.nPiratas != 0)
+                {
+                    posicaoVolta = primeiroMenorQuantidade.nPiratas;
+                    break;
+                    //Jogo.Jogar(idUsuario, senhaUsuario, primeiroMenorQuantidade.nCasa);
+                }
+                
+            }
+            return posicaoVolta;
+            
         }
 
         private void Mostra_Historico(int partidaAtual)
