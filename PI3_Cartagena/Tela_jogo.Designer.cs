@@ -114,8 +114,10 @@
             this.btn_Verificas = new System.Windows.Forms.Button();
             this.lbl_Jogadas = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbx_historico = new System.Windows.Forms.ListBox();
             this.lbl_historico = new System.Windows.Forms.Label();
+            this.lbx_historico = new System.Windows.Forms.ListBox();
+            this.pnlCartas = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAz6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAm6)).BeginInit();
@@ -183,6 +185,7 @@
             this.panel5.SuspendLayout();
             this.pnl_Jogadas.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
@@ -1005,14 +1008,6 @@
             this.panel3.Size = new System.Drawing.Size(200, 284);
             this.panel3.TabIndex = 117;
             // 
-            // lbx_historico
-            // 
-            this.lbx_historico.FormattingEnabled = true;
-            this.lbx_historico.Location = new System.Drawing.Point(16, 32);
-            this.lbx_historico.Name = "lbx_historico";
-            this.lbx_historico.Size = new System.Drawing.Size(156, 238);
-            this.lbx_historico.TabIndex = 0;
-            // 
             // lbl_historico
             // 
             this.lbl_historico.AutoSize = true;
@@ -1022,12 +1017,41 @@
             this.lbl_historico.TabIndex = 1;
             this.lbl_historico.Text = "Historico";
             // 
+            // lbx_historico
+            // 
+            this.lbx_historico.FormattingEnabled = true;
+            this.lbx_historico.Location = new System.Drawing.Point(16, 32);
+            this.lbx_historico.Name = "lbx_historico";
+            this.lbx_historico.Size = new System.Drawing.Size(156, 238);
+            this.lbx_historico.TabIndex = 0;
+            // 
+            // pnlCartas
+            // 
+            this.pnlCartas.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlCartas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCartas.Location = new System.Drawing.Point(684, 12);
+            this.pnlCartas.Name = "pnlCartas";
+            this.pnlCartas.Size = new System.Drawing.Size(81, 476);
+            this.pnlCartas.TabIndex = 118;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(1046, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(11, 11);
+            this.pictureBox1.TabIndex = 119;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // Tela_jogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1241, 641);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pnlCartas);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_Jogadas);
             this.Controls.Add(this.button2);
@@ -1172,6 +1196,7 @@
             this.pnl_Jogadas.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1265,5 +1290,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_historico;
         private System.Windows.Forms.ListBox lbx_historico;
+        private System.Windows.Forms.Panel pnlCartas;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
