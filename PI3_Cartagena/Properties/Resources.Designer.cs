@@ -63,6 +63,16 @@ namespace PI3_Cartagena.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Botao {
+            get {
+                object obj = ResourceManager.GetObject("Botao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chave {
             get {
                 object obj = ResourceManager.GetObject("Chave", resourceCulture);
@@ -96,6 +106,56 @@ namespace PI3_Cartagena.Properties {
         internal static System.Drawing.Bitmap Garrafa {
             get {
                 object obj = ResourceManager.GetObject("Garrafa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Landscape_Wallpapers_landscape_island_beach_XVII_century_4k_hi_0 {
+            get {
+                object obj = ResourceManager.GetObject("Landscape_Wallpapers_landscape_island_beach_XVII_century_4k_hi_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Leonardo_Diffusion_Cartagena_backgroung_for_pirate_game_1__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Leonardo_Diffusion_Cartagena_backgroung_for_pirate_game_1 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Leonardo_Signature_Cartagena_backgroung_for_pirate_game_1 {
+            get {
+                object obj = ResourceManager.GetObject("Leonardo_Signature_Cartagena_backgroung_for_pirate_game_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mapa {
+            get {
+                object obj = ResourceManager.GetObject("Mapa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mapa1 {
+            get {
+                object obj = ResourceManager.GetObject("Mapa1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
