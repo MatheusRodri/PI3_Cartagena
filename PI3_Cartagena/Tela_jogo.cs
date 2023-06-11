@@ -431,7 +431,6 @@ namespace PI3_Cartagena
             idUsuario = Convert.ToInt32(idUsuario);
             senhaUsuario = senhaUsuario;
 
-            pnlCartas.Controls.Clear();
 
             try
             {
@@ -476,7 +475,7 @@ namespace PI3_Cartagena
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Chave.png"),
                                 };
-                                pnlCartas.Controls.Add(picture);
+                            
 
                                 contador++;
 
@@ -514,7 +513,6 @@ namespace PI3_Cartagena
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Esqueleto.jpg"),
                                 };
-                                pnlCartas.Controls.Add(picture);
 
                                 contador++;
 
