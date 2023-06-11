@@ -49,10 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Estrategia.cs" />
+    <Compile Include="Classes\InfoTabuleiro.cs" />
     <Compile Include="Classes\Jogador.cs" />
     <Compile Include="Classes\Partida.cs" />
     <Compile Include="Classes\Pirata.cs" />
-    <Compile Include="Classes\RegistrarLogs.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tela_jogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,14 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Tela_Jogadores.resx">
       <DependentUpon>Tela_Jogadores.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +173,12 @@
     <Content Include="Icones\Tricornio.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Botao.png" />
+    <None Include="Resources\Landscape_Wallpapers_landscape_island_beach_XVII_century_4k_hi_0.jpg" />
+    <None Include="Resources\Mapa1.jpg" />
+    <None Include="Resources\Mapa.jpg" />
+    <None Include="Resources\Leonardo_Signature_Cartagena_backgroung_for_pirate_game_1.jpg" />
+    <None Include="Resources\Leonardo_Diffusion_Cartagena_backgroung_for_pirate_game_1 %281%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
