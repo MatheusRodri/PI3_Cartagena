@@ -112,6 +112,10 @@ namespace PI3_Cartagena
 
         private void btn_telaJogo_Click_1(object sender, EventArgs e)
         {
+            idUsuario = Convert.ToInt32(txt_idUser.Text);
+            senhaUsuario = txt_senhaUsuario.Text;
+            idJogadorInicial = Jogo.IniciarPartida(idUsuario, senhaUsuario);
+
             Tela_jogo jogando = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
             jogando.Show();
             this.Close();
