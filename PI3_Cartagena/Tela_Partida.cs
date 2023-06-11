@@ -24,6 +24,8 @@ namespace PI3_Cartagena
         }
         public void exibirPartidas(string tipoPartida)
         {
+            try
+            {
             lb_partidas.Items.Clear();
             string dados = Jogo.ListarPartidas(tipoPartida);
             dados = dados.Replace("\r", "");
@@ -33,6 +35,11 @@ namespace PI3_Cartagena
             for (int i = 0; i < partidas.Length; i++)
             {
                 lb_partidas.Items.Add(partidas[i]);
+            }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Houve um erro, verifique o servidor ou DLL");
             }
         }
 
@@ -82,7 +89,7 @@ namespace PI3_Cartagena
 
         private void cmb_filtro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // (T)odas, (A)bertas, (J)ogando, (E)ncerradas
+            // (T)Todas, (A)Abertas, (J)Jogando, (E)Encerradas
 
             string filtro = cmb_filtro.SelectedItem.ToString();
             switch (filtro)

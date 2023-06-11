@@ -36,9 +36,6 @@ namespace PI3_Cartagena
             }
         }
        
-
-        
-
         private void btn_criarPartida_Click(object sender, EventArgs e)
         {
             Partida partida = new Partida();
@@ -46,21 +43,25 @@ namespace PI3_Cartagena
             nomePartida = txt_nomePartida.Text;
             senhaPartida = txt_senhaPartida.Text;
 
-
+            try
+            {
             string dadosDaPartidaCriada = partida.CriarPartida(nomePartida, senhaPartida);
-            MessageBox.Show("Partida criada com sucesso");
-
+   
             idPartida = Convert.ToInt32(dadosDaPartidaCriada);
-
-            Tela_Jogadores tela = new Tela_Jogadores(idPartida,senhaPartida);
+                MessageBox.Show("Partida criada com sucesso");
+                Tela_Jogadores tela = new Tela_Jogadores(idPartida,senhaPartida);
             tela.Show();
             this.Close();
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar a partida, Nome da partida e senha não podem conter simbolos");
+            }
         }
         private void txt_nomePartida_TextChanged(object sender, EventArgs e)
         {
             validaCampos();
         }
-        
 
         private void txt_senhaPartida_TextChanged(object sender, EventArgs e)
         {

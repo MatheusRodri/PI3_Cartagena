@@ -11,7 +11,6 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace PI3_Cartagena
 {
@@ -41,383 +40,390 @@ namespace PI3_Cartagena
             this.senhaUsuario = senhaUsuario;
 
             lbl_idJogador.Text = $"ID do jogador: {idUsuario.ToString()}";
-            //lbl_senhaJogador.Text = $"Senha do jogador: {Esconde(senhaUsuario)}"  ;
             mostrarTabuleiro();
             MostrarCartas();
             mapa();
         }
 
-        //private string Esconde(string senha)
-        //{
-        //    char[] chars = senha.ToCharArray();
-
-        //    for (int i = 0; i < chars.Length; i++)
-        //    {
-        //        if (Char.IsLetterOrDigit(chars[i]))
-        //        {
-        //            chars[i] = '*';
-        //        }
-        //    }
-
-        //    return new string(chars);
-        //}
         public void mapa()
         {
-            tabuleiro = Jogo.ExibirTabuleiro(idPartida);
-            tabuleiro = tabuleiro.Replace("\r", "");
-            posicao = tabuleiro.Split('\n');
-
-            List<int> pos = new List<int>();
-            List<string> icone = new List<string>();
-            List<PictureBox> img = new List<PictureBox>();
-
-            foreach (Control control in this.Controls)
+            try
             {
-                if (control is PictureBox && !char.IsLetter(control.Name[6]))
+                tabuleiro = Jogo.ExibirTabuleiro(idPartida);
+                tabuleiro = tabuleiro.Replace("\r", "");
+                posicao = tabuleiro.Split('\n');
+
+                List<int> pos = new List<int>();
+                List<string> icone = new List<string>();
+                List<PictureBox> img = new List<PictureBox>();
+
+                foreach (Control control in this.Controls)
                 {
-                    img.Add((PictureBox)control);
-                }
-            }
-
-            img.Reverse();
-
-            pos.Add(0);
-            icone.Add("B");
-            for (int i = 1; i < posicao.Length; i++)
-            {
-
-                if (posicao[i].Length == 3)
-                {
-                    pos.Add(Convert.ToInt32(posicao[i].Substring(0, posicao[i].Length - 2)));
-                    icone.Add(posicao[i].Substring(2));
-                }
-                else if (posicao[i].Length == 4)
-                {
-                    pos.Add(Convert.ToInt32(posicao[i].Substring(0, posicao[i].Length - 2)));
-                    icone.Add(posicao[i].Substring(3));
-                }
-            }
-            for (int i = 1; i < icone.Count - 1; i++)
-            {
-                switch (icone[i])
-                {
-                    case "C":
-                        img[i].Image = Image.FromFile("Icones/Chave.png");
-
-                        break;
-                    case "E":
-                        img[i].Image = Image.FromFile("Icones/Esqueleto.jpg");
-
-                        break;
-                    case "T":
-                        img[i].Image = Image.FromFile("Icones/Tricornio.jpg");
-
-                        break;
-                    case "F":
-                        img[i].Image = Image.FromFile("Icones/Faca.jpg");
-
-                        break;
-                    case "G":
-                        img[i].Image = Image.FromFile("Icones/Garrafa.jpg");
-
-                        break;
-                    case "P":
-                        img[i].Image = Image.FromFile("Icones/Pistola.jpg");
-
-                        break;
-                }
-            }
-
-            //Mostrar Jogadores
-
-            List<string> lugar = new List<string>();
-            string situacao = Jogo.VerificarVez(idPartida);
-            situacao = situacao.Replace("\r", "");
-            string[] eu = situacao.Split('\n');
-            lugar = eu.ToList();
-            string jogadorvez = lugar[0];
-            List<string> posi = new List<string>();
-            List<string> boneco = new List<string>();
-            List<string> bonecojogador = new List<string>();
-
-            string vez = lugar[0];
-
-            foreach (var item in lugar)
-            {
-                posicaoInicial = item.IndexOf(',');
-                posicaoFinal = item.LastIndexOf(',');
-
-                if (lugar.IndexOf(item) == 0 || item == "")
-                {
-                    continue;
-                }
-                else if (item == "")
-                {
-                    continue;
-                }
-                posi.Add(item.Substring(0, item.IndexOf(',')));
-                boneco.Add(item.Substring(item.LastIndexOf(',') + 1));
-                bonecojogador.Add(item.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1));
-            }
-
-            posicaoInicial = vez.IndexOf(',');
-            posicaoFinal = vez.LastIndexOf(',');
-
-            vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
-            string contjogadores = Jogo.ListarJogadores(idPartida);
-            contjogadores = contjogadores.Replace("\r", "");
-            string[] players = contjogadores.Split('\n');
-
-            List<Jogador> jogadoresLista = new List<Jogador>();
-
-            for (int i = 0; i < players.Length - 1; i++)
-            {
-                int posvirgula1 = players[i].IndexOf(',');
-                int posvirgula2 = players[i].LastIndexOf(',');
-                int id = Convert.ToInt32(players[i].Substring(0, posvirgula1));
-                string nome = players[i].Substring(posvirgula1 + 1, posvirgula2 - posvirgula1 - 1);
-                string cor = players[i].Substring(posvirgula2 + 1);
-                Jogador jogador = new Jogador(id, cor, nome);
-
-                jogadoresLista.Add(jogador);
-
-            }
-
-            string pctBox0 = "pctBox";
-            string pctbox = "pctBoxVm";
-
-            for (int i = 0; i < players.Length - 1; i++)
-            {
-
-                switch (players[i].Substring(players[i].LastIndexOf(',') + 1))
-                {
-                    case "Vermelho":
-                        pctbox = "pctBoxVm";
-
-                        break;
-                    case "Verde":
-                        pctbox = "pctBoxVd";
-
-                        break;
-                    case "Amarelo":
-                        pctbox = "pctBoxAm";
-
-                        break;
-                    case "Azul":
-                        pctbox = "pctBoxAz";
-
-                        break;
-                }
-                for (int j = 1; j <= 6; j++)
-                {
-                    string pctboxaux = pctbox + j.ToString();
-                    PictureBox pictureBox = this.Controls.Find(pctboxaux, true).FirstOrDefault() as PictureBox;
-                    pictureBox.Visible = true;
-
-                }
-            }
-            int aux = 0;
-
-            for (int i = 0; i < posi.Count; i++)
-            {
-                string pozi = "";
-                pctBox0 = "pctBox";
-                int posq = Convert.ToInt32(posi[i]);
-
-                if (posq == 0)
-                {
-                    continue;
-                }
-                else
-                {
-                    if (i != 0)
+                    if (control is PictureBox && !char.IsLetter(control.Name[6]))
                     {
-                        pozi = posi[i - 1];
+                        img.Add((PictureBox)control);
                     }
+                }
 
-                    int atual = 0;
-                    if (posi[i] == pozi && posi[i] != "0")
+                img.Reverse();
+
+                pos.Add(0);
+                icone.Add("B");
+                for (int i = 1; i < posicao.Length; i++)
+                {
+
+                    if (posicao[i].Length == 3)
                     {
-                        int a = Convert.ToInt32(boneco[i]);
-                        int b = Convert.ToInt32(boneco[i - 1]);
-                        atual = (a + b) - 1;
+                        pos.Add(Convert.ToInt32(posicao[i].Substring(0, posicao[i].Length - 2)));
+                        icone.Add(posicao[i].Substring(2));
+                    }
+                    else if (posicao[i].Length == 4)
+                    {
+                        pos.Add(Convert.ToInt32(posicao[i].Substring(0, posicao[i].Length - 2)));
+                        icone.Add(posicao[i].Substring(3));
+                    }
+                }
+                for (int i = 1; i < icone.Count - 1; i++)
+                {
+                    switch (icone[i])
+                    {
+                        case "C":
+                            img[i].Image = Image.FromFile("Icones/Chave.png");
+
+                            break;
+                        case "E":
+                            img[i].Image = Image.FromFile("Icones/Esqueleto.jpg");
+
+                            break;
+                        case "T":
+                            img[i].Image = Image.FromFile("Icones/Tricornio.jpg");
+
+                            break;
+                        case "F":
+                            img[i].Image = Image.FromFile("Icones/Faca.jpg");
+
+                            break;
+                        case "G":
+                            img[i].Image = Image.FromFile("Icones/Garrafa.jpg");
+
+                            break;
+                        case "P":
+                            img[i].Image = Image.FromFile("Icones/Pistola.jpg");
+
+                            break;
+                    }
+                }
+
+                //Mostrar Jogadores
+
+                List<string> lugar = new List<string>();
+                string situacao = Jogo.VerificarVez(idPartida);
+                situacao = situacao.Replace("\r", "");
+                string[] eu = situacao.Split('\n');
+                lugar = eu.ToList();
+                string jogadorvez = lugar[0];
+                List<string> posi = new List<string>();
+                List<string> boneco = new List<string>();
+                List<string> bonecojogador = new List<string>();
+
+                string vez = lugar[0];
+
+                foreach (var item in lugar)
+                {
+                    posicaoInicial = item.IndexOf(',');
+                    posicaoFinal = item.LastIndexOf(',');
+
+                    if (lugar.IndexOf(item) == 0 || item == "")
+                    {
+                        continue;
+                    }
+                    else if (item == "")
+                    {
+                        continue;
+                    }
+                    posi.Add(item.Substring(0, item.IndexOf(',')));
+                    boneco.Add(item.Substring(item.LastIndexOf(',') + 1));
+                    bonecojogador.Add(item.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1));
+                }
+
+                posicaoInicial = vez.IndexOf(',');
+                posicaoFinal = vez.LastIndexOf(',');
+
+                vez = vez.Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1);
+                string contjogadores = Jogo.ListarJogadores(idPartida);
+                contjogadores = contjogadores.Replace("\r", "");
+                string[] players = contjogadores.Split('\n');
+
+                List<Jogador> jogadoresLista = new List<Jogador>();
+
+                for (int i = 0; i < players.Length - 1; i++)
+                {
+                    int posvirgula1 = players[i].IndexOf(',');
+                    int posvirgula2 = players[i].LastIndexOf(',');
+                    int id = Convert.ToInt32(players[i].Substring(0, posvirgula1));
+                    string nome = players[i].Substring(posvirgula1 + 1, posvirgula2 - posvirgula1 - 1);
+                    string cor = players[i].Substring(posvirgula2 + 1);
+                    Jogador jogador = new Jogador(id, cor, nome);
+
+                    jogadoresLista.Add(jogador);
+
+                }
+
+                string pctBox0 = "pctBox";
+                string pctbox = "pctBoxVm";
+
+                for (int i = 0; i < players.Length - 1; i++)
+                {
+
+                    switch (players[i].Substring(players[i].LastIndexOf(',') + 1))
+                    {
+                        case "Vermelho":
+                            pctbox = "pctBoxVm";
+
+                            break;
+                        case "Verde":
+                            pctbox = "pctBoxVd";
+
+                            break;
+                        case "Amarelo":
+                            pctbox = "pctBoxAm";
+
+                            break;
+                        case "Azul":
+                            pctbox = "pctBoxAz";
+
+                            break;
+                    }
+                    for (int j = 1; j <= 6; j++)
+                    {
+                        string pctboxaux = pctbox + j.ToString();
+                        PictureBox pictureBox = this.Controls.Find(pctboxaux, true).FirstOrDefault() as PictureBox;
+                        pictureBox.Visible = true;
 
                     }
+                }
+                int aux = 0;
 
-                    foreach (var item in jogadoresLista)
+                for (int i = 0; i < posi.Count; i++)
+                {
+                    string pozi = "";
+                    pctBox0 = "pctBox";
+                    int posq = Convert.ToInt32(posi[i]);
+
+                    if (posq == 0)
                     {
-                        bool t = true;
-                        if (Convert.ToInt32(bonecojogador[i]) == item.id)
+                        continue;
+                    }
+                    else
+                    {
+                        if (i != 0)
                         {
-                            switch (item.cor)
-                            {
-                                case "Vermelho":
-                                    int k = 0;
-                                    while (t == true)
-                                    {
-
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                                case "Verde":
-
-                                    k = 0;
-                                    while (t == true)
-                                    {
-
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                                case "Amarelo":
-                                    k = 0;
-                                    while (t == true)
-                                    {
-
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                                case "Azul":
-                                    k = 0;
-                                    while (t == true)
-                                    {
-
-                                        if (item.piratas[k].posicao == 0)
-                                        {
-                                            aux += 1;
-
-                                            mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
-                                            t = false;
-                                        }
-                                        else k++;
-                                    }
-                                    break;
-                            }
+                            pozi = posi[i - 1];
                         }
 
+                        int atual = 0;
+                        if (posi[i] == pozi && posi[i] != "0")
+                        {
+                            int a = Convert.ToInt32(boneco[i]);
+                            int b = Convert.ToInt32(boneco[i - 1]);
+                            atual = (a + b) - 1;
+
+                        }
+
+                        foreach (var item in jogadoresLista)
+                        {
+                            bool t = true;
+                            if (Convert.ToInt32(bonecojogador[i]) == item.id)
+                            {
+                                switch (item.cor)
+                                {
+                                    case "Vermelho":
+                                        int k = 0;
+                                        while (t == true)
+                                        {
+
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                    case "Verde":
+
+                                        k = 0;
+                                        while (t == true)
+                                        {
+
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                    case "Amarelo":
+                                        k = 0;
+                                        while (t == true)
+                                        {
+
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                    case "Azul":
+                                        k = 0;
+                                        while (t == true)
+                                        {
+
+                                            if (item.piratas[k].posicao == 0)
+                                            {
+                                                aux += 1;
+
+                                                mover(Convert.ToInt32(boneco[i]), pctbox, pctBox0, posq, item, k, atual);
+                                                t = false;
+                                            }
+                                            else k++;
+                                        }
+                                        break;
+                                }
+                            }
+
+                        }
+
+
+
                     }
 
-
-
                 }
-
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar o mapa, reinice a partidas");
+            }
+
         }
 
 
         public void mover(int boneco, string pctbox, string pctBox0, int posq, Jogador item, int k, int atual)
         {
-            for (int j = 0; j < boneco; j++)
+            try
             {
-                pctbox = item.piratas[k].nome;
-                PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
-
-                pctBox0 = pctBox0 + ((posq).ToString());
-                PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
-
-                if (posq == 37)
+                for (int j = 0; j < boneco; j++)
                 {
-                    switch (item.cor)
+                    pctbox = item.piratas[k].nome;
+                    PictureBox pictureBox = this.Controls.Find(pctbox, true).FirstOrDefault() as PictureBox;
+
+                    pctBox0 = pctBox0 + ((posq).ToString());
+                    PictureBox pictureBoxC = this.Controls.Find(pctBox0, true).FirstOrDefault() as PictureBox;
+
+                    if (posq == 37)
                     {
-                        case "Vermelho":
-                            if (j == 3)
-                            {
-                                int l = j - 3;
-                                pictureBox.Location = new Point(1059, 35 + 11 * (l + 1));
-                            }
-                            else
-                            {
-                                pictureBox.Location = new Point(1046, 35 + 11 * (j + 1));
-                            }
-                            break;
-                        case "Verde":
-                            if (j == 3)
-                            {
-                                int l = j - 3;
-                                pictureBox.Location = new Point(1099, 35 + 11 * (l + 1));
-                            }
-                            else
-                            {
-                                pictureBox.Location = new Point(1086, 35 + 11 * (j + 1));
-                            }
-                            break;
-                        case "Amarelo":
-                            if (j == 3)
-                            {
-                                int l = j - 3;
-                                pictureBox.Location = new Point(1139, 35 + 11 * (l + 1));
-                            }
-                            else
-                            {
-                                pictureBox.Location = new Point(1126, 35 + 11 * (j + 1));
-                            }
-                            break;
-                        case "Azul":
-                            if (j == 3)
-                            {
-                                int l = j - 3;
-                                pictureBox.Location = new Point(1179, 35 + 11 * (l + 1));
-                            }
-                            else
-                            {
-                                pictureBox.Location = new Point(1166, 35 + 11 * (j + 1));
-                            }
-                            break;
+                        switch (item.cor)
+                        {
+                            case "Vermelho":
+                                if (j == 3)
+                                {
+                                    int l = j - 3;
+                                    pictureBox.Location = new Point(1059, 35 + 11 * (l + 1));
+                                }
+                                else
+                                {
+                                    pictureBox.Location = new Point(1046, 35 + 11 * (j + 1));
+                                }
+                                break;
+                            case "Verde":
+                                if (j == 3)
+                                {
+                                    int l = j - 3;
+                                    pictureBox.Location = new Point(1099, 35 + 11 * (l + 1));
+                                }
+                                else
+                                {
+                                    pictureBox.Location = new Point(1086, 35 + 11 * (j + 1));
+                                }
+                                break;
+                            case "Amarelo":
+                                if (j == 3)
+                                {
+                                    int l = j - 3;
+                                    pictureBox.Location = new Point(1139, 35 + 11 * (l + 1));
+                                }
+                                else
+                                {
+                                    pictureBox.Location = new Point(1126, 35 + 11 * (j + 1));
+                                }
+                                break;
+                            case "Azul":
+                                if (j == 3)
+                                {
+                                    int l = j - 3;
+                                    pictureBox.Location = new Point(1179, 35 + 11 * (l + 1));
+                                }
+                                else
+                                {
+                                    pictureBox.Location = new Point(1166, 35 + 11 * (j + 1));
+                                }
+                                break;
 
+                        }
                     }
-                }
-                else if (atual != 0 && posq != 37)
-                {
-                    pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j + 1) * atual);
-                }
+                    else if (atual != 0 && posq != 37)
+                    {
+                        pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j + 1) * atual);
+                    }
 
-                else { pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); }
-                pictureBox.BringToFront();
-                pctBox0 = "pctBox";
-                item.piratas[k].posicao = posq;
-                k++;
+                    else { pictureBox.Location = new Point(pictureBoxC.Location.X, pictureBoxC.Location.Y + 11 * (j)); }
+                    pictureBox.BringToFront();
+                    pctBox0 = "pctBox";
+                    item.piratas[k].posicao = posq;
+                    k++;
 
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Houve um erro");
+            }
+
         }
 
-        //////////////////////////////////////////////////////botoes e funcoes deles 
-
-
+        //////////////////////////////////////////////////////botoes e funcoes deles
 
 
 
         private void mostrarTabuleiro()
         {
-            //tebuleiro por completo (Casa,Tipo)
-            string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
-            //imprime tabuleiro na list box (lb_tabuleiro)
-            tabuleiro.Replace("\r", "");
-            casasSeparadas = tabuleiro.Split('\n');
-            for (int i = 0; i < casasSeparadas.Length; i++)
+            try
             {
-                lb_mostraTab.Items.Add(casasSeparadas[i]);
+                //tebuleiro por completo (Casa,Tipo)
+                string tabuleiro = Jogo.ExibirTabuleiro(idPartida);
+                //imprime tabuleiro na list box (lb_tabuleiro)
+                tabuleiro.Replace("\r", "");
+                casasSeparadas = tabuleiro.Split('\n');
+                for (int i = 0; i < casasSeparadas.Length; i++)
+                {
+                    lb_mostraTab.Items.Add(casasSeparadas[i]);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao mostrar o tabuleiro");
+            }
+
         }
 
         private void MostrarCartas()
@@ -466,7 +472,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Location = new Point(8, 14 + (55 * contador)),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Chave.png"),
                                 };
@@ -484,7 +490,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Location = new Point(8, 14 + (55 * contador)),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Tricornio.jpg"),
                                 };
@@ -504,7 +510,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Location = new Point(8, 14 + (55 * contador)),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Esqueleto.jpg"),
                                 };
@@ -522,7 +528,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Location = new Point(8, 14 + (55 * contador)),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Faca.jpg"),
                                 };
@@ -540,7 +546,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Location = new Point(8, 14 + (55 * contador)),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Garrafa.jpg"),
 
@@ -559,7 +565,7 @@ namespace PI3_Cartagena
                                 {
                                     Name = "pictureBox",
                                     Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Location = new Point(8, 14 + (55 * contador)),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Pistola.jpg"),
                                 };
@@ -585,105 +591,115 @@ namespace PI3_Cartagena
 
         private void tmrVerificarVez_Tick(object sender, EventArgs e)
         {
-            Estrategia estrategia = new Estrategia();
-            estrategia.AtribuirInfos(idPartida, idUsuario, senhaUsuario);
-
-
-            //separação basica
-            string retornando = Jogo.VerificarVez(idPartida);
-            retornando = retornando.Replace("\r", "");
-            string[] arrayRetornando = retornando.Split('\n');
-
-            //dados de quem joga
-            string[] jogandoAgora = arrayRetornando[0].Split(',');
-
-            List<string> jogadas = new List<string>();
-
-            //tabuleiro
-            List<InfoTabuleiro> infoTabuleiro = new List<InfoTabuleiro>();
-
-
-            //dados da partida geral
-            for (int i = 1; i <= arrayRetornando.Length - 1; i++)
+            try
             {
-                jogadas.Add(arrayRetornando[i]);
-            }
+                Estrategia estrategia = new Estrategia();
+                estrategia.AtribuirInfos(idPartida, idUsuario, senhaUsuario);
 
 
-            if (jogandoAgora[1] == idUsuario.ToString())
-            {
-                string cartasNaMao = Jogo.ConsultarMao(idUsuario, senhaUsuario);
-                cartasNaMao = cartasNaMao.Replace("\r", "");
-                string[] maoo = cartasNaMao.Split('\n');
-                int qtd = 0;
-                //string[] cartaQuero = maoo.Split();
+                //separação basica
+                string retornando = Jogo.VerificarVez(idPartida);
+                retornando = retornando.Replace("\r", "");
+                string[] arrayRetornando = retornando.Split('\n');
+
+                //dados de quem joga
+                string[] jogandoAgora = arrayRetornando[0].Split(',');
+
+                List<string> jogadas = new List<string>();
+
+                //tabuleiro
+                List<InfoTabuleiro> infoTabuleiro = new List<InfoTabuleiro>();
 
 
-                //CODIGO RANDOM AQUI EM BAIXO
-
-                //Lista de posição dos piratas
-                List<int> minhaPos = new List<int>();
-                Random random = new Random();
-
-
-                //Alimenta uma lista de onde estão os piratas do jogador
-                for (int i = 1; i < arrayRetornando.Length - 1; i++)
+                //dados da partida geral
+                for (int i = 1; i <= arrayRetornando.Length - 1; i++)
                 {
+                    jogadas.Add(arrayRetornando[i]);
+                }
 
-                    int posicaoInicial = arrayRetornando[i].IndexOf(',');
-                    int posicaoFinal = arrayRetornando[i].LastIndexOf(',');
+
+                if (jogandoAgora[1] == idUsuario.ToString())
+                {
+                    string cartasNaMao = Jogo.ConsultarMao(idUsuario, senhaUsuario);
+                    cartasNaMao = cartasNaMao.Replace("\r", "");
+                    string[] maoo = cartasNaMao.Split('\n');
+                    int qtd = 0;
+                    //string[] cartaQuero = maoo.Split();
 
 
-                    if (arrayRetornando[i].Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1) == idUsuario.ToString())
+                    //CODIGO RANDOM AQUI EM BAIXO
+
+                    //Lista de posição dos piratas
+                    List<int> minhaPos = new List<int>();
+                    Random random = new Random();
+
+
+                    //Alimenta uma lista de onde estão os piratas do jogador
+                    for (int i = 1; i < arrayRetornando.Length - 1; i++)
                     {
 
-                        minhaPos.Add(Convert.ToInt32(arrayRetornando[i].Substring(0, posicaoInicial)));
+                        int posicaoInicial = arrayRetornando[i].IndexOf(',');
+                        int posicaoFinal = arrayRetornando[i].LastIndexOf(',');
+
+
+                        if (arrayRetornando[i].Substring(posicaoInicial + 1, posicaoFinal - posicaoInicial - 1) == idUsuario.ToString())
+                        {
+
+                            minhaPos.Add(Convert.ToInt32(arrayRetornando[i].Substring(0, posicaoInicial)));
+                        }
                     }
-                }
 
 
-                for (int i = 0; i < maoo.Length - 1; i++)
-                {
+                    for (int i = 0; i < maoo.Length - 1; i++)
+                    {
 
-                    qtd += (Convert.ToInt32(maoo[i].Substring(2)));
+                        qtd += (Convert.ToInt32(maoo[i].Substring(2)));
 
-                }
-                //Estrategia para volta
+                    }
+                    //Estrategia para volta
 
-                //Verifica quantos tem entree a casa 30 e 37
-                if (minhaPos.Count(x => x < 30) == 0 && qtd != 0)
-                {
-                    Console.WriteLine("If verifica quantos ");
-                    Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.FirstOrDefault(x => x > 30), maoo[0]);
-                }
 
-                if (minhaPos.Count(x => x > 30 && x < 37) <= qtd)
-                {
-                    Console.WriteLine("Segundo If apos verifica quntos ");
-                    Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.FirstOrDefault(x => x > 30), maoo[0]);
-                }
+                    if (qtd < 4)
+                    {
+                        int pos = VerificaVolta(estrategia, minhaPos);
 
-                if (qtd < 4)
-                {
-                    Console.WriteLine("3º If apos If verifica quantos ");
-                    VerificaVolta(estrategia, minhaPos, qtd);
+                        if (qtd <= 2 && pos == 1)
+                        {
+                            //Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Max());
+
+                            //gera aleatotio pra não tentar voltar pirata na base
+
+
+                            Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Max());
+                        }
+                        else
+                        {
+                            verificaCasaAFrente(estrategia, minhaPos, maoo);
+                        }
+                    }
+                    else
+                    {
+                        //JOGA UM pirata aleatorio e uma cart aleatoria
+                        verificaCasaAFrente(estrategia, minhaPos, maoo);
+                    }
+
+
+
                 }
                 else
                 {
-                    Console.WriteLine("Else após p 3º If verifica quantos ");
-                    //JOGA UM pirata aleatorio e uma cart aleatoria
-                    verificaCasaAFrente(estrategia, minhaPos, maoo, qtd);
+                    mapa();
+                    MostrarCartas();
+                    return;
                 }
-            }
-            else
-            {
-                Console.WriteLine("Else generico");
                 mapa();
                 MostrarCartas();
-                return;
             }
-            mapa();
-            MostrarCartas();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Houve um erro");
+            }
+
         }
 
 
@@ -706,139 +722,113 @@ namespace PI3_Cartagena
             tmrVerificarVez.Enabled = true;
         }
 
-        private void lb_cartas_SelectedIndexChanged(object sender, EventArgs e)
+        private int VerificaVolta(Estrategia estrategia, List<int> minhaPos)
         {
-            //pega a informacao da cara selecionada na listbox da mao
-            string cartaSel = lb_cartas.SelectedItem.ToString();
-
-            //separa carta selecionada (Tipo,numCartas)
-            string[] cartaSelecionada = cartaSel.Split(',');
-
-            cartaParaJogar = Convert.ToString(cartaSelecionada[0]);
-
-            numCartaAjogar = Convert.ToInt32(cartaSelecionada[1]);
-
-
-        }
-
-        private void lb_mostraTab_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //pega informacao da casa selecionada
-
-            string casas = lb_mostraTab.SelectedItem.ToString();
-            string[] casasSele = casas.Split(',');
-            //corta info em num e tipo casa
-
-            //convert informacoes e as passa para as variaveis a ser tratada
-            numCasaSel = Convert.ToInt32(casasSele[0]);
-            tipoCasaSel = Convert.ToString(casasSele[1]);
-
-
-        }
-
-        private void VerificaVolta(Estrategia estrategia, List<int> minhaPos, int qtd)
-        {
-            minhaPos.Reverse();
-            int qtdNoFinal = 0;
-
-            //Verifica onde esta os piratas do jogador e ve se na lista de info tem alguma casa menor que possua qtd de pirtas
-            //diferente de 0 e menor q 3
-            foreach (int item in minhaPos)
+            try
             {
-                if (item == 37)
+                minhaPos.Reverse();
+                int qtdNoFinal = 0;
+                //Verifica onde esta os piratas do jogador e ve se na lista de info tem alguma casa menor que possua qtd de pirtas
+                //diferente de 0 e menor q 3
+                foreach (int item in minhaPos)
                 {
-                    qtdNoFinal++;
-                }
-
-                // Where para filtrar os itens da lista com nCasa menor que a minhaPos e nPiratas < 3.FirstOrDefault para obter o primeiro item dessa lista filtrada.
-                //To criando essa classe pq o retorno do where é uma classe
-                InfoTabuleiro primeiroMenorQuantidade = estrategia.infoTabuleiros.Where(posicao => posicao.nCasa < item && (posicao.nPiratas > 0 && posicao.nPiratas < 3)).LastOrDefault();
-
-                if (primeiroMenorQuantidade != null)
-                {
-
-                    if (primeiroMenorQuantidade.nPiratas == 2)
+                    if (item == 37)
                     {
-                        Jogo.Jogar(idUsuario, senhaUsuario, item);
-                        return;
-
+                        qtdNoFinal++;
                     }
-                    //posicaoVolta = primeiroMenorQuantidade.nPiratas;                   
 
-                    //Jogo.Jogar(idUsuario, senhaUsuario, primeiroMenorQuantidade.nCasa);
+                    // Where para filtrar os itens da lista com nCasa menor que a minhaPos e nPiratas < 3.FirstOrDefault para obter o primeiro item dessa lista filtrada.
+                    //To criando essa classe pq o retorno do where é uma classe
+                    InfoTabuleiro primeiroMenorQuantidade = estrategia.infoTabuleiros.Where(posicao => posicao.nCasa < item && (posicao.nPiratas > 0 && posicao.nPiratas < 3)).LastOrDefault();
+
+                    if (primeiroMenorQuantidade != null)
+                    {
+
+                        if (primeiroMenorQuantidade.nPiratas == 2)
+                        {
+                            Jogo.Jogar(idUsuario, senhaUsuario, item);
+                            return 0;
+
+                        }
+                        //posicaoVolta = primeiroMenorQuantidade.nPiratas;                   
+
+                        //Jogo.Jogar(idUsuario, senhaUsuario, primeiroMenorQuantidade.nCasa);
+                    }
+
                 }
 
+                if (qtdNoFinal == 5)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 1;
+                }
             }
-            if (qtd <= 2)
+            catch (Exception ex)
             {
-                //Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Max());
-                //gera aleatotio pra não tentar voltar pirata na base
+                MessageBox.Show("Houve um erro");
+            }
 
-                Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Max());
-                return;
-            }
-
-            if (qtdNoFinal == 5)
-            {
-                return;
-            }
-            else
-            {
-                return;
-            }
         }
 
-        private void verificaCasaAFrente(Estrategia estrategia, List<int> minhaPos, string[] mao, int qtd)
+        private void verificaCasaAFrente(Estrategia estrategia, List<int> minhaPos, string[] mao)
         {
-
-            Console.WriteLine("Dentro da funcção verifica casaAFrrente");
-
-            foreach (int pos in minhaPos)
+            try
             {
-
-                for (int i = 0; i < mao.Length - 1; i++)
+                foreach (int pos in minhaPos)
                 {
-                    string carta = mao[i].Substring(0, 1);
-
-                    InfoTabuleiro verificaAvanco = estrategia.infoTabuleiros.FirstOrDefault(info => info.nCasa > pos && info.simbolo == Convert.ToChar(carta));
-
-                    if (verificaAvanco != null)
+                    for (int i = 0; i < mao.Length - 1; i++)
                     {
-                        if (verificaAvanco.nPiratas > 0)
+                        string carta = mao[i].Substring(0, 1);
+                        InfoTabuleiro verificaAvanco = estrategia.infoTabuleiros.FirstOrDefault(info => info.nCasa > pos && info.simbolo == Convert.ToChar(carta) && info.nPiratas > 0);
+
+                        if (verificaAvanco != null)
                         {
                             Jogo.Jogar(idUsuario, senhaUsuario, pos, carta);
+                            return;
                         }
-                        return;
-                    }
+                        else
+                        {
+                            Random random = new Random();
+                            int indiceAleatorio = random.Next(minhaPos.Count);
+                            int valorAleatorio = minhaPos[indiceAleatorio];
+                            indiceAleatorio = random.Next(mao.Length - 1);
 
-                    else
-                    {
-                        Random random = new Random();
-                        int indiceAleatorio = random.Next(minhaPos.Count);
-                        int valorAleatorio = minhaPos[indiceAleatorio];
-                        indiceAleatorio = random.Next(mao.Length - 1);
+                            Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Min(), mao[indiceAleatorio].Substring(0, 1));
+                            return;
 
-                        Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Min(), mao[indiceAleatorio].Substring(0, 1));
-                        return;
-
+                        }
                     }
                 }
+
+                return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar a casa");
             }
 
-            return;
         }
 
         private void Mostra_Historico(int partidaAtual)
         {
-            string retornoHistorico = Jogo.ExibirHistorico(partidaAtual);
-            retornoHistorico = retornoHistorico.Replace("\r", "");
-            string[] historico = retornoHistorico.Split('\n');
-            for (int i = 0; i < historico.Length; i++)
+            try
             {
-                lbx_historico.Items.Add(historico[i]);
+                string retornoHistorico = Jogo.ExibirHistorico(partidaAtual);
+                retornoHistorico = retornoHistorico.Replace("\r", "");
+                string[] historico = retornoHistorico.Split('\n');
+                for (int i = 0; i < historico.Length; i++)
+                {
+                    lbx_historico.Items.Add(historico[i]);
+                }
+
             }
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao mostrar historico");
+            }
         }
     }
 }
