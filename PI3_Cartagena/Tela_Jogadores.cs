@@ -28,19 +28,14 @@ namespace PI3_Cartagena
             this.idPartida = idPartida;
             txt_senhaPartida.Text = senhaPartida;
             btn_entrarPartida.Enabled = false;
-            //txt_idUser.Enabled = false;
-            //txt_senhaUsuario.Enabled = false;
-            //btn_iniciarPartida.Enabled = false;
             btn_telaJogo.Enabled = false;
         }
         public Tela_Jogadores(int idPartida)
         {
             InitializeComponent();
             this.idPartida = idPartida;
-            //txt_idUser.Enabled = false;
-            //txt_senhaUsuario.Enabled = false;
-            //btn_iniciarPartida.Enabled = false;
             btn_telaJogo.Enabled = false;
+            btn_iniciarPartida.Enabled = false;
         }
 
         private void validaCampos()
@@ -60,6 +55,8 @@ namespace PI3_Cartagena
 
         private void btn_entrarPartida_Click(object sender, EventArgs e)
         {
+            try
+            {
             nomeUsuario = txt_nomeUsuario.Text;
             senhaPartida = txt_senhaPartida.Text;
             dadosPartida = Jogo.EntrarPartida(idPartida, nomeUsuario, senhaPartida);
@@ -71,19 +68,31 @@ namespace PI3_Cartagena
             txt_senhaUsuario.Text = dadosUser[1];
 
             btn_iniciarPartida.Enabled = true;
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Houve um erro, verifique as informações digitadas");
+            }
         }
 
         private void btn_iniciarPartida_Click(object sender, EventArgs e)
         {
-            idUsuario = Convert.ToInt32(txt_idUser.Text);
-            senhaUsuario = txt_senhaUsuario.Text;
-            idJogadorInicial = Jogo.IniciarPartida(idUsuario, senhaUsuario);
-            
-            MessageBox.Show($"Jogador: {idJogadorInicial} iniciara");
+            try
+            {
+                idUsuario = Convert.ToInt32(txt_idUser.Text);
+                senhaUsuario = txt_senhaUsuario.Text;
+                idJogadorInicial = Jogo.IniciarPartida(idUsuario, senhaUsuario);
 
-            Tela_jogo tela = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
-            tela.Show();
-            this.Close();
+                MessageBox.Show($"Jogador: {idJogadorInicial} iniciara");
+
+                Tela_jogo tela = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
+                tela.Show();
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Houve um erro, verifique as informações");
+            }    
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
@@ -112,9 +121,21 @@ namespace PI3_Cartagena
 
         private void btn_telaJogo_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+            idUsuario = Convert.ToInt32(txt_idUser.Text);
+            senhaUsuario = txt_senhaUsuario.Text;
+            idJogadorInicial = Jogo.IniciarPartida(idUsuario, senhaUsuario);
+
             Tela_jogo jogando = new Tela_jogo(idPartida, idUsuario, senhaUsuario);
             jogando.Show();
             this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Houve um erro, verifique as informações");
+            }
         }
     }
 }

@@ -41,6 +41,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackgroundImage = global::PI3_Cartagena.Properties.Resources.Leonardo_Signature_Cartagena_backgroung_for_pirate_game_1;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_senhaPartida);
             this.panel1.Controls.Add(this.label2);
@@ -55,17 +56,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(50, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(285, 54);
+            this.label3.Size = new System.Drawing.Size(298, 54);
             this.label3.TabIndex = 5;
             this.label3.Text = "Criar Partida";
             // 
             // txt_senhaPartida
             // 
             this.txt_senhaPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_senhaPartida.Location = new System.Drawing.Point(32, 208);
+            this.txt_senhaPartida.Location = new System.Drawing.Point(32, 216);
             this.txt_senhaPartida.Name = "txt_senhaPartida";
             this.txt_senhaPartida.Size = new System.Drawing.Size(311, 38);
             this.txt_senhaPartida.TabIndex = 4;
@@ -74,6 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(69, 173);
             this.label2.Name = "label2";
@@ -103,6 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(69, 82);
             this.label1.Name = "label1";
