@@ -452,7 +452,7 @@ namespace PI3_Cartagena
                         icone.Add(mao[i].Substring(0, mao[i].Length - 2));
                     }
                 }
-                int contador = 1;
+                int contador = 0;
                 int posQtd = 0;
                 // "C", "T", "E", "F", "G", "P"
                 foreach (var item in icone)
@@ -465,8 +465,8 @@ namespace PI3_Cartagena
                                 var picture = new PictureBox
                                 {
                                     Name = "pictureBox",
-                                    Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Size = new Size(46, 77),
+                                    Location = new Point(15 + (50 * contador), 2),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Chave.png"),
                                 };
@@ -483,8 +483,8 @@ namespace PI3_Cartagena
                                 var picture = new PictureBox
                                 {
                                     Name = "pictureBox",
-                                    Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Size = new Size(46, 77),
+                                    Location = new Point(15 + (50 * contador), 2),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Tricornio.jpg"),
                                 };
@@ -503,8 +503,8 @@ namespace PI3_Cartagena
                                 var picture = new PictureBox
                                 {
                                     Name = "pictureBox",
-                                    Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Size = new Size(46, 77),
+                                    Location = new Point(15 + (50 * contador), 2),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Esqueleto.jpg"),
                                 };
@@ -521,8 +521,8 @@ namespace PI3_Cartagena
                                 var picture = new PictureBox
                                 {
                                     Name = "pictureBox",
-                                    Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Size = new Size(46, 77),
+                                    Location = new Point(15 + (50 * contador), 2),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Faca.jpg"),
                                 };
@@ -539,8 +539,8 @@ namespace PI3_Cartagena
                                 var picture = new PictureBox
                                 {
                                     Name = "pictureBox",
-                                    Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12),
+                                    Size = new Size(46, 77),
+                                    Location = new Point(15 + (50 * contador), 2),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Garrafa.jpg"),
 
@@ -558,8 +558,8 @@ namespace PI3_Cartagena
                                 var picture = new PictureBox
                                 {
                                     Name = "pictureBox",
-                                    Size = new Size(40, 50),
-                                    Location = new Point(15 + (50 * contador), 12 ),
+                                    Size = new Size(46, 77),
+                                    Location = new Point(15 + (50 * contador), 2 ),
                                     SizeMode = PictureBoxSizeMode.StretchImage,
                                     Image = Image.FromFile("Icones/Pistola.jpg"),
                                 };
@@ -663,7 +663,7 @@ namespace PI3_Cartagena
 
                 if (qtd < 4)
                 {
-                    VerificaVolta(estrategia, minhaPos, qtd);                                      
+                    VerificaVolta(estrategia, minhaPos, qtd, maoo);                                      
                                                            
                   
                    
@@ -737,7 +737,7 @@ namespace PI3_Cartagena
            
         }
 
-        private void VerificaVolta(Estrategia estrategia, List<int> minhaPos, int qtd)
+        private void VerificaVolta(Estrategia estrategia, List<int> minhaPos, int qtd, string[] maoo)
         {
             minhaPos.Reverse();
             int qtdNoFinal = 0;
@@ -778,6 +778,10 @@ namespace PI3_Cartagena
                 Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Max());
                 return;
             }
+            else
+            {
+                verificaCasaAFrente(estrategia, minhaPos, maoo, qtd);
+            }
 
             if (qtdNoFinal == 5)
             {
@@ -790,10 +794,7 @@ namespace PI3_Cartagena
         }
 
         private void verificaCasaAFrente(Estrategia estrategia, List<int> minhaPos, string[] mao,int qtd)
-        {
-            
-
-
+        {           
             foreach (int pos in minhaPos)
             {
                 
@@ -801,15 +802,17 @@ namespace PI3_Cartagena
                 {
                     string carta =mao[i].Substring(0, 1);
 
-                    InfoTabuleiro verificaAvanco = estrategia.infoTabuleiros.FirstOrDefault(info => info.nCasa > pos && info.simbolo == Convert.ToChar(carta));
+                    InfoTabuleiro verificaAvanco = estrategia.infoTabuleiros.FirstOrDefault(info => info.nCasa > pos && info.simbolo == Convert.ToChar(carta) && info.nPiratas > 0);
 
                     if(verificaAvanco != null)
                     {
+
                         if (verificaAvanco.nPiratas > 0)
                         {
                             Jogo.Jogar(idUsuario, senhaUsuario, pos, carta);
+                            return;
                         }
-                        return;
+                        
                     }
 
                     else
@@ -839,6 +842,11 @@ namespace PI3_Cartagena
                 lbx_historico.Items.Add(historico[i]);
             }
             
+
+        }
+
+        private void pctBox11_Click(object sender, EventArgs e)
+        {
 
         }
     }
