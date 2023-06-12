@@ -221,11 +221,10 @@
             // 
             // pctBox36
             // 
-            this.pctBox36.Location = new System.Drawing.Point(1327, 58);
-            this.pctBox36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox36.Location = new System.Drawing.Point(995, 42);
             this.pctBox36.Name = "pctBox36";
-            this.pctBox36.Size = new System.Drawing.Size(32, 32);
-            this.pctBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox36.Size = new System.Drawing.Size(24, 34);
+            this.pctBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox36.TabIndex = 87;
             this.pctBox36.TabStop = false;
             // 
@@ -242,11 +241,10 @@
             // 
             // pctBox35
             // 
-            this.pctBox35.Location = new System.Drawing.Point(1244, 57);
-            this.pctBox35.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox35.Location = new System.Drawing.Point(933, 42);
             this.pctBox35.Name = "pctBox35";
-            this.pctBox35.Size = new System.Drawing.Size(32, 32);
-            this.pctBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox35.Size = new System.Drawing.Size(24, 34);
+            this.pctBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox35.TabIndex = 86;
             this.pctBox35.TabStop = false;
             // 
@@ -263,11 +261,11 @@
             // 
             // pctBox34
             // 
-            this.pctBox34.Location = new System.Drawing.Point(1152, 58);
-            this.pctBox34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+
+            this.pctBox34.Location = new System.Drawing.Point(864, 42);
             this.pctBox34.Name = "pctBox34";
-            this.pctBox34.Size = new System.Drawing.Size(32, 32);
-            this.pctBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox34.Size = new System.Drawing.Size(24, 34);
+            this.pctBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox34.TabIndex = 85;
             this.pctBox34.TabStop = false;
             // 
@@ -284,11 +282,10 @@
             // 
             // pctBox33
             // 
-            this.pctBox33.Location = new System.Drawing.Point(1152, 135);
-            this.pctBox33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox33.Location = new System.Drawing.Point(864, 107);
             this.pctBox33.Name = "pctBox33";
-            this.pctBox33.Size = new System.Drawing.Size(32, 32);
-            this.pctBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox33.Size = new System.Drawing.Size(24, 34);
+            this.pctBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox33.TabIndex = 84;
             this.pctBox33.TabStop = false;
             // 
@@ -305,11 +302,10 @@
             // 
             // pctBox32
             // 
-            this.pctBox32.Location = new System.Drawing.Point(1244, 135);
-            this.pctBox32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox32.Location = new System.Drawing.Point(933, 107);
             this.pctBox32.Name = "pctBox32";
-            this.pctBox32.Size = new System.Drawing.Size(32, 32);
-            this.pctBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox32.Size = new System.Drawing.Size(24, 34);
+            this.pctBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox32.TabIndex = 83;
             this.pctBox32.TabStop = false;
             // 
@@ -326,11 +322,10 @@
             // 
             // pctBox31
             // 
-            this.pctBox31.Location = new System.Drawing.Point(1327, 135);
-            this.pctBox31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox31.Location = new System.Drawing.Point(995, 107);
             this.pctBox31.Name = "pctBox31";
-            this.pctBox31.Size = new System.Drawing.Size(32, 32);
-            this.pctBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox31.Size = new System.Drawing.Size(24, 34);
+            this.pctBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox31.TabIndex = 82;
             this.pctBox31.TabStop = false;
             // 
@@ -358,11 +353,10 @@
             // 
             // pctBox30
             // 
-            this.pctBox30.Location = new System.Drawing.Point(1395, 135);
-            this.pctBox30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox30.Location = new System.Drawing.Point(1046, 107);
             this.pctBox30.Name = "pctBox30";
-            this.pctBox30.Size = new System.Drawing.Size(32, 32);
-            this.pctBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox30.Size = new System.Drawing.Size(24, 34);
+            this.pctBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox30.TabIndex = 81;
             this.pctBox30.TabStop = false;
             // 
@@ -379,11 +373,10 @@
             // 
             // pctBox29
             // 
-            this.pctBox29.Location = new System.Drawing.Point(1481, 135);
-            this.pctBox29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox29.Location = new System.Drawing.Point(1111, 107);
             this.pctBox29.Name = "pctBox29";
-            this.pctBox29.Size = new System.Drawing.Size(32, 32);
-            this.pctBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox29.Size = new System.Drawing.Size(24, 34);
+            this.pctBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox29.TabIndex = 80;
             this.pctBox29.TabStop = false;
             // 
@@ -400,11 +393,10 @@
             // 
             // pctBox28
             // 
-            this.pctBox28.Location = new System.Drawing.Point(1576, 135);
-            this.pctBox28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox28.Location = new System.Drawing.Point(1182, 107);
             this.pctBox28.Name = "pctBox28";
-            this.pctBox28.Size = new System.Drawing.Size(32, 32);
-            this.pctBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox28.Size = new System.Drawing.Size(24, 34);
+            this.pctBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox28.TabIndex = 79;
             this.pctBox28.TabStop = false;
             // 
@@ -421,11 +413,10 @@
             // 
             // pctBox27
             // 
-            this.pctBox27.Location = new System.Drawing.Point(1576, 213);
-            this.pctBox27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox27.Location = new System.Drawing.Point(1182, 170);
             this.pctBox27.Name = "pctBox27";
-            this.pctBox27.Size = new System.Drawing.Size(32, 32);
-            this.pctBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox27.Size = new System.Drawing.Size(24, 34);
+            this.pctBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox27.TabIndex = 78;
             this.pctBox27.TabStop = false;
             // 
@@ -442,11 +433,10 @@
             // 
             // pctBox26
             // 
-            this.pctBox26.Location = new System.Drawing.Point(1481, 213);
-            this.pctBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox26.Location = new System.Drawing.Point(1111, 170);
             this.pctBox26.Name = "pctBox26";
-            this.pctBox26.Size = new System.Drawing.Size(32, 32);
-            this.pctBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox26.Size = new System.Drawing.Size(24, 34);
+            this.pctBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox26.TabIndex = 77;
             this.pctBox26.TabStop = false;
             // 
@@ -463,11 +453,10 @@
             // 
             // pctBox25
             // 
-            this.pctBox25.Location = new System.Drawing.Point(1395, 213);
-            this.pctBox25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox25.Location = new System.Drawing.Point(1046, 170);
             this.pctBox25.Name = "pctBox25";
-            this.pctBox25.Size = new System.Drawing.Size(32, 32);
-            this.pctBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox25.Size = new System.Drawing.Size(24, 34);
+            this.pctBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox25.TabIndex = 76;
             this.pctBox25.TabStop = false;
             // 
@@ -484,11 +473,10 @@
             // 
             // pctBox24
             // 
-            this.pctBox24.Location = new System.Drawing.Point(1327, 213);
-            this.pctBox24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox24.Location = new System.Drawing.Point(995, 170);
             this.pctBox24.Name = "pctBox24";
-            this.pctBox24.Size = new System.Drawing.Size(32, 32);
-            this.pctBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox24.Size = new System.Drawing.Size(24, 34);
+            this.pctBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox24.TabIndex = 75;
             this.pctBox24.TabStop = false;
             // 
@@ -505,11 +493,10 @@
             // 
             // pctBox23
             // 
-            this.pctBox23.Location = new System.Drawing.Point(1244, 213);
-            this.pctBox23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox23.Location = new System.Drawing.Point(933, 170);
             this.pctBox23.Name = "pctBox23";
-            this.pctBox23.Size = new System.Drawing.Size(32, 32);
-            this.pctBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox23.Size = new System.Drawing.Size(24, 34);
+            this.pctBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox23.TabIndex = 74;
             this.pctBox23.TabStop = false;
             // 
@@ -526,11 +513,10 @@
             // 
             // pctBox22
             // 
-            this.pctBox22.Location = new System.Drawing.Point(1152, 213);
-            this.pctBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox22.Location = new System.Drawing.Point(864, 170);
             this.pctBox22.Name = "pctBox22";
-            this.pctBox22.Size = new System.Drawing.Size(32, 32);
-            this.pctBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox22.Size = new System.Drawing.Size(24, 34);
+            this.pctBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox22.TabIndex = 73;
             this.pctBox22.TabStop = false;
             // 
@@ -550,8 +536,8 @@
             this.pctBox21.Location = new System.Drawing.Point(1152, 292);
             this.pctBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pctBox21.Name = "pctBox21";
-            this.pctBox21.Size = new System.Drawing.Size(32, 32);
-            this.pctBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox21.Size = new System.Drawing.Size(24, 34);
+            this.pctBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox21.TabIndex = 72;
             this.pctBox21.TabStop = false;
             // 
@@ -593,8 +579,8 @@
             this.pctBox20.Location = new System.Drawing.Point(1244, 292);
             this.pctBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pctBox20.Name = "pctBox20";
-            this.pctBox20.Size = new System.Drawing.Size(32, 32);
-            this.pctBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox20.Size = new System.Drawing.Size(24, 34);
+            this.pctBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox20.TabIndex = 71;
             this.pctBox20.TabStop = false;
             // 
@@ -603,8 +589,8 @@
             this.pctBox19.Location = new System.Drawing.Point(1327, 292);
             this.pctBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pctBox19.Name = "pctBox19";
-            this.pctBox19.Size = new System.Drawing.Size(32, 32);
-            this.pctBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox19.Size = new System.Drawing.Size(24, 34);
+            this.pctBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox19.TabIndex = 70;
             this.pctBox19.TabStop = false;
             // 
@@ -613,8 +599,8 @@
             this.pctBox18.Location = new System.Drawing.Point(1395, 292);
             this.pctBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pctBox18.Name = "pctBox18";
-            this.pctBox18.Size = new System.Drawing.Size(32, 32);
-            this.pctBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox18.Size = new System.Drawing.Size(24, 34);
+            this.pctBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox18.TabIndex = 69;
             this.pctBox18.TabStop = false;
             // 
@@ -623,8 +609,8 @@
             this.pctBox17.Location = new System.Drawing.Point(1481, 292);
             this.pctBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pctBox17.Name = "pctBox17";
-            this.pctBox17.Size = new System.Drawing.Size(32, 32);
-            this.pctBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox17.Size = new System.Drawing.Size(24, 34);
+            this.pctBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox17.TabIndex = 68;
             this.pctBox17.TabStop = false;
             // 
@@ -645,158 +631,146 @@
             this.pctBox16.Location = new System.Drawing.Point(1576, 292);
             this.pctBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pctBox16.Name = "pctBox16";
-            this.pctBox16.Size = new System.Drawing.Size(32, 32);
-            this.pctBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox16.Size = new System.Drawing.Size(24, 34);
+            this.pctBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox16.TabIndex = 67;
             this.pctBox16.TabStop = false;
             // 
             // pctBox15
             // 
-            this.pctBox15.Location = new System.Drawing.Point(1576, 370);
-            this.pctBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox15.Location = new System.Drawing.Point(1182, 298);
             this.pctBox15.Name = "pctBox15";
-            this.pctBox15.Size = new System.Drawing.Size(32, 32);
-            this.pctBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox15.Size = new System.Drawing.Size(24, 34);
+            this.pctBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox15.TabIndex = 66;
             this.pctBox15.TabStop = false;
             // 
             // pctBox14
             // 
-            this.pctBox14.Location = new System.Drawing.Point(1481, 370);
-            this.pctBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox14.Location = new System.Drawing.Point(1111, 298);
             this.pctBox14.Name = "pctBox14";
-            this.pctBox14.Size = new System.Drawing.Size(32, 32);
-            this.pctBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox14.Size = new System.Drawing.Size(24, 34);
+            this.pctBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox14.TabIndex = 65;
             this.pctBox14.TabStop = false;
             // 
             // pctBox13
             // 
-            this.pctBox13.Location = new System.Drawing.Point(1395, 370);
-            this.pctBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox13.Location = new System.Drawing.Point(1046, 298);
             this.pctBox13.Name = "pctBox13";
-            this.pctBox13.Size = new System.Drawing.Size(32, 32);
-            this.pctBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox13.Size = new System.Drawing.Size(24, 34);
+            this.pctBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox13.TabIndex = 64;
             this.pctBox13.TabStop = false;
             // 
             // pctBox12
             // 
-            this.pctBox12.Location = new System.Drawing.Point(1327, 370);
-            this.pctBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox12.Location = new System.Drawing.Point(995, 298);
             this.pctBox12.Name = "pctBox12";
-            this.pctBox12.Size = new System.Drawing.Size(32, 32);
-            this.pctBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox12.Size = new System.Drawing.Size(24, 34);
+            this.pctBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox12.TabIndex = 63;
             this.pctBox12.TabStop = false;
             // 
             // pctBox11
             // 
-            this.pctBox11.Location = new System.Drawing.Point(1244, 370);
-            this.pctBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox11.Location = new System.Drawing.Point(933, 298);
             this.pctBox11.Name = "pctBox11";
-            this.pctBox11.Size = new System.Drawing.Size(32, 32);
-            this.pctBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox11.Size = new System.Drawing.Size(24, 34);
+            this.pctBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox11.TabIndex = 62;
             this.pctBox11.TabStop = false;
+            this.pctBox11.Click += new System.EventHandler(this.pctBox11_Click);
             // 
             // pctBox10
             // 
-            this.pctBox10.Location = new System.Drawing.Point(1152, 370);
-            this.pctBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox10.Location = new System.Drawing.Point(864, 298);
             this.pctBox10.Name = "pctBox10";
-            this.pctBox10.Size = new System.Drawing.Size(32, 32);
-            this.pctBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox10.Size = new System.Drawing.Size(24, 34);
+            this.pctBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox10.TabIndex = 61;
             this.pctBox10.TabStop = false;
             // 
             // pctBox9
             // 
-            this.pctBox9.Location = new System.Drawing.Point(1152, 452);
-            this.pctBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox9.Location = new System.Drawing.Point(864, 365);
             this.pctBox9.Name = "pctBox9";
-            this.pctBox9.Size = new System.Drawing.Size(32, 32);
-            this.pctBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox9.Size = new System.Drawing.Size(24, 34);
+            this.pctBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox9.TabIndex = 60;
             this.pctBox9.TabStop = false;
             // 
             // pctBox8
             // 
-            this.pctBox8.Location = new System.Drawing.Point(1244, 452);
-            this.pctBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox8.Location = new System.Drawing.Point(933, 365);
             this.pctBox8.Name = "pctBox8";
-            this.pctBox8.Size = new System.Drawing.Size(32, 32);
-            this.pctBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox8.Size = new System.Drawing.Size(24, 34);
+            this.pctBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox8.TabIndex = 59;
             this.pctBox8.TabStop = false;
             // 
             // pctBox7
             // 
-            this.pctBox7.Location = new System.Drawing.Point(1327, 452);
-            this.pctBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox7.Location = new System.Drawing.Point(995, 365);
             this.pctBox7.Name = "pctBox7";
-            this.pctBox7.Size = new System.Drawing.Size(32, 32);
-            this.pctBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox7.Size = new System.Drawing.Size(24, 34);
+            this.pctBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+
             this.pctBox7.TabIndex = 58;
             this.pctBox7.TabStop = false;
             // 
             // pctBox6
             // 
-            this.pctBox6.Location = new System.Drawing.Point(1395, 452);
-            this.pctBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox6.Location = new System.Drawing.Point(1046, 365);
             this.pctBox6.Name = "pctBox6";
-            this.pctBox6.Size = new System.Drawing.Size(32, 32);
-            this.pctBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox6.Size = new System.Drawing.Size(24, 34);
+            this.pctBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+
             this.pctBox6.TabIndex = 57;
             this.pctBox6.TabStop = false;
             // 
             // pctBox5
             // 
-            this.pctBox5.Location = new System.Drawing.Point(1481, 452);
-            this.pctBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox5.Location = new System.Drawing.Point(1111, 365);
             this.pctBox5.Name = "pctBox5";
-            this.pctBox5.Size = new System.Drawing.Size(32, 32);
-            this.pctBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox5.Size = new System.Drawing.Size(24, 34);
+            this.pctBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox5.TabIndex = 56;
             this.pctBox5.TabStop = false;
             // 
             // pctBox4
             // 
-            this.pctBox4.Location = new System.Drawing.Point(1576, 453);
-            this.pctBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox4.Location = new System.Drawing.Point(1182, 365);
             this.pctBox4.Name = "pctBox4";
-            this.pctBox4.Size = new System.Drawing.Size(32, 32);
-            this.pctBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox4.Size = new System.Drawing.Size(24, 34);
+            this.pctBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox4.TabIndex = 55;
             this.pctBox4.TabStop = false;
             // 
             // pctBox3
             // 
-            this.pctBox3.Location = new System.Drawing.Point(1576, 532);
-            this.pctBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox3.Location = new System.Drawing.Point(1182, 427);
             this.pctBox3.Name = "pctBox3";
-            this.pctBox3.Size = new System.Drawing.Size(32, 32);
-            this.pctBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox3.Size = new System.Drawing.Size(24, 34);
+            this.pctBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox3.TabIndex = 54;
             this.pctBox3.TabStop = false;
             // 
             // pctBox2
             // 
-            this.pctBox2.Location = new System.Drawing.Point(1481, 532);
-            this.pctBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox2.Location = new System.Drawing.Point(1111, 427);
             this.pctBox2.Name = "pctBox2";
-            this.pctBox2.Size = new System.Drawing.Size(32, 32);
-            this.pctBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox2.Size = new System.Drawing.Size(24, 34);
+            this.pctBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox2.TabIndex = 53;
             this.pctBox2.TabStop = false;
             // 
             // pctBox1
             // 
-            this.pctBox1.Location = new System.Drawing.Point(1395, 532);
-            this.pctBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctBox1.Location = new System.Drawing.Point(1046, 427);
             this.pctBox1.Name = "pctBox1";
-            this.pctBox1.Size = new System.Drawing.Size(32, 32);
-            this.pctBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox1.Size = new System.Drawing.Size(24, 34);
+            this.pctBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox1.TabIndex = 52;
             this.pctBox1.TabStop = false;
             // 
@@ -992,6 +966,16 @@
             this.lbx_historico.Name = "lbx_historico";
             this.lbx_historico.Size = new System.Drawing.Size(207, 292);
             this.lbx_historico.TabIndex = 0;
+            // 
+            // pnlCartas
+            // 
+            this.pnlCartas.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlCartas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlCartas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCartas.Location = new System.Drawing.Point(268, 498);
+            this.pnlCartas.Name = "pnlCartas";
+            this.pnlCartas.Size = new System.Drawing.Size(596, 82);
+            this.pnlCartas.TabIndex = 118;
             // 
             // Tela_jogo
             // 
