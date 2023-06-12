@@ -651,22 +651,21 @@ namespace PI3_Cartagena
                 //Estrategia para volta
 
                 //Verifica quantos tem entree a casa 30 e 37
-                if (minhaPos.Count(x=> x < 30) == 0 && qtd != 0)
-                {
-                    Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.FirstOrDefault(x => x > 30), maoo[0]);
-                }
+               
 
                 if (minhaPos.Count(x => x > 30 && x < 37) <= qtd)
                 {
-                    Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.FirstOrDefault(x=> x> 30), maoo[0]);
+                    Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.FirstOrDefault(x=> x> 30 && x <37), maoo[0]);
+                }
+                if (minhaPos.Count(x => x > 30 && x < 37) > 0 && qtd != 0)
+                {
+                    Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.FirstOrDefault(x => x > 30 && x <  37), maoo[0]);
                 }
 
                 if (qtd < 4)
                 {
                     VerificaVolta(estrategia, minhaPos, qtd, maoo);                                      
-                                                           
-                  
-                   
+                                                                                              
                 }               
                 else
                 {
@@ -753,7 +752,7 @@ namespace PI3_Cartagena
 
                 // Where para filtrar os itens da lista com nCasa menor que a minhaPos e nPiratas < 3.FirstOrDefault para obter o primeiro item dessa lista filtrada.
                 //To criando essa classe pq o retorno do where é uma classe
-                InfoTabuleiro primeiroMenorQuantidade = estrategia.infoTabuleiros.Where(posicao => posicao.nCasa < item && (posicao.nPiratas > 0 && posicao.nPiratas < 3)).LastOrDefault();       
+                InfoTabuleiro primeiroMenorQuantidade = estrategia.infoTabuleiros.Where(posicao => posicao.nCasa < item && posicao.nCasa > 0 &&(posicao.nPiratas > 0 && posicao.nPiratas < 3)).LastOrDefault();       
 
                 if (primeiroMenorQuantidade != null)
                 {
@@ -770,7 +769,7 @@ namespace PI3_Cartagena
                 }
                 
             }
-            if (qtd <= 2)
+            if (qtd < 2)
             {
                 //Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Max());
                 //gera aleatotio pra não tentar voltar pirata na base
@@ -782,6 +781,7 @@ namespace PI3_Cartagena
             {
                 verificaCasaAFrente(estrategia, minhaPos, maoo, qtd);
             }
+
 
             if (qtdNoFinal == 5)
             {
@@ -801,6 +801,8 @@ namespace PI3_Cartagena
                 for (int i = 0; i < mao.Length-1; i++)
                 {
                     string carta =mao[i].Substring(0, 1);
+                    int qtdcarta = Convert.ToInt32(mao[i].Substring(2));
+                   
 
                     InfoTabuleiro verificaAvanco = estrategia.infoTabuleiros.FirstOrDefault(info => info.nCasa > pos && info.simbolo == Convert.ToChar(carta) && info.nPiratas > 0);
 
@@ -812,24 +814,28 @@ namespace PI3_Cartagena
                             Jogo.Jogar(idUsuario, senhaUsuario, pos, carta);
                             return;
                         }
+                        else if(qtdcarta > 1)
+                        {
+                            Jogo.Jogar(idUsuario, senhaUsuario, pos, carta);
+                        }
                         
                     }
 
-                    else
-                    {
-                        Random random = new Random();
-                        int indiceAleatorio = random.Next(minhaPos.Count);
-                            int valorAleatorio = minhaPos[indiceAleatorio];
-                            indiceAleatorio = random.Next(mao.Length - 1);
+                    
+                       
 
-                        Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Min(), mao[indiceAleatorio].Substring(0, 1)) ;
-                        return;
-
-                    }
+                    
                 }
             }
+            Random random = new Random();
+            int indiceAleatorio = random.Next(minhaPos.Count);
+            int valorAleatorio = minhaPos[indiceAleatorio];
+            indiceAleatorio = random.Next(mao.Length - 1);
 
+            Jogo.Jogar(idUsuario, senhaUsuario, minhaPos.Min(), mao[indiceAleatorio].Substring(0, 1));
             return;
+
+            
         }
 
         private void Mostra_Historico(int partidaAtual)
