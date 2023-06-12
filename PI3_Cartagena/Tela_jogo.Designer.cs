@@ -680,7 +680,6 @@
             this.pctBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox11.TabIndex = 62;
             this.pctBox11.TabStop = false;
-            this.pctBox11.Click += new System.EventHandler(this.pctBox11_Click);
             // 
             // pctBox10
             // 
@@ -967,6 +966,7 @@
             // 
             // pnlCartas
             // 
+            this.pnlCartas.BackColor = System.Drawing.Color.Transparent;
             this.pnlCartas.Location = new System.Drawing.Point(447, 677);
             this.pnlCartas.Name = "pnlCartas";
             this.pnlCartas.Size = new System.Drawing.Size(677, 100);

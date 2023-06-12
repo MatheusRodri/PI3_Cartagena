@@ -82,12 +82,12 @@ namespace PI3_Cartagena.Classes
                 {
 
                     int virg2 = arrayRetornando[j].LastIndexOf(',');
-                    if (casasSeparadas[i].Substring(0,virg) == arrayRetornando[j].Substring(0,virg))
+                    int virg3 = arrayRetornando[j].IndexOf(',');
+
+                    if (casasSeparadas[i].Substring(0, virg) == arrayRetornando[j].Substring(0, virg3))
                     {
                         qtd += Convert.ToInt32(arrayRetornando[j].Substring(virg2 + 1));
                     }
-
-                   
                     
                 }
                 //add um novo item na lista de tabuleiro com as informações geradas
