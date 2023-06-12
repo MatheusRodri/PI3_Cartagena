@@ -969,13 +969,13 @@
             // 
             // pnlCartas
             // 
-            this.pnlCartas.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlCartas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlCartas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCartas.Location = new System.Drawing.Point(268, 498);
-            this.pnlCartas.Name = "pnlCartas";
-            this.pnlCartas.Size = new System.Drawing.Size(596, 82);
-            this.pnlCartas.TabIndex = 118;
+            //this.pnlCartas.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            //this.pnlCartas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            //this.pnlCartas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //this.pnlCartas.Location = new System.Drawing.Point(268, 498);
+            //this.pnlCartas.Name = "pnlCartas";
+            //this.pnlCartas.Size = new System.Drawing.Size(596, 82);
+            //this.pnlCartas.TabIndex = 118;
             // 
             // Tela_jogo
             // 
